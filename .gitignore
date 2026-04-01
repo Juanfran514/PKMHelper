@@ -1,0 +1,17 @@
+# NODE
+node_modules/
+
+# REACT
+dist/
+dist-ssr/
+*.local
+
+# LOGS
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OTROS
+.DS_Store
+.vscode/
+.idea/
