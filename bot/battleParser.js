@@ -21,14 +21,12 @@ class BattleParser {
             case 'updateuser':
                 return { 
                     type: this.TYPES.UPDATEUSER, 
-                    name: part[2] // El nombre que devuelve el servidor
+                    name: part[2] 
                 };
 
-            // Jugadores en combate
             case 'player':
-                return { type: this.TYPES.PLAYER, id:part[2], name:part[3] }
+                return { type: this.TYPES.PLAYER, id: part[2], name: part[3] };
             
-            // Cambios pokemon
             case 'switch':
             case 'drag':
                 return {
@@ -37,7 +35,6 @@ class BattleParser {
                     pokemonName: part[3].split(',')[0]
                 };
             
-            // Hacer movimiento
             case 'move':
                 return {
                     type: this.TYPES.MOVE,
@@ -46,10 +43,12 @@ class BattleParser {
                     moveName: part[3]
                 };
             
-            // Ganar combate
-            case 'win': return {type: this.TYPES.WIN, winner: part[2].trim()};
+            case 'win': 
+                return { 
+                    type: this.TYPES.WIN, 
+                    winner: part[2].trim() 
+                };
 
-            // RoomList
             case 'queryresponse':
                 if(part[2] === 'roomlist'){
                     return {type: this.TYPES.QUERYRESPONSE, subtype: 'roomList', data:this.safeJSON(part[3])};
@@ -62,7 +61,6 @@ class BattleParser {
 
     getRoomID(rawMessage) {
         if (!rawMessage || typeof rawMessage !== 'string') return null;
-
         if (rawMessage.startsWith('>')) {
             return rawMessage.split('\n')[0].substring(1).trim();
         }
@@ -70,22 +68,29 @@ class BattleParser {
     }
 
     analyzeLog(rawLog, targetUser){
-        // Mantenemos tu lógica igual...
         const lines = rawLog.split('\n');
         const stats = {
             myID: "",
             foeTeam: new Set(),
             myTeam: new Set(),
-            moveCount: {}
+            moveCount: {},
+            winner: null
         };
 
         lines.forEach(line => {
             const parsed = this.parseLine(line);
-            if(parsed?.type === this.TYPES.PLAYER && parsed.name?.toLowerCase() === targetUser.toLowerCase()){
+            if(!parsed) return;
+
+            if(parsed.type === this.TYPES.PLAYER && parsed.name?.toLowerCase() === targetUser.toLowerCase()){
                 stats.myID = parsed.id;
+            }
+
+            if(parsed.type === this.TYPES.WIN) {
+                stats.winner = parsed.winner;
             }
         });
 
+        // Segunda pasada: Analizar equipo y movimientos
         lines.forEach(line => {
             const data = this.parseLine(line);
             if(!data) return;
@@ -112,15 +117,15 @@ class BattleParser {
         return {
             myTeam: Array.from(stats.myTeam),
             foeTeam: Array.from(stats.foeTeam),
-            moveCount: stats.moveCount
+            moveCount: stats.moveCount,
+            winner: stats.winner 
         }
     }
 
     safeJSON(str){
-        try {
-            return JSON.parse(str)
-        } catch(e){
-            console.error("Error safeJSON:", e);
+        try { return JSON.parse(str); } 
+        catch(e){ 
+            console.error(`[PARSER] Error al analizar JSON: ${e.message}`);
             return null;
         }
     }

@@ -9,7 +9,7 @@ function handleLogin(id, str, socket){
 
     const options = {
         hostname: config.LOGIN_URL,
-        path: "/api/login.php",
+        path: config.LOGIN_PATH, //SHOWDOWN ORIGINAL "/api/login.php"
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-ww-form-urlencoded',

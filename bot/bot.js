@@ -6,12 +6,12 @@ const BattleTracker = require('./battleTracker');
 const Scanner = require('./battleScanner');
 const readline = require('node:readline');
 
-// 1. Inicialización de Componentes
+
 const parser = new BattleParser();
 const storage = new BattleSaver(config.LOGS_DIR);
 const tracker = new BattleTracker(parser, storage);
 
-// 2. Interfaz de comandos por terminal (Input de usuarios)
+// Usuarios Terminal
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -25,10 +25,9 @@ rl.on('line', (input) => {
     }
 });
 
-// 3. Lógica de Comunicación (Callback de initClient)
+// Socket
 const socket = initClient((ws, rawMessage) => {
     
-    // A. ¿Es un mensaje de una sala activa? (Empieza por '>')
     const roomID = parser.getRoomID(rawMessage);
     
     if (roomID && tracker.activeBattles[roomID]) {

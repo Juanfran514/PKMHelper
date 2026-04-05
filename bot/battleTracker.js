@@ -2,52 +2,44 @@ class BattleTracker {
     constructor(parser, storage) {
         this.parser = parser;
         this.storage = storage;
-        this.targetUsers = []; 
+        this.targetUsers = [];
         this.activeBattles = {}; 
-        this.visitedRooms = new Set();
     }
 
     setTargetUser(user) {
-        const cleanUser = user.toLowerCase().trim();
-        if (!this.targetUsers.includes(cleanUser)) {
-            this.targetUsers.push(cleanUser);
-            console.log(`Usuario añadido: ${cleanUser}`);
+        const username = user.toLowerCase();
+        if (!this.targetUsers.includes(username)) {
+            this.targetUsers.push(username);
+            console.log(`[TRACKER] Objetivo añadido: ${username}`);
         }
     }
 
-    // BUSCAR EN ROOMLIST
     checkRoomList(rooms, socket) {
         for (const roomID in rooms) {
             const roomData = rooms[roomID];
-            if (!roomData.p1 || !roomData.p2) continue;
+            const p1 = roomData.p1?.toLowerCase();
+            const p2 = roomData.p2?.toLowerCase();
 
-            const p1 = roomData.p1.toLowerCase();
-            const p2 = roomData.p2.toLowerCase();
+            const target = this.targetUsers.find(u => u === p1 || u === p2);
 
-            const foundTarget = this.targetUsers.find(user => p1 === user || p2 === user);
-
-            if (foundTarget && !this.visitedRooms.has(roomID) && !this.activeBattles[roomID]) {
-                console.log(`\n${foundTarget} jugando en: ${roomID}`);
+            if (target && !this.activeBattles[roomID]) {
+                console.log(`[TRACKER] Detectado objetivo ${target} en ${roomID}. Entrando...`);
                 
-                this.visitedRooms.add(roomID);
-                this.activeBattles[roomID] = { 
-                    log: "", 
-                    target: foundTarget 
-                }; 
-                
+                this.activeBattles[roomID] = {
+                    target: target,
+                    log: []
+                };
+
                 socket.send(`|/join ${roomID}`);
             }
         }
     }
 
     trackLine(roomID, rawMessage) {
-        const battle = this.activeBattles[roomID];
-        if (!battle) return false;
-
-        battle.log += rawMessage + "\n";
-
-        if (rawMessage.includes('|win|') || rawMessage.includes('|forfeited')) {
-            return true; 
+        if (this.activeBattles[roomID]) {
+            this.activeBattles[roomID].log.push(rawMessage);
+            
+            return rawMessage.includes('|win|');
         }
         return false;
     }
@@ -56,14 +48,30 @@ class BattleTracker {
         const battle = this.activeBattles[roomID];
         if (!battle) return;
 
-        console.log(`Batalla ${roomID} terminada.`);
+        try {
+            const fullLogString = battle.log.join('\n');
+            const stats = this.parser.analyzeLog(fullLogString, battle.target);
 
-        const stats = this.parser.analyzeLog(battle.log, battle.target);
+            if (stats) {
+                const cleanName = (n) => n ? n.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() : "";
+                const isWin = cleanName(stats.winner) === cleanName(battle.target);
 
-        this.storage.saveBattleLog(battle.target, {
-            roomID: roomID,
-            stats: stats
-        });
+                // 2. Guardar Logs Raw
+                this.storage.saveRawLog(battle.target, roomID, fullLogString);
+                
+                this.storage.saveStats(battle.target, stats, stats.winner);
+
+                this.storage.updateGlobalMoveStats(battle.target, stats.moveCount);
+
+                if (stats.foeTeam && stats.foeTeam.length > 0) {
+                    this.storage.updateMatchups(battle.target, stats.foeTeam, isWin);
+                }
+
+                console.log(`[ANALYSIS] Partida finalizada en ${roomID}. Datos actualizados para ${battle.target}.`);
+            }
+        } catch (err) {
+            console.error(`[ERROR] Error procesando estadísticas:`, err);
+        }
 
         delete this.activeBattles[roomID];
         socket.send(`|/leave ${roomID}`);
