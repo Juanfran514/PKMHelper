@@ -25,7 +25,7 @@ function handleLogin(id, str, socket){
             try{
                 if (body.startsWith(']')) body = body.substring(1);
                 const result = JSON.parse(body);
-                socket.send(`|/trn ${SH_USER},0,${result.assertion}`);
+                socket.send(`|/trn ${config.SH_USER},0,${result.assertion}`);
             } catch (e) {
                 console.error('Error en req login:', e.message);
             }

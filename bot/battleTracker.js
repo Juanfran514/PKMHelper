@@ -1,45 +1,53 @@
 class BattleTracker {
-    constructor(Parser, Saver){
-        this.Parser = Parser;
-        this.Saver = Saver;
-
-        this.targetUser = null;
-        this.activeBattles = {};
+    constructor(parser, storage) {
+        this.parser = parser;
+        this.storage = storage;
+        this.targetUsers = []; 
+        this.activeBattles = {}; 
         this.visitedRooms = new Set();
     }
 
-    setTargetUser(username){
-        this.targetUser = username.toLowerCase();
-        this.visitedRooms.clear();
-        console.log(`Usuario a buscar:${this.targetUser}`);
+    setTargetUser(user) {
+        const cleanUser = user.toLowerCase().trim();
+        if (!this.targetUsers.includes(cleanUser)) {
+            this.targetUsers.push(cleanUser);
+            console.log(`Usuario añadido: ${cleanUser}`);
+        }
     }
 
-    checkRoomList(rooms){
-        if(!this.targeUser) return;
+    // BUSCAR EN ROOMLIST
+    checkRoomList(rooms, socket) {
+        for (const roomID in rooms) {
+            const roomData = rooms[roomID];
+            if (!roomData.p1 || !roomData.p2) continue;
 
-        for(const roomID in rooms){
-            const p1 = rooms[roomID].p1?.toLowerCase();
-            const p2 = rooms[roomID].p2?.toLowerCase();
-                                                                // REVISAR QUE PASA SI DOS REGISTRADOS ESTAN EN UN COMBATE
-            if(p1 === this.targetUser || p2 === this.targetUser && !this.visitedRooms.has(roomID)){ 
+            const p1 = roomData.p1.toLowerCase();
+            const p2 = roomData.p2.toLowerCase();
+
+            const foundTarget = this.targetUsers.find(user => p1 === user || p2 === user);
+
+            if (foundTarget && !this.visitedRooms.has(roomID) && !this.activeBattles[roomID]) {
+                console.log(`\n${foundTarget} jugando en: ${roomID}`);
+                
                 this.visitedRooms.add(roomID);
-                this.activeBattles[roomID] = {
-                    log:[],
-                    target: this.targetUser
-                };
-
+                this.activeBattles[roomID] = { 
+                    log: "", 
+                    target: foundTarget 
+                }; 
+                
                 socket.send(`|/join ${roomID}`);
-                console.log(`Entrando a sala ${roomID}`);
             }
         }
     }
 
-    trackLine(roomID, lines){
-        if(this.activeBattles[roomID]){
-            this.activeBattles[roomID].log.push(...lines);
-            
-            const hasEnd = lines.some(line => line.includes('|win|') || line.includes('|tie'));
-            return hasEnd;
+    trackLine(roomID, rawMessage) {
+        const battle = this.activeBattles[roomID];
+        if (!battle) return false;
+
+        battle.log += rawMessage + "\n";
+
+        if (rawMessage.includes('|win|') || rawMessage.includes('|forfeited')) {
+            return true; 
         }
         return false;
     }
@@ -48,16 +56,15 @@ class BattleTracker {
         const battle = this.activeBattles[roomID];
         if (!battle) return;
 
-        console.log(`Batalla Terminada en ${roomID}`);
+        console.log(`Batalla ${roomID} terminada.`);
 
-        // Parse analiza el log
-        const rawLogText = battle.log.join('\n');
-        const stats = this.parser.analyzeLog(rawLogText, battle.target);
+        const stats = this.parser.analyzeLog(battle.log, battle.target);
 
-        // Guarda JSON
-        this.storage.saveBattleLog(battle.target, stats);
+        this.storage.saveBattleLog(battle.target, {
+            roomID: roomID,
+            stats: stats
+        });
 
-        // Salimos de sala
         delete this.activeBattles[roomID];
         socket.send(`|/leave ${roomID}`);
     }

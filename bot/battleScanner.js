@@ -36,4 +36,4 @@ class BattleScanner {
     }
 }
 
-module.exports = Scanner;
+module.exports = BattleScanner;

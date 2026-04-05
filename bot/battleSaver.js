@@ -1,5 +1,4 @@
-const { time } = require('node:console');
-const fs = require('node:fs/promises');
+const fs = require('node:fs');
 const path = require('node:path');
 
 class BattleSaver {
@@ -8,42 +7,39 @@ class BattleSaver {
         this.ensureSaveDir();
     }
 
-    async ensureSaveDir(){
-        if(!fs.existsSync(this.saveDir)){
-            fs.mkdirSync(this.saveDir, {recursive: true});
-            console.log('Carpeta creada en', this.saveDir);
+    ensureSaveDir() {
+        if (!fs.existsSync(this.saveDir)) {
+            fs.mkdirSync(this.saveDir, { recursive: true });
         }
     }
 
-    saveBattleLog(filename, data){
+    saveBattleLog(filename, data) {
         const filePath = path.join(this.saveDir, `${filename.toLowerCase()}.json`);
         let history = [];
 
-        // LEER HISTORIAL
-        if(fs.existsSync(filePath)){
-            try{
+        if (fs.existsSync(filePath)) {
+            try {
                 const content = fs.readFileSync(filePath, 'utf-8');
                 history = JSON.parse(content);
-            } catch(e){
-                console.error('Error leyendo historial:', e);
+            } catch (e) {
+                console.error('No se puede leer, se reescribirá:', e.message);
                 history = [];
             }
         }
 
-        // AÑADIR COMBATE
+        // Añadimos la fecha y los datos
         history.push({
             timestamp: new Date().toISOString(),
             ...data
         });
 
-        // GUARDAR HISTORIAL
-        try{
-            fs.writeFileSync(filePath, JSON.stringify(history,null,2), 'utf-8');
-            console.log(`Combate guardado en ${filePath}`);
-        } catch (e){
-            console.error('Error guardando combate:', e);
+        try {
+            fs.writeFileSync(filePath, JSON.stringify(history, null, 2), 'utf-8');
+            console.log(`Datos guardados en: ${filePath}`);
+        } catch (e) {
+            console.error('No se pudo guardar el archivo:', e.message);
         }
     }
 }
 
-module.exports = { battleSaver };
+module.exports = { BattleSaver };
