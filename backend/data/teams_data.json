@@ -1,0 +1,1927 @@
+[
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5957",
+    "TEAM": [
+      {
+        "name": "Iron Crown",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "tera": "Water",
+        "moves": {
+          "move1": "Expanding Force",
+          "move2": "Tachyon Cutter",
+          "move3": "Calm Mind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Choice Band",
+        "ability": "Unseen Fist",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Wicked Blow",
+          "move2": "Close Combat",
+          "move3": "Sucker Punch",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Focus Sash",
+        "ability": "Prankster",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Icy Wind",
+          "move3": "Tailwind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Sludge Bomb",
+          "move3": "Sandsear Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Power Whip",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Female Indeedee",
+        "item": "Rocky Helmet",
+        "ability": "Psychic Surge",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Follow Me",
+          "move2": "Imprison",
+          "move3": "Helping Hand",
+          "move4": "Trick Room"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5958",
+    "TEAM": [
+      {
+        "name": "Farigiraf",
+        "item": "Throat Spray",
+        "ability": "Armor Tail",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Hyper Voice",
+          "move2": "Helping Hand",
+          "move3": "Trick Room",
+          "move4": "Imprison"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Wicked Blow",
+          "move2": "Close Combat",
+          "move3": "Sucker Punch",
+          "move4": "Detect"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Choice Specs",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Shadow Ball",
+          "move3": "Dazzling Gleam",
+          "move4": "Power Gem"
+        }
+      },
+      {
+        "name": "Cornerstone Mask Ogerpon",
+        "item": "Cornerstone Mask",
+        "ability": "Sturdy",
+        "tera": "Rock",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Power Whip",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Covert Cloak",
+        "ability": "Prankster",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Icy Wind",
+          "move3": "Tailwind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Ninetales",
+        "item": "Life Orb",
+        "ability": "Drought",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Overheat",
+          "move3": "Helping Hand",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5959",
+    "TEAM": [
+      {
+        "name": "Cresselia",
+        "item": "Safety Goggles",
+        "ability": "Levitate",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Icy Wind",
+          "move2": "Psychic",
+          "move3": "Trick Room",
+          "move4": "Lunar Blessing"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Fake Out",
+          "move2": "Knock Off",
+          "move3": "Flare Blitz",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Rage Powder",
+          "move3": "Spore",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Choice Specs",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Dazzling Gleam",
+          "move3": "Shadow Ball",
+          "move4": "Perish Song"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Facade",
+          "move2": "Earthquake",
+          "move3": "Headlong Rush",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Life Orb",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Close Combat",
+          "move3": "Aqua Jet",
+          "move4": "Detect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5960",
+    "TEAM": [
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Protect",
+          "move3": "Dazzling Gleam",
+          "move4": "Shadow Ball"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Spore",
+          "move3": "Rage Powder",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Stellar",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Close Combat",
+          "move3": "Aqua Jet",
+          "move4": "Detect"
+        }
+      },
+      {
+        "name": "Chi-Yu",
+        "item": "Choice Specs",
+        "ability": "Beads of Ruin",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Dark Pulse",
+          "move3": "Overheat",
+          "move4": "Snarl"
+        }
+      },
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Sandsear Storm",
+          "move2": "Earth Power",
+          "move3": "Protect",
+          "move4": "Sludge Bomb"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Covert Cloak",
+        "ability": "Prankster",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Tailwind",
+          "move3": "Taunt",
+          "move4": "Icy Wind"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5961",
+    "TEAM": [
+      {
+        "name": "Farigiraf",
+        "item": "Throat Spray",
+        "ability": "Armor Tail",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Hyper Voice",
+          "move2": "Psyshock",
+          "move3": "Protect",
+          "move4": "Trick Room"
+        }
+      },
+      {
+        "name": "Torkoal",
+        "item": "Charcoal",
+        "ability": "Drought",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Eruption",
+          "move2": "Weather Ball",
+          "move3": "Helping Hand",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Chi-Yu",
+        "item": "Choice Scarf",
+        "ability": "Beads of Ruin",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Dark Pulse",
+          "move3": "Snarl",
+          "move4": "Overheat"
+        }
+      },
+      {
+        "name": "Regidrago",
+        "item": "Dragon Fang",
+        "ability": "Dragon's Maw",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Dragon Energy",
+          "move2": "Draco Meteor",
+          "move3": "Earth Power",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Focus Sash",
+        "ability": "Protosynthesis",
+        "tera": "Stellar",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Shadow Ball",
+          "move3": "Icy Wind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Sitrus Berry",
+        "ability": "Regenerator",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Spore",
+          "move3": "Rage Powder",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5962",
+    "TEAM": [
+      {
+        "name": "Whimsicott",
+        "item": "Covert Cloak",
+        "ability": "Prankster",
+        "tera": "Electric",
+        "moves": {
+          "move1": "Tailwind",
+          "move2": "Fake Tears",
+          "move3": "Encore",
+          "move4": "Moonblast"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Follow Me",
+          "move3": "Power Whip",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Gholdengo",
+        "item": "Metal Coat",
+        "ability": "Good as Gold",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Make It Rain",
+          "move2": "Shadow Ball",
+          "move3": "Nasty Plot",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Chien-Pao",
+        "item": "Focus Sash",
+        "ability": "Sword of Ruin",
+        "tera": "Stellar",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Ice Spinner",
+          "move3": "Sacred Sword",
+          "move4": "Sucker Punch"
+        }
+      },
+      {
+        "name": "Regidrago",
+        "item": "Life Orb",
+        "ability": "Dragon's Maw",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Dragon Energy",
+          "move2": "Draco Meteor",
+          "move3": "Earth Power",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Entei",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Sacred Fire",
+          "move2": "Extreme Speed",
+          "move3": "Stone Edge",
+          "move4": "Flare Blitz"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5963",
+    "TEAM": [
+      {
+        "name": "Raging Bolt",
+        "item": "Assault Vest",
+        "ability": "Protosynthesis",
+        "tera": "Electric",
+        "moves": {
+          "move1": "Thunderbolt",
+          "move2": "Dragon Pulse",
+          "move3": "Thunderclap",
+          "move4": "Electroweb"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Safety Goggles",
+        "ability": "Intimidate",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Flare Blitz",
+          "move2": "Knock Off",
+          "move3": "Parting Shot",
+          "move4": "Fake Out"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Icy Wind",
+          "move3": "Thunder Wave",
+          "move4": "Taunt"
+        }
+      },
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Sludge Bomb",
+          "move3": "Sandsear Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Horn Leech",
+          "move2": "Ivy Cudgel",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Close Combat",
+          "move2": "Wicked Blow",
+          "move3": "Sucker Punch",
+          "move4": "Detect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5964",
+    "TEAM": [
+      {
+        "name": "Landorus Therian",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "tera": "Steel",
+        "moves": {
+          "move1": "U-turn",
+          "move2": "Earthquake",
+          "move3": "Rock Slide",
+          "move4": "Stomping Tantrum"
+        }
+      },
+      {
+        "name": "Raging Bolt",
+        "item": "Assault Vest",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Thunderbolt",
+          "move2": "Draco Meteor",
+          "move3": "Thunderclap",
+          "move4": "Electroweb"
+        }
+      },
+      {
+        "name": "Primarina",
+        "item": "Sitrus Berry",
+        "ability": "Liquid Voice",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Hyper Voice",
+          "move2": "Moonblast",
+          "move3": "Aqua Jet",
+          "move4": "Haze"
+        }
+      },
+      {
+        "name": "Chi-Yu",
+        "item": "Choice Specs",
+        "ability": "Beads of Ruin",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Overheat",
+          "move3": "Snarl",
+          "move4": "Flamethrower"
+        }
+      },
+      {
+        "name": "Farigiraf",
+        "item": "Safety Goggles",
+        "ability": "Armor Tail",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Hyper Voice",
+          "move2": "Psychic",
+          "move3": "Trick Room",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Focus Sash",
+        "ability": "Prankster",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Tailwind",
+          "move3": "Sunny Day",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5965",
+    "TEAM": [
+      {
+        "name": "Chi-Yu",
+        "item": "Focus Sash",
+        "ability": "Beads of Ruin",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Dark Pulse",
+          "move3": "Protect",
+          "move4": "Overheat"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Icy Wind",
+          "move3": "Protect",
+          "move4": "Taunt"
+        }
+      },
+      {
+        "name": "Tatsugiri",
+        "item": "Safety Goggles",
+        "ability": "Commander",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Muddy Water",
+          "move2": "Draco Meteor",
+          "move3": "Protect",
+          "move4": "Helping Hand"
+        }
+      },
+      {
+        "name": "Dragonite",
+        "item": "Assault Vest",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Aerial Ace",
+          "move2": "Stomping Tantrum",
+          "move3": "Iron Head",
+          "move4": "Extreme Speed"
+        }
+      },
+      {
+        "name": "Galarian Weezing",
+        "item": "Sitrus Berry",
+        "ability": "Neutralizing Gas",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Poison Gas",
+          "move3": "Protect",
+          "move4": "Toxic Spikes"
+        }
+      },
+      {
+        "name": "Dondozo",
+        "item": "Rocky Helmet",
+        "ability": "Oblivious",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Wave Crash",
+          "move2": "Order Up",
+          "move3": "Protect",
+          "move4": "Earthquake"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5966",
+    "TEAM": [
+      {
+        "name": "Dragonite",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Outrage",
+          "move2": "Extreme Speed",
+          "move3": "Aerial Ace",
+          "move4": "Stomping Tantrum"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Fake Out",
+          "move2": "Flare Blitz",
+          "move3": "Knock Off",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Chien-Pao",
+        "item": "Focus Sash",
+        "ability": "Sword of Ruin",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Icicle Crash",
+          "move2": "Sucker Punch",
+          "move3": "Sacred Sword",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Mystic Water",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Close Combat",
+          "move3": "Aqua Jet",
+          "move4": "Detect"
+        }
+      },
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Sludge Bomb",
+          "move3": "Sandsear Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Water",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Spore",
+          "move3": "Rage Powder",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5967",
+    "TEAM": [
+      {
+        "name": "Incineroar",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Fake Out",
+          "move2": "Flare Blitz",
+          "move3": "Knock Off",
+          "move4": "Parting Shot"
+        }
+      },
+      {
+        "name": "Roaring Moon",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Flying",
+        "moves": {
+          "move1": "Acrobatics",
+          "move2": "Knock Off",
+          "move3": "Protect",
+          "move4": "Tailwind"
+        }
+      },
+      {
+        "name": "Gholdengo",
+        "item": "Metal Coat",
+        "ability": "Good as Gold",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Make It Rain",
+          "move2": "Protect",
+          "move3": "Nasty Plot",
+          "move4": "Shadow Ball"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Mental Herb",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Pollen Puff",
+          "move2": "Protect",
+          "move3": "Spore",
+          "move4": "Rage Powder"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Choice Specs",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Dazzling Gleam",
+          "move2": "Moonblast",
+          "move3": "Shadow Ball",
+          "move4": "Perish Song"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Life Orb",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Aqua Jet",
+          "move3": "Close Combat",
+          "move4": "Detect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5968",
+    "TEAM": [
+      {
+        "name": "Iron Crown",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Calm Mind",
+          "move3": "Expanding Force",
+          "move4": "Tachyon Cutter"
+        }
+      },
+      {
+        "name": "Whimsicott",
+        "item": "Focus Sash",
+        "ability": "Prankster",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Tailwind",
+          "move2": "Encore",
+          "move3": "Endeavor",
+          "move4": "Moonblast"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Spiky Shield",
+          "move2": "Follow Me",
+          "move3": "Ivy Cudgel",
+          "move4": "Wood Hammer"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Choice Band",
+        "ability": "Unseen Fist",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Close Combat",
+          "move2": "Wicked Blow",
+          "move3": "Sucker Punch",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Fake Out",
+          "move2": "Flare Blitz",
+          "move3": "Knock Off",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Female Indeedee",
+        "item": "Rocky Helmet",
+        "ability": "Psychic Surge",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Trick Room",
+          "move2": "Follow Me",
+          "move3": "Helping Hand",
+          "move4": "Dazzling Gleam"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5969",
+    "TEAM": [
+      {
+        "name": "Dondozo",
+        "item": "Rocky Helmet",
+        "ability": "Oblivious",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Wave Crash",
+          "move2": "Order Up",
+          "move3": "Earthquake",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Chi-Yu",
+        "item": "Focus Sash",
+        "ability": "Beads of Ruin",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Overheat",
+          "move2": "Heat Wave",
+          "move3": "Dark Pulse",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Tatsugiri",
+        "item": "Safety Goggles",
+        "ability": "Commander",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Draco Meteor",
+          "move2": "Muddy Water",
+          "move3": "Helping Hand",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Icy Wind",
+          "move3": "Taunt",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Galarian Weezing",
+        "item": "Sitrus Berry",
+        "ability": "Neutralizing Gas",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Poison Gas",
+          "move3": "Toxic Spikes",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Dragonite",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Extreme Speed",
+          "move2": "Outrage",
+          "move3": "Aerial Ace",
+          "move4": "Stomping Tantrum"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5970",
+    "TEAM": [
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Flare Blitz",
+          "move2": "Knock Off",
+          "move3": "U-turn",
+          "move4": "Fake Out"
+        }
+      },
+      {
+        "name": "Farigiraf",
+        "item": "Sitrus Berry",
+        "ability": "Armor Tail",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Dazzling Gleam",
+          "move2": "Helping Hand",
+          "move3": "Trick Room",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Detect",
+          "move2": "Wicked Blow",
+          "move3": "Close Combat",
+          "move4": "Sucker Punch"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Rocky Helmet",
+        "ability": "Prankster",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Tailwind",
+          "move3": "Protect",
+          "move4": "Sunny Day"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Headlong Rush",
+          "move2": "Protect",
+          "move3": "Facade",
+          "move4": "Earthquake"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Dazzling Gleam",
+          "move3": "Shadow Ball",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5971",
+    "TEAM": [
+      {
+        "name": "Entei",
+        "item": "Life Orb",
+        "ability": "Inner Focus",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Sacred Fire",
+          "move2": "Protect",
+          "move3": "Stomping Tantrum",
+          "move4": "Extreme Speed"
+        }
+      },
+      {
+        "name": "Alolan Ninetales",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Icy Wind",
+          "move2": "Moonblast",
+          "move3": "Aurora Veil",
+          "move4": "Helping Hand"
+        }
+      },
+      {
+        "name": "Iron Hands",
+        "item": "Assault Vest",
+        "ability": "Quark Drive",
+        "tera": "Water",
+        "moves": {
+          "move1": "Drain Punch",
+          "move2": "Fake Out",
+          "move3": "Heavy Slam",
+          "move4": "Wild Charge"
+        }
+      },
+      {
+        "name": "Galarian Moltres",
+        "item": "Sitrus Berry",
+        "ability": "Berserk",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Fiery Wrath",
+          "move2": "Air Slash",
+          "move3": "Nasty Plot",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Iron Bundle",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "tera": "Ice",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Hydro Pump",
+          "move3": "Freeze-Dry",
+          "move4": "Blizzard"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Rage Powder",
+          "move3": "Spore",
+          "move4": "Sludge Bomb"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5972",
+    "TEAM": [
+      {
+        "name": "Dragonite",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Extreme Speed",
+          "move2": "Outrage",
+          "move3": "Aerial Ace",
+          "move4": "Stomping Tantrum"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Sitrus Berry",
+        "ability": "Regenerator",
+        "tera": "Water",
+        "moves": {
+          "move1": "Grass Knot",
+          "move2": "Sludge Bomb",
+          "move3": "Rage Powder",
+          "move4": "Spore"
+        }
+      },
+      {
+        "name": "Chien-Pao",
+        "item": "Focus Sash",
+        "ability": "Sword of Ruin",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Ice Spinner",
+          "move2": "Sucker Punch",
+          "move3": "Sacred Sword",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Gouging Fire",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Heat Crash",
+          "move2": "Breaking Swipe",
+          "move3": "Howl",
+          "move4": "Burning Bulwark"
+        }
+      },
+      {
+        "name": "Kingambit",
+        "item": "Black Glasses",
+        "ability": "Defiant",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Kowtow Cleave",
+          "move2": "Sucker Punch",
+          "move3": "Swords Dance",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Horn Leech",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5973",
+    "TEAM": [
+      {
+        "name": "Dondozo",
+        "item": "Rocky Helmet",
+        "ability": "Oblivious",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Wave Crash",
+          "move2": "Order Up",
+          "move3": "Earthquake",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Galarian Weezing",
+        "item": "Sitrus Berry",
+        "ability": "Neutralizing Gas",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Dazzling Gleam",
+          "move2": "Toxic Spikes",
+          "move3": "Toxic",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Dragonite",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "tera": "Normal",
+        "moves": {
+          "move1": "Extreme Speed",
+          "move2": "Outrage",
+          "move3": "Iron Head",
+          "move4": "Stomping Tantrum"
+        }
+      },
+      {
+        "name": "Tatsugiri",
+        "item": "Focus Sash",
+        "ability": "Commander",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Muddy Water",
+          "move2": "Draco Meteor",
+          "move3": "Helping Hand",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Raging Bolt",
+        "item": "Assault Vest",
+        "ability": "Protosynthesis",
+        "tera": "Electric",
+        "moves": {
+          "move1": "Electroweb",
+          "move2": "Thunderclap",
+          "move3": "Draco Meteor",
+          "move4": "Snarl"
+        }
+      },
+      {
+        "name": "Chien-Pao",
+        "item": "Life Orb",
+        "ability": "Sword of Ruin",
+        "tera": "Ice",
+        "moves": {
+          "move1": "Ice Spinner",
+          "move2": "Sacred Sword",
+          "move3": "Sucker Punch",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5957",
+    "TEAM": [
+      {
+        "name": "Iron Crown",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "tera": "Water",
+        "moves": {
+          "move1": "Expanding Force",
+          "move2": "Tachyon Cutter",
+          "move3": "Calm Mind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Choice Band",
+        "ability": "Unseen Fist",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Wicked Blow",
+          "move2": "Close Combat",
+          "move3": "Sucker Punch",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Focus Sash",
+        "ability": "Prankster",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Icy Wind",
+          "move3": "Tailwind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Sludge Bomb",
+          "move3": "Sandsear Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Power Whip",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Female Indeedee",
+        "item": "Rocky Helmet",
+        "ability": "Psychic Surge",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Follow Me",
+          "move2": "Imprison",
+          "move3": "Helping Hand",
+          "move4": "Trick Room"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5974",
+    "TEAM": [
+      {
+        "name": "Corviknight",
+        "item": "Covert Cloak",
+        "ability": "Mirror Armor",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Brave Bird",
+          "move2": "Iron Head",
+          "move3": "Tailwind",
+          "move4": "Roost"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Facade",
+          "move2": "Headlong Rush",
+          "move3": "Protect",
+          "move4": "Earthquake"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Flare Blitz",
+          "move2": "Snarl",
+          "move3": "Fake Out",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Single Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Dark",
+        "moves": {
+          "move1": "Wicked Blow",
+          "move2": "Close Combat",
+          "move3": "Protect",
+          "move4": "Sucker Punch"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Water",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Spore",
+          "move3": "Protect",
+          "move4": "Rage Powder"
+        }
+      },
+      {
+        "name": "Cresselia",
+        "item": "Mental Herb",
+        "ability": "Levitate",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Lunar Blessing",
+          "move3": "Protect",
+          "move4": "Trick Room"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5975",
+    "TEAM": [
+      {
+        "name": "Tornadus",
+        "item": "Sky Plate",
+        "ability": "Prankster",
+        "tera": "Dragon",
+        "moves": {
+          "move1": "Tailwind",
+          "move2": "Icy Wind",
+          "move3": "Bleakwind Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Regidrago",
+        "item": "Dragon Fang",
+        "ability": "Dragon's Maw",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Dragon Energy",
+          "move2": "Draco Meteor",
+          "move3": "Earth Power",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Chi-Yu",
+        "item": "Life Orb",
+        "ability": "Beads of Ruin",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Heat Wave",
+          "move2": "Overheat",
+          "move3": "Dark Pulse",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Focus Sash",
+        "ability": "Unseen Fist",
+        "tera": "Stellar",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Close Combat",
+          "move3": "Aqua Jet",
+          "move4": "Detect"
+        }
+      },
+      {
+        "name": "Iron Crown",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "tera": "Water",
+        "moves": {
+          "move1": "Expanding Force",
+          "move2": "Tachyon Cutter",
+          "move3": "Tera Blast",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Female Indeedee",
+        "item": "Rocky Helmet",
+        "ability": "Psychic Surge",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Follow Me",
+          "move2": "Helping Hand",
+          "move3": "Imprison",
+          "move4": "Trick Room"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5976",
+    "TEAM": [
+      {
+        "name": "Tornadus",
+        "item": "Sitrus Berry",
+        "ability": "Prankster",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Protect",
+          "move3": "Icy Wind",
+          "move4": "Tailwind"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Spore",
+          "move2": "Rage Powder",
+          "move3": "Sludge Bomb",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Protect",
+          "move3": "Icy Wind",
+          "move4": "Shadow Ball"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Fake Out",
+          "move2": "U-turn",
+          "move3": "Knock Off",
+          "move4": "Flare Blitz"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Life Orb",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Aqua Jet",
+          "move2": "Surging Strikes",
+          "move3": "Detect",
+          "move4": "Close Combat"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Facade",
+          "move2": "Protect",
+          "move3": "Earthquake",
+          "move4": "Headlong Rush"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5977",
+    "TEAM": [
+      {
+        "name": "Flutter Mane",
+        "item": "Choice Specs",
+        "ability": "Protosynthesis",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Dazzling Gleam",
+          "move2": "Moonblast",
+          "move3": "Shadow Ball",
+          "move4": "Icy Wind"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Spore",
+          "move3": "Sludge Bomb",
+          "move4": "Rage Powder"
+        }
+      },
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Life Orb",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Detect",
+          "move2": "Surging Strikes",
+          "move3": "Close Combat",
+          "move4": "Aqua Jet"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Protect",
+          "move2": "Facade",
+          "move3": "Headlong Rush",
+          "move4": "Earthquake"
+        }
+      },
+      {
+        "name": "Cresselia",
+        "item": "Safety Goggles",
+        "ability": "Levitate",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Icy Wind",
+          "move2": "Psychic",
+          "move3": "Trick Room",
+          "move4": "Lunar Blessing"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Knock Off",
+          "move2": "Flare Blitz",
+          "move3": "U-turn",
+          "move4": "Fake Out"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5978",
+    "TEAM": [
+      {
+        "name": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Sludge Bomb",
+          "move3": "Sandsear Storm",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Pelipper",
+        "item": "Focus Sash",
+        "ability": "Drizzle",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Hurricane",
+          "move2": "Weather Ball",
+          "move3": "Wide Guard",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "tera": "Water",
+        "moves": {
+          "move1": "Sludge Bomb",
+          "move2": "Spore",
+          "move3": "Rage Powder",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Wellspring Mask Ogerpon",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "tera": "Water",
+        "moves": {
+          "move1": "Ivy Cudgel",
+          "move2": "Horn Leech",
+          "move3": "Follow Me",
+          "move4": "Spiky Shield"
+        }
+      },
+      {
+        "name": "Baxcalibur",
+        "item": "Loaded Dice",
+        "ability": "Thermal Exchange",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Icicle Spear",
+          "move2": "Scale Shot",
+          "move3": "Ice Shard",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Iron Hands",
+        "item": "Assault Vest",
+        "ability": "Quark Drive",
+        "tera": "Water",
+        "moves": {
+          "move1": "Wild Charge",
+          "move2": "Drain Punch",
+          "move3": "Fake Out",
+          "move4": "Heavy Slam"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5979",
+    "TEAM": [
+      {
+        "name": "Rapid Strike Urshifu",
+        "item": "Life Orb",
+        "ability": "Unseen Fist",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Surging Strikes",
+          "move2": "Close Combat",
+          "move3": "Aqua Jet",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Amoonguss",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "tera": "Fairy",
+        "moves": {
+          "move1": "Spore",
+          "move2": "Sludge Bomb",
+          "move3": "Rage Powder",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Tornadus",
+        "item": "Sharp Beak",
+        "ability": "Prankster",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Bleakwind Storm",
+          "move2": "Tailwind",
+          "move3": "Icy Wind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Incineroar",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Flare Blitz",
+          "move2": "Knock Off",
+          "move3": "Fake Out",
+          "move4": "U-turn"
+        }
+      },
+      {
+        "name": "Flutter Mane",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Moonblast",
+          "move2": "Shadow Ball",
+          "move3": "Icy Wind",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Headlong Rush",
+          "move2": "Earthquake",
+          "move3": "Facade",
+          "move4": "Protect"
+        }
+      }
+    ]
+  },
+  {
+    "TeamSource": "https://limitlessvgc.com/teams/5980",
+    "TEAM": [
+      {
+        "name": "Grimmsnarl",
+        "item": "Light Clay",
+        "ability": "Prankster",
+        "tera": "Ghost",
+        "moves": {
+          "move1": "Spirit Break",
+          "move2": "Light Screen",
+          "move3": "Reflect",
+          "move4": "Thunder Wave"
+        }
+      },
+      {
+        "name": "Rillaboom",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Wood Hammer",
+          "move2": "Grassy Glide",
+          "move3": "U-turn",
+          "move4": "Fake Out"
+        }
+      },
+      {
+        "name": "Maushold",
+        "item": "Focus Sash",
+        "ability": "Friend Guard",
+        "tera": "Grass",
+        "moves": {
+          "move1": "Beat Up",
+          "move2": "Taunt",
+          "move3": "Follow Me",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Annihilape",
+        "item": "Leftovers",
+        "ability": "Defiant",
+        "tera": "Water",
+        "moves": {
+          "move1": "Drain Punch",
+          "move2": "Rage Fist",
+          "move3": "Bulk Up",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Gastrodon",
+        "item": "Sitrus Berry",
+        "ability": "Storm Drain",
+        "tera": "Fire",
+        "moves": {
+          "move1": "Earth Power",
+          "move2": "Ice Beam",
+          "move3": "Yawn",
+          "move4": "Protect"
+        }
+      },
+      {
+        "name": "Landorus Therian",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "tera": "Steel",
+        "moves": {
+          "move1": "Stomping Tantrum",
+          "move2": "Rock Slide",
+          "move3": "Earthquake",
+          "move4": "U-turn"
+        }
+      }
+    ]
+  }
+]
