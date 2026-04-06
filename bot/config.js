@@ -9,7 +9,7 @@ module.exports = {
     // URLs
     SHOWDOWN_WS_URL: 'wss://showdown.vgcpast.es/showdown/websocket',  //SHOWDOWN ORIGINAL 'wss://sim3.psim.us/showdown/websocket'
     LOGIN_URL: 'play.pokemonshowdown.com',  //SHOWDOWN ORIGINAL 'play.pokemonshowdown.com'
-    LOGIN_PATH: '/~~showdown-vgcpast-es/action.php', //PARA SERVER PRIVADO
+    LOGIN_PATH: '/~~showdown-vgcpast-es/action.php', //SHOWDOWN ORIGINAL "/api/login.php"
 
     // Ruta logs
     LOGS_DIR: process.env.LOGS_DIR,

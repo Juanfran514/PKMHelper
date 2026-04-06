@@ -1,10 +1,10 @@
 const puppeteer = require('puppeteer');
 const fs = require('node:fs/promises');
-const path = require('path');
+const path = require('node:path');
 
 // --- CONFIGURACIÓN ---
 const URL_BASE = "https://limitlessvgc.com/teams?time=all&type=regional&format=all&region=all";
-const PAGES_NUM = 1; 
+const PAGES_NUM = 5; 
 const RUTA_SALIDA = path.join(__dirname, '..', 'backend', 'data', 'teams_data.json');
 
 async function runTeamScrapper() {
@@ -22,7 +22,7 @@ async function runTeamScrapper() {
 
         const allTeamLinks = [];
 
-        // --- BSUCAR ENLACES EQUIPOS---
+        // --- BUSCAR ENLACES EQUIPOS---
         for (let i = 1; i <= PAGES_NUM; i++) {
             const pageLinks = await teamsPage.evaluate(() => {
                 const teamRows = document.querySelectorAll("a.vgc-team");
@@ -89,7 +89,7 @@ async function runTeamScrapper() {
             await teamDetailsPage.close();
         }
 
-        // --- 3. GUARDAR JSON ---
+        // --- GUARDAR JSON ---
         const dir = path.dirname(RUTA_SALIDA);
         await fs.mkdir(dir, { recursive: true });
 

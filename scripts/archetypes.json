@@ -1,0 +1,48 @@
+{
+  "main_archetypes": [
+    {
+      "tag": "Hyper Offense",
+      "pokemon": ["Koraidon", "Miraidon", "Flutter Mane", "Calyrex-Shadow", "Chi-Yu", "Chien-Pao", "Iron Valiant", "Roaring Moon", "Urshifu", "Regieleki", "Dragonite"],
+      "moves": ["Tailwind", "Astral Barrage", "Collision Course", "Electro Drift", "Sucker Punch", "Extreme Speed", "Surging Strikes", "Wicked Blow"],
+      "abilities": ["Orichalcum Pulse", "Hadron Engine", "As One", "Beads of Ruin", "Sword of Ruin", "Unseen Fist", "Prankster"],
+      "items": ["Choice Specs", "Choice Band", "Choice Scarf", "Life Orb", "Focus Sash", "Booster Energy"]
+    },
+    {
+        "tag": "Balanced",
+        "pokemon": ["Incineroar", "Rillaboom", "Amoonguss", "Iron Hands", "Tornadus", "Landorus-Therian", "Gouging Fire", "Ogerpon-Wellspring"],
+        "moves": ["Fake Out", "U-turn", "Parting Shot", "Spore", "Follow Me", "Helping Hand", "Snarl", "Will-O-Wisp"],
+        "abilities": ["Intimidate", "Grassy Surge", "Regenerator", "Armor Tail"],
+        "items": ["Assault Vest", "Sitrus Berry", "Rocky Helmet", "Leftovers", "Safety Goggles", "Clear Amulet"]
+    },
+    {
+      "tag": "Trick Room",
+      "pokemon": ["Calyrex-Ice", "Ursaluna", "Ursaluna-Bloodmoon", "Torkoal", "Armarouge", "Indeedee", "Hatterene", "Porygon2", "Iron Hands", "Gallade", "Farigiraf"],
+      "moves": ["Trick Room", "Helping Hand", "Eruption", "Blood Moon", "Glacial Lance"],
+      "abilities": ["Guts", "Cud Chew", "Flash Fire", "Telepathy"],
+      "items": ["Flame Orb", "Iron Ball", "Room Service", "Eviolite"]
+    }
+  ],
+  "sub_archetypes": [
+    {
+      "tag": "Sun",
+      "abilities": ["Drought", "Orichalcum Pulse"],
+      "moves": ["Eruption", "Precipice Blades", "Solar Beam"]
+    },
+    {
+      "tag": "Rain",
+      "abilities": ["Drizzle", "Swift Swim"],
+      "moves": ["Water Spout", "Electro Shot", "Wave Crash"]
+    },
+    {
+      "tag": "Psyspam",
+      "pokemon": ["Indeedee", "Iron Crown", "Armarouge"],
+      "abilities": ["Psychic Surge"],
+      "moves": ["Expanding Force"]
+    },
+    {
+      "tag": "Sand",
+      "abilities": ["Sand Stream", "Sand Rush"],
+      "pokemon": ["Tyranitar", "Excadrill", "Garganacl"]
+    }
+  ]
+}
