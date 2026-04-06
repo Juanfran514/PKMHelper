@@ -1,9 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ARCHETYPES_PATH = path.join(__dirname, 'archetypes.json');
+const ARCHETYPES_PATH = path.join(__dirname, '..', 'backend', 'data', 'archetypes.json');
 const INPUT_FILE = path.join(__dirname, '..', 'backend', 'data', 'teams_data.json');
-const OUTPUT_FILE = path.join(__dirname, 'classified_teams.json');
+const OUTPUT_FILE = path.join(__dirname, '..', 'backend', 'data', 'classified_teams.json');
 
 
 function scoreCategory(team, categoryList, checkTrickRoomRule = false) {
