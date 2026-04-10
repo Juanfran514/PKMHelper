@@ -4,12 +4,11 @@ const path = require('node:path');
 
 // --- CONFIGURACIÓN ---
 const URL_BASE = "https://www.pikalytics.com/pokedex/gen9vgc2026regf/";
-const CANTIDAD_POKEMON = 50; 
+const CANTIDAD_POKEMON = 100; 
 const RUTA_SALIDA = path.join('..', 'backend', 'data', 'competitive_sets.json'); 
 
 async function runFullScraper() {
     const browser = await puppeteer.launch({
-        headless: false, 
     });
 
     try {

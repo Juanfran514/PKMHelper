@@ -1,14 +1,13 @@
 import './App.css'
-import PokemonCard from './components/PokemonCard.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PokemonData from '../../backend/data/competitive_sets.json';
+import PokemonList from './components/PokemonList';
 
 function App() {
   return (
     <div className="App">
       <h1>PKMHelper</h1>
-      <PokemonCard
-        name="Urhsifu"
-        usage="69%"
-      />
+      <PokemonList pokemonData={PokemonData} />
     </div>
 
   );
