@@ -7,11 +7,9 @@ import PokemonCard from './pokemonCard';
 
 function PokemonList({pokemonData}){
     return (
-        <Container fluid className = "pokemon-list">
+        <Container className = "pokemon-list">
             <Row>
-                {pokemonData.map((pokemon, index) => (
-                    // Este Col es el que dicta el ancho. 
-                    // md={6} significa que ocupará la mitad de la pantalla (2 cartas por fila)
+                {pokemonData.map((pokemon, index) => (  
                     <Col key={pokemon.name || index} xs={12} md={6} lg={4} className="mb-4">
                         <PokemonCard name={pokemon.name} usage={pokemon.usage} />
                     </Col>
