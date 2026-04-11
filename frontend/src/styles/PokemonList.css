@@ -1,0 +1,16 @@
+Col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.pokemon-list {
+    margin-top: 150px;
+    /*background-color: red;        COLOR TEST*/ 
+    max-height: 415px;
+    overflow:scroll;
+    overflow-x:hidden;
+    scrollbar-color: #2d2d4d transparent;
+}
+
