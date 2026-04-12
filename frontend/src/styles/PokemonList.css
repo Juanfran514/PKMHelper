@@ -6,7 +6,7 @@ Col{
 }
 
 .pokemon-list {
-    margin-top: 150px;
+    margin-top: 50px;
     /*background-color: red;        COLOR TEST*/ 
     max-height: 415px;
     overflow:scroll;
