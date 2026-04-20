@@ -7,10 +7,11 @@ Col{
 
 .pokemon-list {
     margin-top: 50px;
-    /*background-color: red;        COLOR TEST*/ 
-    max-height: 415px;
+    /*background-color: red;        /*COLOR TEST*/ 
+    max-height: 37vh;
+    max-width: 60vw;
     overflow:scroll;
     overflow-x:hidden;
-    scrollbar-color: #2d2d4d transparent;
+    scrollbar-color: #1d1d3d transparent;
 }
 

@@ -1,12 +1,12 @@
 /* Configuramos el fondo oscuro para toda la aplicación */
 :root {
-  background-color: #0b0b1a;
+  background-image: url(./assets/imgs/appBG.jpg);
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #0b0b1a !important; /* El color oscuro de fondo */
+    background-image: url(./assets/imgs/appBG.jpg)!important; /* El color oscuro de fondo */
   color: white;
   min-height: 100vh;
 }

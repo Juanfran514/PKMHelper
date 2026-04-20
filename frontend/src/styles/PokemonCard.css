@@ -4,8 +4,8 @@
     background-color: #1a1a32;
     border-radius: 20px;
     box-sizing: border-box;
-    width: 280px; 
-    height: 116px;
+    width: 18vw; 
+    height: 15vh;
     margin: 0 auto; 
     padding: 0 24px;
     
@@ -15,6 +15,7 @@
     align-items: center; 
 }
 
+
 /* Nombre del Pokémon */
 .card-name {
     font-size: 20px;
@@ -22,7 +23,7 @@
     font-weight: bold;
     margin: 0;
     
-    width: 240px; 
+    width: 18VW; 
     text-align: left; 
     white-space: nowrap; 
     overflow: hidden; 
