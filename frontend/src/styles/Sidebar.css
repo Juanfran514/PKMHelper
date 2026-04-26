@@ -1,0 +1,103 @@
+/* src/components/Sidebar.css */
+
+.custom-sidebar {
+    width: 280px; /* Un poco más ancho para que quepan bien los botones */
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    height: 100vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ZONA SUPERIOR (Logo y Selector) --- */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 0 8px;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.format-selector {
+    background: #1c25f6; /* El azul eléctrico de tu imagen */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- NAVEGACIÓN (Los botones) --- */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1; /* Esto empuja el perfil hacia abajo */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    background: rgba(15, 10, 30, 0.8); /* Fondo oscuro por defecto */
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Estilo para el botón cuando está seleccionado */
+.nav-item.active {
+    background: #1c25f6; /* El azul activo */
+}
+
+.nav-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+/* --- PERFIL DE USUARIO --- */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(15, 10, 30, 0.8);
+    border-radius: 12px;
+    color: white;
+    margin-top: auto; /* Se asegura de estar siempre abajo */
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
