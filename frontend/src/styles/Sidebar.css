@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    flex-grow: 1; /* Esto empuja el perfil hacia abajo */
+    flex-grow: 1; 
 }
 
 .nav-item {
@@ -100,4 +100,9 @@
 
 .user-profile:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+link{
+    text-decoration: none;
+    text-align: center;
 }

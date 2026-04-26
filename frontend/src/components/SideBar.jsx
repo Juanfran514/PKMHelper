@@ -16,7 +16,6 @@ export default function Sidebar() {
                     to="/" 
                     className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
                 >
-                    <span className="nav-icon">◫</span>
                     DASHBOARD
                 </Link>
                 
@@ -24,7 +23,6 @@ export default function Sidebar() {
                     to="/teambuilder" 
                     className={`nav-item ${location.pathname === '/teambuilder' ? 'active' : ''}`}
                 >
-                    <span className="nav-icon">🎒</span>
                     TEAMBUILDER
                 </Link>
                 
@@ -32,7 +30,6 @@ export default function Sidebar() {
                     to="/teams" 
                     className={`nav-item ${location.pathname === '/teams' ? 'active' : ''}`}
                 >
-                    <span className="nav-icon">📈</span>
                     META TEAMS
                 </Link>
 
@@ -40,7 +37,6 @@ export default function Sidebar() {
                     to="/match-history" 
                     className={`nav-item ${location.pathname === '/match-history' ? 'active' : ''}`}
                 >
-                    <span className="nav-icon">🛠️</span>
                     MATCH HISTORY
                 </Link>
             </nav>

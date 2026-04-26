@@ -1,0 +1,255 @@
+
+/* Panel Principal */
+.editor-panel {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- PESTAÑAS --- */
+.editor-tabs {
+    display: flex;
+    padding-left: 20px;
+}
+
+.editor-tab {
+    background: #1e1e2f; /* Color oscuro inactivo */
+    padding: 15px 30px;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+
+.editor-tab.active {
+    background: #252538; /* Color activo que coincide con el body */
+}
+
+.tab-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.editor-tab.active .tab-circle {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- CUERPO DEL EDITOR --- */
+.editor-body {
+    background: #252538;
+    border-radius: 0 12px 12px 12px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* Inputs tipo pastilla (Inputs redondeados) */
+.pill-input {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #827a96;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 1px;
+    outline: none;
+}
+.pill-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+.pill-input:focus { border-color: rgba(255, 255, 255, 0.4); }
+
+.full-width { width: 100%; margin-bottom: 20px; }
+
+/* Izquierda */
+.editor-left {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-image-box {
+    flex-grow: 1;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    min-height: 350px;
+}
+
+/* Derecha */
+.editor-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.editor-top-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.editor-top-inputs .pill-input { flex: 1; }
+
+/* Movimientos */
+.editor-moves-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.move-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.move-btn:hover { border-color: rgba(255, 255, 255, 0.4); color: white; }
+
+/* Stats */
+.editor-stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stats-sliders {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-label {
+    width: 60px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Estilo para los sliders */
+.stat-range {
+    flex: 1;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    height: 2px;
+    border-radius: 2px;
+    outline: none;
+}
+.stat-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #827a96;
+    cursor: pointer;
+}
+
+.stat-number {
+    width: 70px;
+    text-align: center;
+}
+
+.stats-side-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 30px;
+    margin-left: 30px;
+}
+
+.nature-input { width: 120px; text-align: center; }
+
+.done-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 8px 30px;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.done-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+/* Contenedor relativo para posicionar el desplegable */
+.pokemon-search-container {
+    position: relative;
+    width: 100%;
+}
+
+/* El menú desplegable */
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    background: #1e1e2f;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Scrollbar del menú */
+.autocomplete-dropdown::-webkit-scrollbar { width: 6px; }
+.autocomplete-dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+/* Cada elemento de la lista */
+.autocomplete-item {
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* Quitar el hover extraño a la caja de imagen */
+.editor-image-box {
+    flex-grow: 1;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.poke-sprite {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+}

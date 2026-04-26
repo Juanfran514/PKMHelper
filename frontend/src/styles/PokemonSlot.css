@@ -1,0 +1,54 @@
+.pokemon-slot {
+    flex: 1; /* Todas las cartas ocupan el mismo ancho */
+    position: relative;
+    background-color: #1a1a2e; /* Color oscuro por defecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+.pokemon-slot:last-child {
+    border-right: none;
+}
+
+.pokemon-slot:hover {
+    filter: brightness(1.2);
+}
+
+/* El diseño del botón '+' vacío de tu mockup */
+.slot-empty {
+    background-color: #161625;
+}
+
+.add-btn-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* La imagen del Pokémon cargada desde la PokéAPI */
+.pokemon-artwork {
+    height: 80%; /* Para que sobresalga un poco como en tu mockup */
+    object-fit: contain;
+    position: absolute;
+    bottom: 5%; /* Alineado hacia abajo */
+    z-index: 2;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+}
+
+/* Capa de fondo provisional simulando los colores del mockup */
+.slot-bg-layer {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.8;
+    z-index: 1;
+}
