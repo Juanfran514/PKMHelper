@@ -2,11 +2,9 @@
 import { useState, useEffect } from 'react';
 
 export const usePokeAPI = () => {
-    // Estados internos de la API
     const [allPokemonList, setAllPokemonList] = useState([]);
     const [pokemonSprite, setPokemonSprite] = useState(null);
 
-    // 1. Cargar la lista completa de Pokémon solo UNA vez al iniciar
     useEffect(() => {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=1025')
             .then(res => res.json())
@@ -14,7 +12,6 @@ export const usePokeAPI = () => {
             .catch(err => console.error("Error cargando la Pokedex:", err));
     }, []);
 
-    // 2. Función para cargar SOLO la imagen (ideal para cuando cambias de pestaña)
     const loadSprite = async (pokemonName) => {
         if (!pokemonName) {
             setPokemonSprite(null);
@@ -29,20 +26,16 @@ export const usePokeAPI = () => {
         }
     };
 
-    // 3. Función para descargar todos los datos al seleccionar del buscador
     const fetchPokemonDetails = async (pokemonName) => {
         try {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
             const data = await res.json();
             
-            // Lógica de negocio: extraemos habilidad y tera tipo por defecto
             const defaultAbility = data.abilities.find(a => !a.is_hidden)?.ability.name || data.abilities[0].ability.name;
             const defaultTera = data.types[0].type.name;
             
-            // Actualizamos la imagen en el estado del hook
             setPokemonSprite(data.sprites.other['official-artwork'].front_default);
 
-            // Devolvemos los datos limpios y en mayúsculas listos para guardar en el equipo
             return {
                 name: data.name.toUpperCase(),
                 ability: defaultAbility.toUpperCase(),
@@ -54,7 +47,6 @@ export const usePokeAPI = () => {
         }
     };
 
-    // 4. Utilidad para filtrar la lista según lo que escriba el usuario (máximo 8 resultados)
     const getFilteredList = (searchTerm) => {
         if (!searchTerm) return [];
         return allPokemonList
@@ -62,12 +54,53 @@ export const usePokeAPI = () => {
             .slice(0, 8);
     };
 
-    // Devolvemos al componente solo lo que necesita usar
+    // FUNCIÓN MOVIDA ARRIBA DEL RETURN
+    const getSortedMoves = async (pokemonName, backendStatsData) => {
+        if (!pokemonName) return { topMoves: [], otherMoves: [] };
+
+        let allMoves = [];
+        try {
+            // ¡RUTA CORREGIDA! 
+            // Ahora busca directamente en la raíz de la carpeta public
+            const res = await fetch('/learnsets.json');
+            
+            // Si la respuesta no es OK, forzamos un error para que no intente parsear HTML
+            if (!res.ok) throw new Error("Archivo no encontrado");
+            
+            const db = await res.json();
+            const key = pokemonName.toUpperCase();
+            allMoves = db[key] || [];
+        } catch (e) {
+            console.error("No se pudo cargar learnsets.json", e);
+        }
+
+        let topMoves = [];
+        if (backendStatsData && backendStatsData.set && backendStatsData.set.moves) {
+            const movesObj = backendStatsData.set.moves;
+            topMoves = Object.keys(movesObj)
+                .filter(m => m !== "Other")
+                .map(m => ({
+                    name: m.toUpperCase(),
+                    usage: movesObj[m]
+                }));
+            
+            topMoves.sort((a, b) => parseFloat(b.usage) - parseFloat(a.usage));
+        }
+
+        const topMoveNames = topMoves.map(m => m.name);
+        const otherMoves = allMoves
+            .filter(m => !topMoveNames.includes(m.toUpperCase()))
+            .map(m => ({ name: m.toUpperCase(), usage: null }));
+
+        return { topMoves, otherMoves };
+    };
+
     return {
         pokemonSprite,
-        setPokemonSprite, // Lo exportamos por si el componente necesita limpiarlo al borrar un input
+        setPokemonSprite,
         loadSprite,
         fetchPokemonDetails,
-        getFilteredList
+        getFilteredList,
+        getSortedMoves 
     };
 };
