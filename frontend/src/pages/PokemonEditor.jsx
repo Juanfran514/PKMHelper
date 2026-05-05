@@ -133,7 +133,7 @@ export default function PokemonEditor() {
         // 1. Juntamos los datos del Pokémon y su foto en un solo objeto
         const pokemonToSave = {
             ...currentPokemon,
-            sprite: pokemonSprite // <-- SIN ESTO, EL GRID NO SABE QUÉ DIBUJAR
+            sprite: pokemonSprite // <-- LA FOTO PARA QUE EL GRID LO DIBUJE
         };
 
         // 2. Imprimimos en consola para asegurarnos de que no está vacío
@@ -146,7 +146,7 @@ export default function PokemonEditor() {
         navigate('/teambuilder');
     };
 
-    // 6. Lógica de EVs (Límite 32)
+    // 6. Lógica de EVs (Límite 32 por stat, 68 global)
     const evStatsMap = [
         { label: 'HP', key: 'hp' }, { label: 'ATK', key: 'atk' }, { label: 'DEF', key: 'def' },
         { label: 'SPATK', key: 'spa' }, { label: 'SPDEF', key: 'spd' }, { label: 'SPE', key: 'spe' }
@@ -154,10 +154,35 @@ export default function PokemonEditor() {
 
     const handleEvChange = (key, value) => {
         let numValue = parseInt(value, 10) || 0;
-        if (numValue > 32) numValue = 32; 
-        if (numValue < 0) numValue = 0;
-        setCurrentPokemon(prev => ({ ...prev, evs: { ...prev.evs, [key]: numValue } }));
+
+        setCurrentPokemon(prev => {
+            const currentEvs = prev.evs;
+            
+            // Calculamos la suma de todos los EVs actuales EXCEPTO el que estamos moviendo ahora
+            let otherEvsSum = 0;
+            for (let stat in currentEvs) {
+                if (stat !== key) {
+                    otherEvsSum += currentEvs[stat];
+                }
+            }
+
+            // Calculamos el máximo real permitido para este stat. 
+            const maxAllowed = Math.min(32, 68 - otherEvsSum);
+
+            // Ajustamos el valor ingresado para que no rompa las reglas
+            if (numValue > maxAllowed) numValue = maxAllowed;
+            if (numValue < 0) numValue = 0;
+
+            return { 
+                ...prev, 
+                evs: { ...prev.evs, [key]: numValue } 
+            };
+        });
     };
+
+    // Calculamos los EVs totales gastados y restantes para la interfaz visual
+    const totalEvsSpent = Object.values(currentPokemon.evs).reduce((a, b) => a + b, 0);
+    const evsRemaining = 68 - totalEvsSpent;
 
     // 7. Lógica de los Movimientos
     const handleMoveClick = async (slotIndex) => {
@@ -339,6 +364,7 @@ export default function PokemonEditor() {
                             {[0, 1, 2, 3].map((index) => (
                                 <div key={index} style={{ position: 'relative' }}>
                                     <button 
+                                        type="button"
                                         className="move-btn w-100" 
                                         onClick={() => handleMoveClick(index)}
                                         style={{ borderColor: activeMoveSlot === index ? 'white' : '' }}
@@ -390,6 +416,13 @@ export default function PokemonEditor() {
                         </div>
 
                         <div className="editor-stats-container">
+                            {/* TEXTO DE PUNTOS RESTANTES */}
+                            <div className="ev-counter-container">
+                                <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`}>
+                                    PUNTOS DISPONIBLES: {evsRemaining} / 68
+                                </div>
+                            </div>
+
                             <div className="stats-sliders">
                                 {evStatsMap.map(stat => (
                                     <div className="stat-row" key={stat.key}>
@@ -401,7 +434,7 @@ export default function PokemonEditor() {
                             </div>
                             <div className="stats-side-controls">
                                 <input type="text" name="nature" className="pill-input nature-input" placeholder="NATURE" value={currentPokemon.nature} onChange={handleInputChange} autoComplete="off" />
-                                <button className="done-btn" onClick={handleDone}>DONE</button>
+                                <button type="button" className="done-btn" onClick={handleDone}>DONE</button>
                             </div>
                         </div>
                     </div>

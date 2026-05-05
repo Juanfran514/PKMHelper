@@ -316,3 +316,33 @@
     color: #4CAF50; 
     font-size: 0.75rem;
 }
+
+
+.ev-counter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.ev-counter {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #4facfe;
+    color: #4facfe;
+    padding: 6px 20px;
+    border-radius: 20px; 
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.2);
+    transition: all 0.3s ease; /* Transición suave de colores */
+    user-select: none;
+}
+
+.ev-counter.empty {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
