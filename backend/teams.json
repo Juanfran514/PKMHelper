@@ -1,0 +1,117 @@
+[
+  {
+    "id": "1777970575981",
+    "trainerName": "TrainerName",
+    "teamName": "Nuevo Equipo",
+    "type": "Public",
+    "pokemon": [
+      {
+        "name": "CORVIKNIGHT",
+        "item": "",
+        "teraType": "FLYING",
+        "ability": "PRESSURE",
+        "nature": "",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png"
+      },
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "createdAt": "2026-05-05T08:42:55.981Z"
+  },
+  {
+    "id": "1777971459044",
+    "trainerName": "MiNickname",
+    "teamName": "asfasf",
+    "type": "Public",
+    "pokemon": [],
+    "createdAt": "2026-05-05T08:57:39.044Z"
+  },
+  {
+    "id": "1777971466361",
+    "trainerName": "MiNickname",
+    "teamName": "sdfsdf",
+    "type": "Public",
+    "pokemon": [
+      {
+        "name": "INFERNAPE",
+        "item": "",
+        "teraType": "FIRE",
+        "ability": "BLAZE",
+        "nature": "",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/392.png"
+      },
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "createdAt": "2026-05-05T08:57:46.361Z"
+  },
+  {
+    "teamName": "test2",
+    "trainerName": "MiNickname",
+    "type": "Public",
+    "pokemon": [
+      {
+        "name": "BULBASAUR",
+        "item": "",
+        "teraType": "GRASS",
+        "ability": "OVERGROW",
+        "nature": "",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+      },
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "id": "1777972654451"
+  }
+]

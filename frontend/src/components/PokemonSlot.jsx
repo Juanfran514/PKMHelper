@@ -2,16 +2,17 @@ import React from 'react';
 import '../styles/PokemonSlot.css';
 
 export default function PokemonSlot({ pokemon, onClick }) {
-    const imageUrl = pokemon ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png` : null;
+    // AHORA SÍ: Cogemos la foto exacta que le mandamos desde el Editor
+    const imageUrl = pokemon && pokemon.name ? pokemon.sprite : null;
 
     return (
         <div 
-            className={`pokemon-slot ${!pokemon ? 'slot-empty' : ''}`} 
+            className={`pokemon-slot ${!pokemon || !pokemon.name ? 'slot-empty' : ''}`} 
             onClick={onClick}
         >
-            {pokemon ? (
+            {pokemon && pokemon.name ? (
                 <>
-                    {/* Fondo decorativo (en el futuro puedes cambiarlo según el tipo del Pokémon) */}
+                    {/* Fondo decorativo */}
                     <div className="slot-bg-layer" style={{ background: 'linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%)' }}></div>
                     
                     {/* Imagen del Pokémon */}

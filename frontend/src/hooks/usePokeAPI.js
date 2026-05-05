@@ -60,8 +60,6 @@ export const usePokeAPI = () => {
 
         let allMoves = [];
         try {
-            // ¡RUTA CORREGIDA! 
-            // Ahora busca directamente en la raíz de la carpeta public
             const res = await fetch('/learnsets.json');
             
             // Si la respuesta no es OK, forzamos un error para que no intente parsear HTML

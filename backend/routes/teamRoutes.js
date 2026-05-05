@@ -1,71 +1,74 @@
+// backend/routes/teamRoutes.js
 const express = require('express');
 const router = express.Router();
-const Team = require('../models/Team');
-const { getTeams, saveTeams } = require('../dbManager');
+const fs = require('fs');
+const path = require('path');
 
-// GET Public Teams
-router.get('/', async (req, res) => {
+// Ruta donde se guardará nuestro JSON (en la carpeta raíz del backend)
+const teamsFilePath = path.join(__dirname, '../teams.json');
+
+// GET: Enviar los equipos guardados al Frontend
+router.get('/', (req, res) => {
     try {
-        const teams = await getTeams();
+        if (!fs.existsSync(teamsFilePath)) {
+            return res.json([]); 
+        }
+        const data = fs.readFileSync(teamsFilePath, 'utf8');
+        let teams = JSON.parse(data);
+
+        // NUEVO: Miramos si el Frontend pide los equipos de alguien en concreto
+        const { trainerName } = req.query; 
         
-        const publicTeams = teams.filter(team => team.type === 'Public');
+        if (trainerName) {
+            // Filtramos y nos quedamos solo con los que coincidan
+            teams = teams.filter(team => team.trainerName === trainerName);
+        }
+
+        res.json(teams);
+    } catch (error) {
+        console.error("❌ Error leyendo teams.json:", error);
+        res.status(500).json({ error: "Error leyendo equipos" });
+    }
+});
+
+// POST: Recibir un equipo y guardarlo
+router.post('/', (req, res) => {
+    try {
+        const newTeam = req.body;
+        console.log("📥 Recibiendo equipo para guardar:", newTeam.teamName);
+
+        // Le generamos un ID único si no lo tiene
+        if (!newTeam.id) {
+            newTeam.id = Date.now().toString();
+        }
+
+        let teams = [];
+        // Si el archivo ya existe, sacamos los equipos que ya hubiera
+        if (fs.existsSync(teamsFilePath)) {
+            const data = fs.readFileSync(teamsFilePath, 'utf8');
+            teams = JSON.parse(data);
+        }
+
+        // Comprobamos si el equipo ya existe (por ID o por Nombre) para actualizarlo o añadirlo
+        const existingIndex = teams.findIndex(t => t.id === newTeam.id || t.teamName === newTeam.teamName);
         
-        res.json(publicTeams);
-    } catch (error) {
-        res.status(500).json({ error: "Error al obtener equipos" });
-    }
-});
+        if (existingIndex >= 0) {
+            teams[existingIndex] = newTeam; // Lo actualizamos
+            console.log("🔄 Equipo actualizado en la base de datos.");
+        } else {
+            teams.push(newTeam); // Lo añadimos nuevo
+            console.log("✅ Nuevo equipo añadido a la base de datos.");
+        }
 
-// POST team
-router.post('/', async (req, res) => {
-    try {
-        const newTeam = new Team(req.body);
-        const teams = await getTeams();
-        teams.push(newTeam);
-        await saveTeams(teams);
-        res.status(201).json(newTeam);
+        // Guardamos todo de vuelta en el archivo JSON
+        fs.writeFileSync(teamsFilePath, JSON.stringify(teams, null, 2));
+        
+        // Le avisamos al Frontend de que todo ha ido bien
+        res.status(200).json({ message: 'Equipo guardado correctamente', team: newTeam });
+        
     } catch (error) {
-        res.status(400).json({ error: "Error al crear el equipo" });
-    }
-});
-
-// GET team by id
-router.get('/:id', async (req, res) => {
-    try {
-        const teams = await getTeams();
-        const team = teams.find(t => t.id === req.params.id);
-        if (!team) return res.status(404).json({ error: "No encontrado" });
-        res.json(team);
-    } catch (error) {
-        res.status(500).json({ error: "Error de servidor" });
-    }
-});
-
-// PUT
-router.put('/:id', async (req, res) => {
-    try {
-        const teams = await getTeams();
-        const index = teams.findIndex(t => t.id === req.params.id);
-        if (index === -1) return res.status(404).json({ error: "No encontrado" });
-
-        const updatedTeam = new Team({ ...req.body, id: req.params.id });
-        teams[index] = updatedTeam;
-        await saveTeams(teams);
-        res.json(updatedTeam);
-    } catch (error) {
-        res.status(400).json({ error: "Error al actualizar" });
-    }
-});
-
-// DELETE
-router.delete('/:id', async (req, res) => {
-    try {
-        const teams = await getTeams();
-        const filtered = teams.filter(t => t.id !== req.params.id);
-        await saveTeams(filtered);
-        res.json({ message: "Eliminado" });
-    } catch (error) {
-        res.status(500).json({ error: "Error al borrar" });
+        console.error("❌ Error CRÍTICO al intentar guardar el equipo:", error);
+        res.status(500).json({ error: "Error interno al guardar el equipo" });
     }
 });
 
