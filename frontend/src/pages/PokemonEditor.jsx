@@ -416,13 +416,6 @@ export default function PokemonEditor() {
                         </div>
 
                         <div className="editor-stats-container">
-                            {/* TEXTO DE PUNTOS RESTANTES */}
-                            <div className="ev-counter-container">
-                                <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`}>
-                                    PUNTOS DISPONIBLES: {evsRemaining} / 68
-                                </div>
-                            </div>
-
                             <div className="stats-sliders">
                                 {evStatsMap.map(stat => (
                                     <div className="stat-row" key={stat.key}>
@@ -433,7 +426,12 @@ export default function PokemonEditor() {
                                 ))}
                             </div>
                             <div className="stats-side-controls">
-                                <input type="text" name="nature" className="pill-input nature-input" placeholder="NATURE" value={currentPokemon.nature} onChange={handleInputChange} autoComplete="off" />
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
+                                    <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`}>
+                                        PUNTOS: {evsRemaining}/68
+                                    </div>
+                                    <input type="text" name="nature" className="pill-input nature-input" placeholder="NATURE" value={currentPokemon.nature} onChange={handleInputChange} autoComplete="off" />
+                                </div>
                                 <button type="button" className="done-btn" onClick={handleDone}>DONE</button>
                             </div>
                         </div>

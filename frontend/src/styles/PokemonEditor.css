@@ -326,23 +326,19 @@
 }
 
 .ev-counter {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #4facfe;
-    color: #4facfe;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: #827a96;
     padding: 6px 20px;
     border-radius: 20px; 
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
-    box-shadow: 0 0 10px rgba(79, 172, 254, 0.2);
-    transition: all 0.3s ease; /* Transición suave de colores */
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
     user-select: none;
 }
 
 .ev-counter.empty {
-    border-color: #ff6b6b;
-    color: #ff6b6b;
-    text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
 }

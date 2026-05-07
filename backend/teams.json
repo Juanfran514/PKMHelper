@@ -113,5 +113,40 @@
       null
     ],
     "id": "1777972654451"
+  },
+  {
+    "teamName": "Niga",
+    "trainerName": "MiNickname",
+    "type": "Public",
+    "pokemon": [
+      {
+        "name": "PIKACHU",
+        "item": "",
+        "teraType": "ELECTRIC",
+        "ability": "STATIC",
+        "nature": "",
+        "moves": [
+          "FAKE OUT",
+          "",
+          "HELPING HAND",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+      },
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "id": "1778167547090"
   }
 ]
