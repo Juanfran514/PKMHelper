@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTeamContext } from '../context/TeamContext';
 import { usePokeAPI } from '../hooks/usePokeAPI';
+import { POKEMON_NATURES } from '../constants/natures';
 import '../styles/PokemonEditor.css';
 
 export default function PokemonEditor() {
@@ -29,13 +30,23 @@ export default function PokemonEditor() {
     const [isItemMenuOpen, setIsItemMenuOpen] = useState(false);
     const [itemSearchTerm, setItemSearchTerm] = useState("");
     const [allItems, setAllItems] = useState([]);
+
+    // Estados para Natures
+    const [isNatureMenuOpen, setIsNatureMenuOpen] = useState(false);
+    const [natureSearchTerm, setNatureSearchTerm] = useState("");
+
+    // Estados para Habilidades
+    const [isAbilityMenuOpen, setIsAbilityMenuOpen] = useState(false);
+    const [availableAbilities, setAvailableAbilities] = useState([]);
     
     // Stats del Backend
     const [pokemonStats, setPokemonStats] = useState(null); 
+    const [baseStats, setBaseStats] = useState(null);
 
     const { 
         pokemonSprite, setPokemonSprite, loadSprite, 
-        fetchPokemonDetails, getFilteredList, getSortedMoves 
+        fetchPokemonDetails, getFilteredList, getSortedMoves,
+        fetchBaseStats
     } = usePokeAPI();
 
     // 1. Cargar la lista completa de objetos (solo una vez)
@@ -66,6 +77,8 @@ export default function PokemonEditor() {
         setIsSearchOpen(false);
         setActiveMoveSlot(null);
         setIsItemMenuOpen(false); // Cerramos menú de items al cambiar pestaña
+        setIsNatureMenuOpen(false);
+        setIsAbilityMenuOpen(false);
     }, [activeTab, teamData.pokemon]);
 
     // 3. Traer datos del backend cuando el Pokémon cambia (Con traductor)
@@ -94,8 +107,25 @@ export default function PokemonEditor() {
                 })
                 .then(data => setPokemonStats(data))
                 .catch(err => setPokemonStats(null));
+
+            fetchBaseStats(currentPokemon.name)
+                .then(data => {
+                    if (data) {
+                        setBaseStats(data.baseStats);
+                        setAvailableAbilities(data.abilities);
+                    } else {
+                        setBaseStats(null);
+                        setAvailableAbilities([]);
+                    }
+                })
+                .catch(err => {
+                    setBaseStats(null);
+                    setAvailableAbilities([]);
+                });
         } else {
             setPokemonStats(null);
+            setBaseStats(null);
+            setAvailableAbilities([]);
         }
     }, [currentPokemon.name]);
 
@@ -147,6 +177,35 @@ export default function PokemonEditor() {
     };
 
     // 6. Lógica de EVs (Límite 32 por stat, 68 global)
+    const calculateStat = (statKey) => {
+        if (!baseStats) return "-";
+        
+        const base = baseStats[statKey];
+        if (base === undefined) return "-";
+        
+        // El slider llega hasta 32. Asumimos que el valor ingresado corresponde a EVs.
+        const ev = currentPokemon.evs[statKey] || 0;
+        const iv = 31; // Asumimos IVs perfectos (31) para combates competitivos
+        const level = 50;
+
+        if (statKey === 'hp') {
+            const baseHp = Math.floor(((2 * base + iv) * level) / 100) + level + 10;
+            return baseHp + ev;
+        } else {
+            const currentNatureObj = POKEMON_NATURES.find(n => n.name.toUpperCase() === currentPokemon.nature.toUpperCase());
+            let multiplier = 1.0;
+            if (currentNatureObj) {
+                const natureStatMap = { 'atk': 'Atk', 'def': 'Def', 'spa': 'SpA', 'spd': 'SpD', 'spe': 'Spe' };
+                const natureKey = natureStatMap[statKey];
+                if (currentNatureObj.plus === natureKey) multiplier = 1.1;
+                if (currentNatureObj.minus === natureKey) multiplier = 0.9;
+            }
+            
+            const rawStat = Math.floor(((2 * base + iv) * level) / 100) + 5;
+            return Math.floor(rawStat * multiplier) + ev;
+        }
+    };
+
     const evStatsMap = [
         { label: 'HP', key: 'hp' }, { label: 'ATK', key: 'atk' }, { label: 'DEF', key: 'def' },
         { label: 'SPATK', key: 'spa' }, { label: 'SPDEF', key: 'spd' }, { label: 'SPE', key: 'spe' }
@@ -357,7 +416,51 @@ export default function PokemonEditor() {
                             </div>
 
                             <input type="text" name="teraType" className="pill-input" placeholder="TERA TYPE" value={currentPokemon.teraType} onChange={handleInputChange} autoComplete="off" style={{ flex: 1 }} />
-                            <input type="text" name="ability" className="pill-input" placeholder="ABILITY" value={currentPokemon.ability} onChange={handleInputChange} autoComplete="off" style={{ flex: 1 }} />
+                            
+                            <div style={{ position: 'relative', flex: 1 }}>
+                                <input 
+                                    type="text" 
+                                    name="ability" 
+                                    className="pill-input w-100" 
+                                    placeholder="ABILITY" 
+                                    value={currentPokemon.ability} 
+                                    onChange={handleInputChange} 
+                                    onClick={() => {
+                                        setIsAbilityMenuOpen(true);
+                                        setIsItemMenuOpen(false);
+                                        setIsNatureMenuOpen(false);
+                                        setActiveMoveSlot(null);
+                                    }}
+                                    autoComplete="off"
+                                />
+                                {isAbilityMenuOpen && availableAbilities && availableAbilities.length > 0 && (
+                                    <div className="move-dropdown" style={{ zIndex: 100 }}>
+                                        <div className="move-list-container">
+                                            {availableAbilities.map(ab => (
+                                                <div 
+                                                    key={ab.name} 
+                                                    className="move-item" 
+                                                    style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 10px' }}
+                                                    onClick={() => {
+                                                        setCurrentPokemon(prev => ({ ...prev, ability: ab.name }));
+                                                        setIsAbilityMenuOpen(false);
+                                                    }}
+                                                >
+                                                    <span>{ab.name}</span>
+                                                    {ab.isHidden && <span style={{ fontSize: '0.7rem', color: '#ffb84d' }}>Hidden</span>}
+                                                </div>
+                                            ))}
+                                            <div 
+                                                className="move-item" 
+                                                style={{ textAlign: 'center', color: '#ff6b6b', marginTop: '5px' }}
+                                                onClick={() => setIsAbilityMenuOpen(false)}
+                                            >
+                                                ✖ Cerrar
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         <div className="editor-moves-grid" style={{ position: 'relative' }}>
@@ -422,15 +525,79 @@ export default function PokemonEditor() {
                                         <span className="stat-label">{stat.label}</span>
                                         <input type="range" className="stat-range" min="0" max="32" value={currentPokemon.evs[stat.key]} onChange={(e) => handleEvChange(stat.key, e.target.value)} />
                                         <input type="number" className="pill-input stat-number" min="0" max="32" value={currentPokemon.evs[stat.key]} onChange={(e) => handleEvChange(stat.key, e.target.value)} />
+                                        <span style={{ color: '#4facfe', width: '35px', textAlign: 'right', fontWeight: 'bold', fontSize: '14px' }}>
+                                            {calculateStat(stat.key)}
+                                        </span>
                                     </div>
                                 ))}
                             </div>
                             <div className="stats-side-controls">
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
-                                    <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'stretch' }}>
+                                    <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`} style={{ textAlign: 'center' }}>
                                         PUNTOS: {evsRemaining}/68
                                     </div>
-                                    <input type="text" name="nature" className="pill-input nature-input" placeholder="NATURE" value={currentPokemon.nature} onChange={handleInputChange} autoComplete="off" />
+                                    <div style={{ position: 'relative' }}>
+                                        <input 
+                                            type="text" 
+                                            name="nature" 
+                                            className="pill-input nature-input" 
+                                            style={{ width: '100%' }}
+                                            placeholder="NATURE" 
+                                            value={isNatureMenuOpen ? natureSearchTerm : currentPokemon.nature} 
+                                            onChange={(e) => {
+                                                if (isNatureMenuOpen) {
+                                                    setNatureSearchTerm(e.target.value);
+                                                } else {
+                                                    handleInputChange(e);
+                                                }
+                                            }}
+                                            onClick={() => {
+                                                setIsNatureMenuOpen(true);
+                                                setNatureSearchTerm("");
+                                                setIsItemMenuOpen(false);
+                                                setActiveMoveSlot(null);
+                                            }}
+                                            autoComplete="off" 
+                                        />
+                                        {isNatureMenuOpen && (
+                                            <div className="move-dropdown" style={{ zIndex: 100, bottom: '100%', top: 'auto', marginBottom: '5px' }}>
+                                                <div className="move-list-container">
+                                                    {POKEMON_NATURES
+                                                        .filter(n => n.name.toUpperCase().includes(natureSearchTerm.toUpperCase()))
+                                                        .map(nature => (
+                                                            <div 
+                                                                key={nature.name} 
+                                                                className="move-item" 
+                                                                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 8px' }}
+                                                                onClick={() => {
+                                                                    setCurrentPokemon(prev => ({ ...prev, nature: nature.name.toUpperCase() }));
+                                                                    setIsNatureMenuOpen(false);
+                                                                }}
+                                                            >
+                                                                <span style={{ fontSize: '0.7rem', fontWeight: 'bold' }}>{nature.name.toUpperCase()}</span>
+                                                                {nature.plus && nature.minus && (
+                                                                    <span style={{ fontSize: '0.65rem', opacity: 0.9 }}>
+                                                                        <span style={{ color: '#4CAF50', marginRight: '4px' }}>+{nature.plus}</span>
+                                                                        <span style={{ color: '#ff6b6b' }}>-{nature.minus}</span>
+                                                                    </span>
+                                                                )}
+                                                                {!nature.plus && (
+                                                                    <span style={{ fontSize: '0.65rem', opacity: 0.5 }}>Neutral</span>
+                                                                )}
+                                                            </div>
+                                                        ))
+                                                    }
+                                                    <div 
+                                                        className="move-item" 
+                                                        style={{ textAlign: 'center', color: '#ff6b6b', marginTop: '10px' }}
+                                                        onClick={() => setIsNatureMenuOpen(false)}
+                                                    >
+                                                        ✖ Cerrar
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                                 <button type="button" className="done-btn" onClick={handleDone}>DONE</button>
                             </div>

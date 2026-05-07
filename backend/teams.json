@@ -89,7 +89,7 @@
         "item": "",
         "teraType": "GRASS",
         "ability": "OVERGROW",
-        "nature": "",
+        "nature": "BRAVE",
         "moves": [
           "",
           "",
@@ -97,10 +97,10 @@
           ""
         ],
         "evs": {
-          "hp": 0,
-          "atk": 0,
+          "hp": 13,
+          "atk": 27,
           "def": 0,
-          "spa": 0,
+          "spa": 28,
           "spd": 0,
           "spe": 0
         },

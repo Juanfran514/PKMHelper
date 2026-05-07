@@ -19,6 +19,7 @@ export const usePokeAPI = () => {
         }
         try {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+            if (!res.ok) throw new Error("Not Found");
             const data = await res.json();
             setPokemonSprite(data.sprites.other['official-artwork'].front_default);
         } catch (error) {
@@ -29,6 +30,7 @@ export const usePokeAPI = () => {
     const fetchPokemonDetails = async (pokemonName) => {
         try {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+            if (!res.ok) throw new Error("Not Found");
             const data = await res.json();
             
             const defaultAbility = data.abilities.find(a => !a.is_hidden)?.ability.name || data.abilities[0].ability.name;
@@ -93,12 +95,47 @@ export const usePokeAPI = () => {
         return { topMoves, otherMoves };
     };
 
+    const fetchBaseStats = async (pokemonName) => {
+        if (!pokemonName) return null;
+        try {
+            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+            if (!res.ok) throw new Error("Not Found");
+            const data = await res.json();
+            
+            const statMap = {
+                'hp': 'hp',
+                'attack': 'atk',
+                'defense': 'def',
+                'special-attack': 'spa',
+                'special-defense': 'spd',
+                'speed': 'spe'
+            };
+            
+            const baseStats = {};
+            data.stats.forEach(s => {
+                const key = statMap[s.stat.name];
+                if (key) baseStats[key] = s.base_stat;
+            });
+            
+            const abilities = data.abilities.map(a => ({
+                name: a.ability.name.toUpperCase(),
+                isHidden: a.is_hidden
+            }));
+            
+            return { baseStats, abilities };
+        } catch (error) {
+            console.error("Error obteniendo base stats", error);
+            return null;
+        }
+    };
+
     return {
         pokemonSprite,
         setPokemonSprite,
         loadSprite,
         fetchPokemonDetails,
         getFilteredList,
-        getSortedMoves 
+        getSortedMoves,
+        fetchBaseStats
     };
 };
