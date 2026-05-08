@@ -106,8 +106,50 @@
         },
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
       },
-      null,
-      null,
+      {
+        "name": "PIKACHU",
+        "item": "",
+        "teraType": "ELECTRIC",
+        "ability": "STATIC",
+        "nature": "",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+      },
+      {
+        "name": "NIDORAN-F",
+        "item": "",
+        "teraType": "POISON",
+        "ability": "POISON-POINT",
+        "nature": "",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/29.png"
+      },
       null,
       null,
       null
