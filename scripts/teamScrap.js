@@ -1,11 +1,9 @@
 const puppeteer = require('puppeteer');
-const fs = require('node:fs/promises');
-const path = require('node:path');
+const { pool } = require('../backend/dbManager');
 
 // --- CONFIGURACIÓN ---
 const URL_BASE = "https://limitlessvgc.com/teams?time=all&type=regional&format=all&region=all";
 const PAGES_NUM = 5; 
-const RUTA_SALIDA = path.join(__dirname, '..', 'backend', 'data', 'teams_data.json');
 
 async function runTeamScrapper() {
     const browser = await puppeteer.launch({
@@ -89,17 +87,34 @@ async function runTeamScrapper() {
             await teamDetailsPage.close();
         }
 
-        // --- GUARDAR JSON ---
-        const dir = path.dirname(RUTA_SALIDA);
-        await fs.mkdir(dir, { recursive: true });
+        // --- GUARDAR EN POSTGRESQL ---
+        console.log(`Guardando ${finalData.length} equipos en la base de datos...`);
+        for (let i = 0; i < finalData.length; i++) {
+            const teamData = finalData[i];
+            const uniqueId = `scrapped_${Date.now()}_${i}`;
+            const sourceUrl = teamData.TeamSource || 'Unknown Source';
 
-        await fs.writeFile(RUTA_SALIDA, JSON.stringify(finalData, null, 2));
-        console.log(`Equipos competitivos guardados en: ${RUTA_SALIDA}`);
+            const query = `
+                INSERT INTO teams (id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
+                VALUES ($1, $2, 'Public', true, $3, NOW(), NOW())
+                ON CONFLICT (id) DO NOTHING;
+            `;
+            
+            const values = [
+                uniqueId,
+                `Source: ${sourceUrl}`, 
+                JSON.stringify(teamData.TEAM || [])
+            ];
+
+            await pool.query(query, values);
+        }
+        console.log("¡Equipos competitivos guardados exitosamente en PostgreSQL!");
 
     } catch (error) {
         console.error("Error scrappear equipos:", error);
     } finally {
         await browser.close();
+        process.exit(0);
     }
 }
 

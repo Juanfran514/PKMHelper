@@ -1,11 +1,9 @@
 const puppeteer = require ('puppeteer');
-const writeFile = require('node:fs/promises').writeFile;
-const path = require('node:path');
+const { pool } = require('../backend/dbManager');
 
 // --- CONFIGURACIÓN ---
 const URL_BASE = "https://www.pikalytics.com/pokedex/gen9vgc2026regf/";
 const CANTIDAD_POKEMON = 100; 
-const RUTA_SALIDA = path.join('..', 'backend', 'data', 'competitive_sets.json'); 
 
 async function runFullScraper() {
     const browser = await puppeteer.launch({
@@ -138,15 +136,27 @@ async function runFullScraper() {
             await pageSet.close();
         }
 
-        // Guardar en JSON
-        const jsonData = JSON.stringify(finalData, null, 2);
-        await writeFile(RUTA_SALIDA, jsonData);
-        console.log(`${RUTA_SALIDA} generado`);
+        // Guardar en PostgreSQL
+        console.log(`Guardando stats de ${finalData.length} Pokémon en la base de datos...`);
+        for (const pkm of finalData) {
+            const query = `
+                INSERT INTO pikalytics_stats (pokemon_name, usage_percent, set_data, updated_at)
+                VALUES ($1, $2, $3, NOW())
+                ON CONFLICT (pokemon_name) DO UPDATE SET
+                    usage_percent = EXCLUDED.usage_percent,
+                    set_data = EXCLUDED.set_data,
+                    updated_at = NOW();
+            `;
+            const values = [pkm.name, pkm.usage, JSON.stringify(pkm.set)];
+            await pool.query(query, values);
+        }
+        console.log("¡Stats competitivas guardadas exitosamente en PostgreSQL!");
 
     } catch (error) {
         console.error("Error:", error);
     } finally {
         await browser.close();
+        process.exit(0);
     }
 }
 

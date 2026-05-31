@@ -1,38 +1,48 @@
 // backend/routes/teamRoutes.js
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
-
-// Ruta donde se guardará nuestro JSON (en la carpeta raíz del backend)
-const teamsFilePath = path.join(__dirname, '../teams.json');
+const { pool } = require('../dbManager'); // Importamos el pool de dbManager
 
 // GET: Enviar los equipos guardados al Frontend
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        if (!fs.existsSync(teamsFilePath)) {
-            return res.json([]); 
-        }
-        const data = fs.readFileSync(teamsFilePath, 'utf8');
-        let teams = JSON.parse(data);
-
-        // NUEVO: Miramos si el Frontend pide los equipos de alguien en concreto
         const { trainerName } = req.query; 
-        
+
+        // Modificamos la query dependiendo de si nos piden un entrenador concreto
+        let query = `
+            SELECT t.*, u.username as trainer_name 
+            FROM teams t 
+            LEFT JOIN "user" u ON t.user_id = u.id 
+            WHERE t.is_scrapped = false
+        `;
+        let values = [];
+
         if (trainerName) {
-            // Filtramos y nos quedamos solo con los que coincidan
-            teams = teams.filter(team => team.trainerName === trainerName);
+            query += ` AND u.username = $1`;
+            values.push(trainerName);
         }
+
+        const dbRes = await pool.query(query, values);
+
+        // Mapeamos los resultados EXACTAMENTE como estaba el JSON anterior
+        const teams = dbRes.rows.map(row => ({
+            id: row.id,
+            trainerName: row.trainer_name || "Unknown Trainer",
+            teamName: row.team_name,
+            type: row.publicity,
+            pokemon: row.pokemon_list,
+            createdAt: row.created_at
+        }));
 
         res.json(teams);
     } catch (error) {
-        console.error("❌ Error leyendo teams.json:", error);
+        console.error("❌ Error leyendo equipos de la BD:", error);
         res.status(500).json({ error: "Error leyendo equipos" });
     }
 });
 
 // POST: Recibir un equipo y guardarlo
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newTeam = req.body;
         console.log("📥 Recibiendo equipo para guardar:", newTeam.teamName);
@@ -42,26 +52,47 @@ router.post('/', (req, res) => {
             newTeam.id = Date.now().toString();
         }
 
-        let teams = [];
-        // Si el archivo ya existe, sacamos los equipos que ya hubiera
-        if (fs.existsSync(teamsFilePath)) {
-            const data = fs.readFileSync(teamsFilePath, 'utf8');
-            teams = JSON.parse(data);
+        let userId = null;
+        if (newTeam.trainerName) {
+            // Comprobamos si el usuario existe
+            const userRes = await pool.query('SELECT id FROM "user" WHERE username = $1', [newTeam.trainerName]);
+            if (userRes.rows.length > 0) {
+                userId = userRes.rows[0].id;
+            } else {
+                // Creamos usuario ficticio para mantener el trainerName
+                const insertUserRes = await pool.query(
+                    'INSERT INTO "user" (username, password, email) VALUES ($1, $2, $3) RETURNING id',
+                    [newTeam.trainerName, 'no_password_created_via_api', `${newTeam.trainerName}@api.local`]
+                );
+                userId = insertUserRes.rows[0].id;
+            }
         }
 
-        // Comprobamos si el equipo ya existe (por ID o por Nombre) para actualizarlo o añadirlo
-        const existingIndex = teams.findIndex(t => t.id === newTeam.id || t.teamName === newTeam.teamName);
-        
-        if (existingIndex >= 0) {
-            teams[existingIndex] = newTeam; // Lo actualizamos
-            console.log("🔄 Equipo actualizado en la base de datos.");
-        } else {
-            teams.push(newTeam); // Lo añadimos nuevo
-            console.log("✅ Nuevo equipo añadido a la base de datos.");
-        }
+        const query = `
+            INSERT INTO teams (id, user_id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
+            VALUES ($1, $2, $3, $4, false, $5, $6, NOW())
+            ON CONFLICT (id) DO UPDATE SET
+                user_id = EXCLUDED.user_id,
+                team_name = EXCLUDED.team_name,
+                publicity = EXCLUDED.publicity,
+                pokemon_list = EXCLUDED.pokemon_list,
+                updated_at = NOW();
+        `;
 
-        // Guardamos todo de vuelta en el archivo JSON
-        fs.writeFileSync(teamsFilePath, JSON.stringify(teams, null, 2));
+        const createdAt = newTeam.createdAt ? new Date(newTeam.createdAt) : new Date();
+
+        const values = [
+            newTeam.id,
+            userId,
+            newTeam.teamName || 'Nuevo Equipo',
+            newTeam.type || 'Private',
+            JSON.stringify(newTeam.pokemon || []),
+            createdAt
+        ];
+
+        await pool.query(query, values);
+
+        console.log("✅ Equipo guardado o actualizado en la base de datos.");
         
         // Le avisamos al Frontend de que todo ha ido bien
         res.status(200).json({ message: 'Equipo guardado correctamente', team: newTeam });

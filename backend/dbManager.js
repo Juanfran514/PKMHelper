@@ -1,21 +1,31 @@
-const fs = require('node:fs/promises');
-const path = require('node:path');
+const { Pool } = require('pg');
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+let poolConfig = {};
 
-const dbPath = path.join(__dirname, 'teams.json');
+if (process.env.DATABASE_URL) {
+    poolConfig = { connectionString: process.env.DATABASE_URL };
+} else {
+    poolConfig = {
+        user: process.env.POSTGRES_USER,
+        password: process.env.POSTGRES_PASSWORD,
+        host: 'localhost',
+        port: 5432,
+        database: process.env.POSTGRES_DB
+    };
+}
 
-// Lee el archivo y devuelve el array de equipos
-async function getTeams() {
+const pool = new Pool(poolConfig);
+
+async function testConnection() {
     try {
-        const data = await fs.readFile(dbPath, 'utf-8');
-        return JSON.parse(data);
+        const client = await pool.connect();
+        const res = await client.query('SELECT NOW()');
+        console.log('Conexión con PostgreSQL. Hora de la DB:', res.rows[0].now);
+        client.release();
     } catch (error) {
-        if (error.code === 'ENOENT') return [];
-        throw error;
+        console.error('Error conectando a PostgreSQL:', error.message);
     }
 }
 
-async function saveTeams(teamsArray) {
-    await fs.writeFile(dbPath, JSON.stringify(teamsArray, null, 2));
-}
-
-module.exports = { getTeams, saveTeams };
+module.exports = { pool, testConnection };
