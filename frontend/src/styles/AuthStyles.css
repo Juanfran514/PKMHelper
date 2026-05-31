@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.auth-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    /* Transparent background so the main body bg image shows through */
+    background: transparent; 
+}
+
+.auth-container {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    background: rgba(20, 20, 30, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.auth-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.auth-logo {
+    max-width: 100%;
+    object-fit: contain;
+    /* This adds a nice glow to the placeholder or actual logo */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+.auth-right {
+    flex: 1;
+    background: #11111a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.auth-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.auth-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-input {
+    background: #1c1c28;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.auth-input:focus {
+    background: #252538;
+}
+
+.auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -0.5rem;
+}
+
+.auth-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    color: #4da6ff;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.auth-button {
+    background: #1a1aff;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.auth-button:hover {
+    background: #3333ff;
+}
+
+.auth-button:active {
+    transform: scale(0.98);
+}
+
+.auth-center-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-error {
+    color: #ff4d4d;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    margin-top: -1rem;
+}

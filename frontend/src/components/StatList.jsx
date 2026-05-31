@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ShowdownInfoCard from './showdownInfoComponent';
+import ShowdownInfoCard from './ShowdownInfoComponent';
 
 function StatList({elo, winrate, glicko}){
     return(

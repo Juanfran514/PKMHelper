@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../components/Sidebar'; 
+import Sidebar from '../components/SideBar';
 
 export default function MainLayout() {
     return (
@@ -7,7 +7,7 @@ export default function MainLayout() {
             <Sidebar />
 
             <main style={{ flex: 1, padding: '2rem', background: 'transparent', overflowY: 'auto' }}>
-                <Outlet /> 
+                <Outlet />
             </main>
         </div>
     );

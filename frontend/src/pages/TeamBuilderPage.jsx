@@ -3,21 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import PokemonSlotGrid from '../components/PokemonSlotGrid';
 import { useTeamContext } from '../context/TeamContext';
-import '../styles/TeambuilderPage.css';
+import { useAuth } from '../context/AuthContext';
+import '../styles/TeamBuilderPage.css';
 
 export default function TeambuilderPage() {
     const navigate = useNavigate();
-    const [selectedTeamId, setSelectedTeamId] = useState(""); 
+    const [selectedTeamId, setSelectedTeamId] = useState("");
     const [savedTeams, setSavedTeams] = useState([]); // Aquí guardaremos los equipos del JSON
-    
+
     // Traemos setTeamData para poder sobreescribir el equipo completo de golpe
     const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
+    const { user } = useAuth();
 
     // 1. Cargar equipos del backend al abrir la página
-// 1. Cargar equipos del backend al abrir la página
     useEffect(() => {
-        // Le pasamos el nombre del usuario actual como parámetro en la URL
-        const currentUser = teamData.trainerName; 
+        const currentUser = user?.username;
+        if (!currentUser) return;
 
         fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
             .then(res => res.json())
@@ -26,7 +27,7 @@ export default function TeambuilderPage() {
                 setSavedTeams(teamsArray);
             })
             .catch(err => console.error("Error cargando equipos del backend:", err));
-    }, []); 
+    }, [user]);
 
     const handleSlotClick = (index, pokemon) => {
         navigate(`/teambuilder/editor/${index}`);
@@ -46,7 +47,7 @@ export default function TeambuilderPage() {
             // Si elige "Crear Nuevo Equipo", limpiamos la pantalla
             setTeamData({
                 teamName: '',
-                trainerName: 'MiNickname', // O el nombre que tengas por defecto
+                trainerName: user?.username || 'MiNickname', // Usamos el usuario logueado
                 type: 'Public',
                 pokemon: Array(6).fill(null)
             });
@@ -55,12 +56,12 @@ export default function TeambuilderPage() {
 
         // Buscamos el equipo en la lista que nos dio el backend
         const selectedTeam = savedTeams.find(t => t.teamName === selectedValue || t.id === selectedValue);
-        
+
         if (selectedTeam) {
             // Nos aseguramos de que el array tenga siempre 6 huecos aunque se haya guardado con menos
             const safePokemonList = [...(selectedTeam.pokemon || [])];
-            while(safePokemonList.length < 6) safePokemonList.push(null);
-            
+            while (safePokemonList.length < 6) safePokemonList.push(null);
+
             // ¡Inyectamos el equipo recuperado en el Teambuilder!
             setTeamData({
                 ...selectedTeam,
@@ -71,16 +72,17 @@ export default function TeambuilderPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (!teamData.teamName.trim()) {
             alert("Por favor, ponle un nombre a tu equipo antes de guardar.");
             return;
         }
 
         await saveTeamToBackend();
-        
-        const currentUser = teamData.trainerName;
-        
+
+        const currentUser = user?.username;
+        if (!currentUser) return;
+
         // Recargamos la lista de equipos, pidiendo SOLO los nuestros otra vez
         fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
             .then(res => res.json())
@@ -95,7 +97,7 @@ export default function TeambuilderPage() {
 
             <div className="teambuilder-header">
                 <div className="teambuilder-controls">
-                    <Form.Select 
+                    <Form.Select
                         style={{ width: '200px', background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                         value={selectedTeamId}
                         onChange={handleTeamSelect}
@@ -109,19 +111,19 @@ export default function TeambuilderPage() {
                         ))}
                     </Form.Select>
 
-                    <Form.Control 
-                        type="text" 
-                        name="teamName" 
-                        placeholder="Nombre del Equipo..." 
-                        value={teamData.teamName} 
+                    <Form.Control
+                        type="text"
+                        name="teamName"
+                        placeholder="Nombre del Equipo..."
+                        value={teamData.teamName}
                         onChange={handleInputChange}
                         style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555', width: '250px' }}
                         autoComplete="off"
                     />
 
-                    <Form.Select 
-                        name="type" 
-                        value={teamData.type} 
+                    <Form.Select
+                        name="type"
+                        value={teamData.type}
                         onChange={handleInputChange}
                         style={{ width: '150px', background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                     >
@@ -135,9 +137,9 @@ export default function TeambuilderPage() {
                 </Button>
             </div>
 
-            <PokemonSlotGrid 
-                currentPokemonList={teamData.pokemon} 
-                onSlotClick={handleSlotClick} 
+            <PokemonSlotGrid
+                currentPokemonList={teamData.pokemon}
+                onSlotClick={handleSlotClick}
             />
 
         </div>

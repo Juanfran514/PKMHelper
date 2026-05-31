@@ -1,14 +1,23 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { useAuth } from './AuthContext';
 
 const TeamContext = createContext();
 
 export const TeamProvider = ({ children }) => {
+    const { user } = useAuth();
+    
     const [teamData, setTeamData] = useState({
         teamName: '',
-        trainerName: 'MiNickname',
+        trainerName: user?.username || 'MiNickname',
         type: 'Public',
         pokemon: Array(6).fill(null) 
     });
+
+    useEffect(() => {
+        if (user) {
+            setTeamData(prev => ({ ...prev, trainerName: user.username }));
+        }
+    }, [user]);
 
     const updateTeamDetails = (name, value) => {
         setTeamData(prev => ({ ...prev, [name]: value }));

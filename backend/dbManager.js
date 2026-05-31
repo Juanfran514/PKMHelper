@@ -3,18 +3,19 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
 let poolConfig = {};
 
-if (process.env.DATABASE_URL) {
+if (process.env.DATABASE_URL && !process.env.POSTGRES_HOST) {
     poolConfig = { connectionString: process.env.DATABASE_URL };
 } else {
     poolConfig = {
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
-        host: 'localhost',
+        host: process.env.POSTGRES_HOST || 'localhost',
         port: 5432,
         database: process.env.POSTGRES_DB
     };
 }
 
+delete process.env.DATABASE_URL;
 const pool = new Pool(poolConfig);
 
 async function testConnection() {
