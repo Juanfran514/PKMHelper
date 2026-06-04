@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # 1. LA BASE DE DATOS
+  db:
+    image: postgres:15-alpine
+    container_name: pokemon_db
+    restart: always
+    environment:
+      # Docker inyecta aquí los valores de tu archivo .env
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  # 2. EL BACKEND (API)
+  backend:
+    build: ./backend
+    container_name: pokemon_backend
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - JWT_SECRET=${JWT_SECRET}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+
+  # 3. EL FRONTEND (Web)
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: pokemon_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  # 4. EL BOT DE SHOWDOWN
+  bot:
+    build: ./bot
+    container_name: pokemon_bot
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=db
+      - BACKEND_URL=http://backend:${PORT}
+    depends_on:
+      - db
+      - backend
+
+volumes:
+  postgres_data:

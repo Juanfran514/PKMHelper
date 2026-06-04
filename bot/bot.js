@@ -17,13 +17,34 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-
 rl.on('line', (input) => {
     const user = input.trim();
     if (user) {
         tracker.setTargetUser(user);
     }
 });
+
+// Sincronizar objetivos con la base de datos
+async function syncTargetUsers() {
+    const users = await storage.getRegisteredUsers();
+    const newTargets = users.map(u => u.trim().toLowerCase()).filter(Boolean);
+    
+    const added = newTargets.filter(u => !tracker.targetUsers.includes(u));
+    const removed = tracker.targetUsers.filter(u => !newTargets.includes(u));
+    
+    if (added.length > 0 || removed.length > 0) {
+        tracker.targetUsers = newTargets;
+        console.log(`\n[TRACKER] Lista de objetivos actualizada desde la BD. Total: ${newTargets.length} usuarios.`);
+        console.log(`[TRACKER] Rastreando a: ${newTargets.join(', ') || 'Nadie'}`);
+    } else if (tracker.targetUsers.length === 0) {
+        tracker.targetUsers = newTargets; // Para evitar array vacío inicial si no hay
+        console.log(`\n[TRACKER] Conectado a la BD. Rastreando a: ${newTargets.join(', ') || 'Nadie'}`);
+    }
+}
+
+// Ejecutar al iniciar y cada 5 minutos
+syncTargetUsers();
+setInterval(syncTargetUsers, 5 * 60 * 1000);
 
 // Socket
 const socket = initClient((ws, rawMessage) => {
@@ -62,13 +83,19 @@ const socket = initClient((ws, rawMessage) => {
             if (parsed.subtype === 'roomList') {
                 const rooms = parsed.data?.rooms || {};
                 
+                // Obtenemos qué objetivos se han encontrado en esta pasada
+                const foundTargets = tracker.checkRoomList(rooms, ws);
+                
                 if (tracker.targetUsers.length > 0) {
-                    process.stdout.write(`\rObjetivos: [${tracker.targetUsers.join(', ')}]   `);
+                    console.log(`\n[SCANNER] Rastreo completado. Buscando a: ${tracker.targetUsers.join(', ')}`);
+                    if (foundTargets.length > 0) {
+                        console.log(`[SCANNER] ✅ Encontrados en combate: ${foundTargets.join(', ')}`);
+                    } else {
+                        console.log(`[SCANNER] ❌ Ninguno de los objetivos está jugando en este momento.`);
+                    }
                 } else {
-                    process.stdout.write(`\rEsperando objetivos...`);
+                    console.log(`\n[SCANNER] Esperando objetivos en la base de datos...`);
                 }
-
-                tracker.checkRoomList(rooms, ws);
             }
             break;
 

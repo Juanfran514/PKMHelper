@@ -1,25 +1,27 @@
-const fs = require('node:fs');
+const { pool } = require('../backend/dbManager');
 const path = require('node:path');
 
-const ARCHETYPES_PATH = path.join(__dirname, '..', 'backend', 'data', 'archetypes.json');
-const INPUT_FILE = path.join(__dirname, '..', 'backend', 'data', 'teams_data.json');
-const OUTPUT_FILE = path.join(__dirname, '..', 'backend', 'data', 'classified_teams.json');
+// Cargamos el config directamente con require para no usar fs
+const config = require('../backend/data/archetypes.json');
 
-
-function scoreCategory(team, categoryList, checkTrickRoomRule = false) {
-
+function scoreCategory(teamPokemonList, categoryList, checkTrickRoomRule = false) {
     if (checkTrickRoomRule) {
-        const trCount = team.TEAM.reduce((acc, pkmn) => 
-            Object.values(pkmn.moves).includes("Trick Room") ? acc + 1 : acc, 0);
+        const trCount = teamPokemonList.reduce((acc, pkmn) => {
+            if (!pkmn) return acc;
+            const moves = Object.values(pkmn.moves || {});
+            return moves.includes("Trick Room") ? acc + 1 : acc;
+        }, 0);
         
         if (trCount >= 2) return "Trick Room";
     }
 
     let results = categoryList.map(arc => {
         let points = 0;
-        team.TEAM.forEach(pkmn => {
-            const moves = Object.values(pkmn.moves);
-            if (arc.pokemon?.some(p => pkmn.name.includes(p))) points += 10;
+        teamPokemonList.forEach(pkmn => {
+            if (!pkmn) return;
+            const moves = Object.values(pkmn.moves || {});
+            const pkmnName = pkmn.name || "";
+            if (arc.pokemon?.some(p => pkmnName.includes(p))) points += 10;
             if (arc.abilities?.includes(pkmn.ability)) points += 12;
             if (arc.moves?.some(m => moves.includes(m))) points += 7;
             if (arc.items?.includes(pkmn.item)) points += 3;
@@ -31,25 +33,49 @@ function scoreCategory(team, categoryList, checkTrickRoomRule = false) {
     return best && best.points > 0 ? best.tag : "Standard"; 
 }
 
-function processTeams() {
+async function processTeams() {
     try {
-        const config = JSON.parse(fs.readFileSync(ARCHETYPES_PATH, 'utf8'));
-        const teams = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf8'));
+        console.log("Conectando a PostgreSQL para clasificar equipos...");
+        
+        // Obtenemos solo los equipos que no tienen arquetipo
+        const { rows: teamsToClassify } = await pool.query(
+            "SELECT id, pokemon_list FROM teams WHERE archetype IS NULL"
+        );
 
-        const taggedTeams = teams.map(team => {
-            const mainTag = scoreCategory(team, config.main_archetypes, true);
-            const subTag = scoreCategory(team, config.sub_archetypes, false);
+        if (teamsToClassify.length === 0) {
+            console.log("No hay equipos sin clasificar.");
+            process.exit(0);
+        }
 
-            return {
-                TeamSource: team.TeamSource,
-                tags: [mainTag, subTag].filter(t => t !== "Standard")
-            };
-        });
+        console.log(`Encontrados ${teamsToClassify.length} equipos para clasificar.`);
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(taggedTeams, null, 2));
-        console.log("Tags Aplicados en ", OUTPUT_FILE);
+        let updatePromises = [];
+
+        for (const team of teamsToClassify) {
+            const pokemonList = typeof team.pokemon_list === 'string' ? JSON.parse(team.pokemon_list) : team.pokemon_list;
+            
+            // Si el team no tiene pokemon, saltamos
+            if (!pokemonList || !Array.isArray(pokemonList) || pokemonList.length === 0) {
+                continue;
+            }
+
+            const mainTag = scoreCategory(pokemonList, config.main_archetypes, true);
+            const subTag = scoreCategory(pokemonList, config.sub_archetypes, false);
+
+            const tags = [mainTag, subTag].filter(t => t !== "Standard");
+            const archetypeString = tags.length > 0 ? tags.join(' / ') : 'Standard';
+
+            const query = "UPDATE teams SET archetype = $1 WHERE id = $2";
+            updatePromises.push(pool.query(query, [archetypeString, team.id]));
+        }
+
+        await Promise.all(updatePromises);
+        
+        console.log(`¡Arquetipos aplicados exitosamente a ${updatePromises.length} equipos en la base de datos!`);
+        process.exit(0);
     } catch (err) {
-        console.error("Error crítico:", err.message);
+        console.error("Error crítico durante la clasificación:", err.message);
+        process.exit(1);
     }
 }
 

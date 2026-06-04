@@ -2,7 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const teamRoutes = require('./routes/teamRoutes'); 
-const pokemonRoutes = require('./routes/pokemonRoutes')
+const pokemonRoutes = require('./routes/pokemonRoutes');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 
@@ -11,6 +13,8 @@ app.use(express.json());
 
 app.use('/api/teams', teamRoutes);
 app.use('/api/stats', pokemonRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => {

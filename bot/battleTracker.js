@@ -15,6 +15,7 @@ class BattleTracker {
     }
 
     checkRoomList(rooms, socket) {
+        const found = [];
         for (const roomID in rooms) {
             const roomData = rooms[roomID];
             const p1 = roomData.p1?.toLowerCase();
@@ -22,17 +23,22 @@ class BattleTracker {
 
             const target = this.targetUsers.find(u => u === p1 || u === p2);
 
-            if (target && !this.activeBattles[roomID]) {
-                console.log(`[TRACKER] Detectado objetivo ${target} en ${roomID}. Entrando...`);
+            if (target) {
+                if (!found.includes(target)) found.push(target);
                 
-                this.activeBattles[roomID] = {
-                    target: target,
-                    log: []
-                };
+                if (!this.activeBattles[roomID]) {
+                    console.log(`\n[TRACKER] Detectado objetivo ${target} en ${roomID}. Entrando...`);
+                    
+                    this.activeBattles[roomID] = {
+                        target: target,
+                        log: []
+                    };
 
-                socket.send(`|/join ${roomID}`);
+                    socket.send(`|/join ${roomID}`);
+                }
             }
         }
+        return found;
     }
 
     trackLine(roomID, rawMessage) {
@@ -56,16 +62,8 @@ class BattleTracker {
                 const cleanName = (n) => n ? n.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() : "";
                 const isWin = cleanName(stats.winner) === cleanName(battle.target);
 
-                // 2. Guardar Logs Raw
-                this.storage.saveRawLog(battle.target, roomID, fullLogString);
-                
-                this.storage.saveStats(battle.target, stats, stats.winner);
-
-                this.storage.updateGlobalMoveStats(battle.target, stats.moveCount);
-
-                if (stats.foeTeam && stats.foeTeam.length > 0) {
-                    this.storage.updateMatchups(battle.target, stats.foeTeam, isWin);
-                }
+                // Guardar log, estadísticas y actualizar BD
+                this.storage.saveBattle(battle.target, roomID, fullLogString, stats, isWin);
 
                 console.log(`[ANALYSIS] Partida finalizada en ${roomID}. Datos actualizados para ${battle.target}.`);
             }
