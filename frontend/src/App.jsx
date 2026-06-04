@@ -14,6 +14,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 
+import MatchHistoryPage from './pages/MatchHistoryPage';
+
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return null;
@@ -51,12 +53,7 @@ function App() {
               <Route path="teambuilder" element={<TeambuilderPage />} />
               <Route path="teambuilder/editor/:slotIndex" element={<PokemonEditor />} />
 
-              <Route path="match-history" element={
-                <div className="container mt-4 text-white">
-                  <h2>Match History</h2>
-                  <p>Pantalla en construcción...</p>
-                </div>
-              } />
+              <Route path="match-history" element={<MatchHistoryPage />} />
 
               <Route path="profile" element={<ProfilePage />} />
             </Route>

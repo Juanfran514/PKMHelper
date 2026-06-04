@@ -108,6 +108,7 @@ CREATE TABLE team_move_stats (
 
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES "user"(id) ON DELETE CASCADE,
     team_id VARCHAR REFERENCES teams(id) ON DELETE CASCADE,
     opponent_name VARCHAR,
     result VARCHAR,

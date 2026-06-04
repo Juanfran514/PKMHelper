@@ -65,4 +65,24 @@ router.put('/profile', verifyToken, async (req, res) => {
     }
 });
 
+// GET /api/users/matches
+// Obtiene el historial de partidas del usuario logeado
+router.get('/matches', verifyToken, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const result = await pool.query(
+            `SELECT m.id, m.opponent_name, m.result, m.played_at, m.elo_change, t.team_name 
+             FROM matches m 
+             LEFT JOIN teams t ON m.team_id = t.id 
+             WHERE m.user_id = $1 
+             ORDER BY m.played_at DESC`,
+            [userId]
+        );
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error fetching matches:', error);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
 module.exports = router;
