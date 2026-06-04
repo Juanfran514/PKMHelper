@@ -85,4 +85,33 @@ router.get('/matches', verifyToken, async (req, res) => {
     }
 });
 
+// GET /api/users/stats
+// Obtiene estadísticas generales del usuario
+router.get('/stats', verifyToken, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const result = await pool.query(
+            `SELECT SUM(matches_played) as total_matches, SUM(wins) as total_wins 
+             FROM "userStats" 
+             WHERE "playerId" = $1`,
+            [userId]
+        );
+        
+        let winrate = "0%";
+        let elo = 1500; // Por defecto
+        let glicko = 1600; // Por defecto
+        
+        if (result.rows.length > 0 && result.rows[0].total_matches > 0) {
+            const wins = parseInt(result.rows[0].total_wins) || 0;
+            const matches = parseInt(result.rows[0].total_matches) || 0;
+            winrate = Math.round((wins / matches) * 100) + "%";
+        }
+
+        res.json({ elo, winrate, glicko });
+    } catch (error) {
+        console.error('Error fetching stats:', error);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
 module.exports = router;
