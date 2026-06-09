@@ -15,6 +15,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 
 import MatchHistoryPage from './pages/MatchHistoryPage';
+import MetaTeamsPage from './pages/MetaTeamsPage';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -43,12 +44,7 @@ function App() {
             }>
               <Route index element={<DashboardPage />} />
 
-              <Route path="teams" element={
-                <div className="container mt-4 text-white">
-                  <h2>Teams</h2>
-                  <p>Pantalla en construcción...</p>
-                </div>
-              } />
+              <Route path="teams" element={<MetaTeamsPage />} />
 
               <Route path="teambuilder" element={<TeambuilderPage />} />
               <Route path="teambuilder/editor/:slotIndex" element={<PokemonEditor />} />
