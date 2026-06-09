@@ -2,47 +2,317 @@
   "main_archetypes": [
     {
       "tag": "Hyper Offense",
-      "pokemon": ["Koraidon", "Miraidon", "Flutter Mane", "Calyrex-Shadow", "Chi-Yu", "Chien-Pao", "Iron Valiant", "Roaring Moon", "Urshifu", "Regieleki", "Dragonite"],
-      "moves": ["Tailwind", "Astral Barrage", "Collision Course", "Electro Drift", "Sucker Punch", "Extreme Speed", "Surging Strikes", "Wicked Blow"],
-      "abilities": ["Orichalcum Pulse", "Hadron Engine", "As One", "Beads of Ruin", "Sword of Ruin", "Unseen Fist", "Prankster"],
-      "items": ["Choice Specs", "Choice Band", "Choice Scarf", "Life Orb", "Focus Sash", "Booster Energy"]
+      "pokemon": [
+        "Chien-Pao",
+        "Sneasler",
+        "Urshifu",
+        "Flutter Mane",
+        "Dragapult",
+        "Chi-Yu",
+        "Gengar",
+        "Salamence",
+        "Dragonite",
+        "Tornadus",
+        "Basculegion",
+        "Ogerpon"
+      ],
+      "moves": [
+        "Tailwind",
+        "Sucker Punch",
+        "Extreme Speed",
+        "Dire Claw",
+        "Surging Strikes",
+        "Astral Barrage",
+        "Bleakwind Storm",
+        "Acrobatics"
+      ],
+      "abilities": [
+        "Sword of Ruin",
+        "Beads of Ruin",
+        "Unseen Fist",
+        "Aerilate",
+        "Shadow Tag",
+        "Unburden",
+        "Inner Focus",
+        "Multiscale"
+      ],
+      "items": [
+        "Focus Sash",
+        "Life Orb",
+        "Booster Energy",
+        "Choice Band"
+      ]
     },
     {
-        "tag": "Balanced",
-        "pokemon": ["Incineroar", "Rillaboom", "Amoonguss", "Iron Hands", "Tornadus", "Landorus-Therian", "Gouging Fire", "Ogerpon-Wellspring"],
-        "moves": ["Fake Out", "U-turn", "Parting Shot", "Spore", "Follow Me", "Helping Hand", "Snarl", "Will-O-Wisp"],
-        "abilities": ["Intimidate", "Grassy Surge", "Regenerator", "Armor Tail"],
-        "items": ["Assault Vest", "Sitrus Berry", "Rocky Helmet", "Leftovers", "Safety Goggles", "Clear Amulet"]
+      "tag": "Balanced",
+      "pokemon": [
+        "Incineroar",
+        "Amoonguss",
+        "Rillaboom",
+        "Iron Hands",
+        "Kingambit",
+        "Garchomp",
+        "Venusaur",
+        "Metagross",
+        "Landorus",
+        "Gouging Fire"
+      ],
+      "moves": [
+        "Parting Shot",
+        "Spore",
+        "Rage Powder",
+        "Follow Me",
+        "Snarl",
+        "Kowtow Cleave",
+        "U-turn",
+        "Will-O-Wisp"
+      ],
+      "abilities": [
+        "Intimidate",
+        "Regenerator",
+        "Grassy Surge",
+        "Supreme Overlord",
+        "Tough Claws",
+        "Thick Fat",
+        "Effect Spore"
+      ],
+      "items": [
+        "Assault Vest",
+        "Sitrus Berry",
+        "Rocky Helmet",
+        "Clear Amulet",
+        "Leftovers"
+      ]
     },
     {
       "tag": "Trick Room",
-      "pokemon": ["Calyrex-Ice", "Ursaluna", "Ursaluna-Bloodmoon", "Torkoal", "Armarouge", "Indeedee", "Hatterene", "Porygon2", "Iron Hands", "Gallade", "Farigiraf"],
-      "moves": ["Trick Room", "Helping Hand", "Eruption", "Blood Moon", "Glacial Lance"],
-      "abilities": ["Guts", "Cud Chew", "Flash Fire", "Telepathy"],
-      "items": ["Flame Orb", "Iron Ball", "Room Service", "Eviolite"]
+      "pokemon": [
+        "Ursaluna",
+        "Farigiraf",
+        "Porygon2",
+        "Hatterene",
+        "Indeedee",
+        "Camerupt",
+        "Mawile",
+        "Armarouge",
+        "Torkoal",
+        "Glastrier"
+      ],
+      "moves": [
+        "Trick Room",
+        "Blood Moon",
+        "Expanding Force",
+        "Eruption",
+        "Glacial Lance"
+      ],
+      "abilities": [
+        "Armor Tail",
+        "Magic Bounce",
+        "Telepathy",
+        "Guts",
+        "Mind's Eye",
+        "Sheer Force",
+        "Huge Power",
+        "Psychic Surge"
+      ],
+      "items": [
+        "Eviolite",
+        "Flame Orb",
+        "Room Service",
+        "Iron Ball",
+        "Mental Herb"
+      ]
+    },
+    {
+      "tag": "Perish Trap",
+      "pokemon": [
+        "Gengar",
+        "Politoed",
+        "Altaria",
+        "Gothitelle",
+        "Azumarill",
+        "Scream Tail",
+        "Flutter Mane"
+      ],
+      "moves": [
+        "Perish Song",
+        "Mean Look",
+        "Whirlpool",
+        "Fire Spin",
+        "Infestation"
+      ],
+      "abilities": [
+        "Shadow Tag",
+        "Sap Sipper"
+      ],
+      "items": [
+        "Gengarite",
+        "Leftovers",
+        "Sitrus Berry"
+      ]
     }
   ],
   "sub_archetypes": [
     {
-      "tag": "Sun",
-      "abilities": ["Drought", "Orichalcum Pulse"],
-      "moves": ["Eruption", "Precipice Blades", "Solar Beam"]
-    },
-    {
       "tag": "Rain",
-      "abilities": ["Drizzle", "Swift Swim"],
-      "moves": ["Water Spout", "Electro Shot", "Wave Crash"]
+      "required_setters": [
+        "Pelipper",
+        "Politoed",
+        "Whimsicott",
+        "Tornadus",
+        "Kyogre"
+      ],
+      "pokemon": [
+        "Pelipper",
+        "Politoed",
+        "Swampert",
+        "Basculegion",
+        "Archaludon",
+        "Urshifu-Rapid-Strike",
+        "Kingdra",
+        "Ludicolo"
+      ],
+      "abilities": [
+        "Drizzle",
+        "Swift Swim",
+        "Stamina",
+        "Rain Dish"
+      ],
+      "moves": [
+        "Water Spout",
+        "Wave Crash",
+        "Electro Shot",
+        "Hurricane",
+        "Rain Dance"
+      ],
+      "items": [
+        "Damp Rock",
+        "Mystic Water"
+      ]
     },
     {
-      "tag": "Psyspam",
-      "pokemon": ["Indeedee", "Iron Crown", "Armarouge"],
-      "abilities": ["Psychic Surge"],
-      "moves": ["Expanding Force"]
+      "tag": "Sun",
+      "required_setters": [
+        "Torkoal",
+        "Charizard",
+        "Ninetales",
+        "Groudon",
+        "Whimsicott",
+        "Tornadus"
+      ],
+      "pokemon": [
+        "Torkoal",
+        "Charizard",
+        "Ninetales",
+        "Venusaur",
+        "Gouging Fire",
+        "Flutter Mane",
+        "Raging Bolt",
+        "Lilligant"
+      ],
+      "abilities": [
+        "Drought",
+        "Protosynthesis",
+        "Chlorophyll",
+        "Solar Power"
+      ],
+      "moves": [
+        "Eruption",
+        "Heat Wave",
+        "Solar Beam",
+        "Sunny Day",
+        "Weather Ball"
+      ],
+      "items": [
+        "Heat Rock"
+      ]
     },
     {
       "tag": "Sand",
-      "abilities": ["Sand Stream", "Sand Rush"],
-      "pokemon": ["Tyranitar", "Excadrill", "Garganacl"]
+      "required_setters": [
+        "Tyranitar",
+        "Hippowdon"
+      ],
+      "pokemon": [
+        "Tyranitar",
+        "Hippowdon",
+        "Excadrill",
+        "Houndstone",
+        "Garchomp",
+        "Lycanroc"
+      ],
+      "abilities": [
+        "Sand Stream",
+        "Sand Rush",
+        "Sand Force",
+        "Sand Veil"
+      ],
+      "moves": [
+        "Sandstorm"
+      ],
+      "items": [
+        "Smooth Rock",
+        "Tyranitarite"
+      ]
+    },
+    {
+      "tag": "Snow",
+      "required_setters": [
+        "Ninetales-Alola",
+        "Abomasnow",
+        "Froslass"
+      ],
+      "pokemon": [
+        "Ninetales-Alola",
+        "Abomasnow",
+        "Baxcalibur",
+        "Frosmoth",
+        "Articuno-Galar",
+        "Froslass"
+      ],
+      "abilities": [
+        "Snow Warning",
+        "Slush Rush",
+        "Ice Body"
+      ],
+      "moves": [
+        "Blizzard",
+        "Aurora Veil",
+        "Freeze-Dry",
+        "Snowscape"
+      ],
+      "items": [
+        "Light Clay",
+        "Abomasite"
+      ]
+    },
+    {
+      "tag": "Psyspam",
+      "required_setters": [
+        "Indeedee"
+      ],
+      "pokemon": [
+        "Indeedee",
+        "Armarouge",
+        "Iron Crown",
+        "Gardevoir",
+        "Alakazam",
+        "Hatterene"
+      ],
+      "abilities": [
+        "Psychic Surge",
+        "Pixilate",
+        "Magic Guard"
+      ],
+      "moves": [
+        "Expanding Force",
+        "Armor Cannon",
+        "Psychic Noise",
+        "Psychic Terrain"
+      ],
+      "items": [
+        "Psychic Seed"
+      ]
     }
   ]
 }

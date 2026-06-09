@@ -1,0 +1,230 @@
+.meta-teams-container {
+    padding: 2rem;
+    color: white;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meta-teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.search-section label,
+.format-section label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    background-color: #1a1a2e;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 12px 12px 12px 45px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+.format-section select {
+    background-color: #1a1a2e;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    min-width: 150px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+.meta-teams-filters {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background-color: #1a1a2e;
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 10px 24px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    background-color: #2a2a4a;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #2a2a4a;
+    border-color: #4facfe;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.4);
+}
+
+.meta-teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 2rem;
+}
+
+.meta-team-card {
+    background-color: #111122; /* Darker navy */
+    border: 1px solid #22223b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.meta-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: #333355;
+}
+
+.team-pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.mini-poke-slot {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #2a2a4a;
+    background-color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-poke-slot img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.team-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    position: relative;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #a0a0b5;
+    margin-bottom: 0.4rem;
+    letter-spacing: 1px;
+}
+
+.tags-list, .standings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.tag-item, .standing-item {
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+}
+
+.team-standings {
+    margin-top: 1rem;
+}
+
+.view-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2400ff; /* Bright blue as seen in image */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(36, 0, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #3b1bff;
+    box-shadow: 0 0 15px rgba(36, 0, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.loading-text, .no-results {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+    color: #a0a0b5;
+    padding: 3rem;
+}
+
+@media (max-width: 768px) {
+    .meta-teams-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+    }
+    
+    .meta-teams-filters {
+        flex-wrap: wrap;
+    }
+    
+    .meta-teams-grid {
+        grid-template-columns: 1fr;
+    }
+}

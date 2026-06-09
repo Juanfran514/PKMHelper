@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const { pool } = require('../backend/dbManager');
+const { determineArchetype } = require('../backend/utils/archetypeUtils');
 
 // --- CONFIGURACIÓN ---
 const URL_BASE = "https://limitlessvgc.com/teams?time=all&type=regional&format=all&region=all";
@@ -48,62 +49,105 @@ async function runTeamScrapper() {
             
             await teamDetailsPage.goto(teamLink, { waitUntil: 'networkidle0', timeout: 60000 });
 
-            const fullTeam = await teamDetailsPage.evaluate(() => {
+            const rawTeam = await teamDetailsPage.evaluate(() => {
                 const pokemonBlocks = document.querySelectorAll(".teamlist-pokemon .pkmn");
                 
                 return Array.from(pokemonBlocks).map(block => {
-                    const rawAbility = block.querySelector(".details .ability")?.innerText.trim() || "None";
-                    const rawTera = block.querySelector(".details .tera")?.innerText.trim() || "None";
+                    const rawAbility = block.querySelector(".details .ability")?.innerText.trim() || "";
+                    const rawTera = block.querySelector(".details .tera")?.innerText.trim() || "";
 
-                    const cleanAbility = rawAbility.replace(/^Ability:\s*/i, "");
-                    const cleanTera = rawTera.replace(/^Tera Type:\s*/i, "");
+                    const cleanAbility = rawAbility.replace(/^Ability:\s*/i, "").toUpperCase();
+                    const cleanTera = rawTera.replace(/^Tera Type:\s*/i, "").toUpperCase();
 
-                    const pokemonObj = {
-                        name: block.querySelector(".name a")?.innerText.trim() || "Unknown",
-                        item: block.querySelector(".details .item")?.innerText.trim() || "None",
-                        ability: cleanAbility,
-                        tera: cleanTera,
-                        moves: {}
-                    };
+                    const name = block.querySelector(".name a")?.innerText.trim().toUpperCase() || "UNKNOWN";
+                    let item = block.querySelector(".details .item")?.innerText.trim().toUpperCase() || "";
+                    if (item === "NONE") item = "";
 
                     const movesList = block.querySelectorAll("ul.moves li");
+                    let moves = ["", "", "", ""];
                     movesList.forEach((move, index) => {
-                        const moveName = move.innerText.trim();
-                        if (moveName) {
-                            pokemonObj.moves[`move${index + 1}`] = moveName;
+                        const moveName = move.innerText.trim().toUpperCase();
+                        if (index < 4 && moveName) {
+                            moves[index] = moveName;
                         }
                     });
 
-                    return pokemonObj;
+                    return {
+                        evs: { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 },
+                        item: item,
+                        name: name,
+                        moves: moves,
+                        nature: "",
+                        sprite: "", // Will be filled from DB
+                        ability: cleanAbility === "NONE" ? "" : cleanAbility,
+                        teraType: cleanTera === "NONE" ? "" : cleanTera
+                    };
                 });
             });
 
+            // Fill sprites from database
+            for (let i = 0; i < rawTeam.length; i++) {
+                const p = rawTeam[i];
+                try {
+                    const nameWithHyphen = p.name.replace(/\s+/g, '-');
+                    const namePrefix = nameWithHyphen + '%';
+                    
+                    const query = `
+                        SELECT sprite FROM pokedex 
+                        WHERE name ILIKE $1 
+                           OR showdown_name ILIKE $1 
+                           OR REPLACE(name, '-', ' ') ILIKE $1
+                           OR name ILIKE $2
+                           OR name ILIKE $3
+                        LIMIT 1
+                    `;
+                    const dbRes = await pool.query(query, [p.name, nameWithHyphen, namePrefix]);
+                    
+                    if (dbRes.rows.length > 0) {
+                        p.sprite = dbRes.rows[0].sprite;
+                    }
+                } catch (err) {
+                    console.error(`Error querying sprite for ${p.name}:`, err.message);
+                }
+            }
+
+            // Pad the array to exactly 6 elements
+            const formattedTeam = [...rawTeam];
+            while (formattedTeam.length < 6) {
+                formattedTeam.push(null);
+            }
+
             finalData.push({
                 TeamSource: teamLink,
-                TEAM: fullTeam
+                TEAM: formattedTeam
             });
 
-            console.log(`   -> OK: ${fullTeam.length} Pokémon detectados.`);
+            console.log(`   -> OK: ${rawTeam.length} Pokémon detectados y formateados a 6 slots.`);
             await teamDetailsPage.close();
         }
 
         // --- GUARDAR EN POSTGRESQL ---
-        console.log(`Guardando ${finalData.length} equipos en la base de datos...`);
+        console.log(`Borrando equipos scrapeados antiguos...`);
+        await pool.query('DELETE FROM teams WHERE is_scrapped = true');
+        
+        console.log(`Guardando ${finalData.length} equipos nuevos en la base de datos...`);
         for (let i = 0; i < finalData.length; i++) {
             const teamData = finalData[i];
             const uniqueId = `scrapped_${Date.now()}_${i}`;
             const sourceUrl = teamData.TeamSource || 'Unknown Source';
+            const archetype = determineArchetype(teamData.TEAM);
 
             const query = `
-                INSERT INTO teams (id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
-                VALUES ($1, $2, 'Public', true, $3, NOW(), NOW())
+                INSERT INTO teams (id, team_name, publicity, is_scrapped, pokemon_list, archetype, created_at, updated_at)
+                VALUES ($1, $2, 'Public', true, $3, $4, NOW(), NOW())
                 ON CONFLICT (id) DO NOTHING;
             `;
             
             const values = [
                 uniqueId,
                 `Source: ${sourceUrl}`, 
-                JSON.stringify(teamData.TEAM || [])
+                JSON.stringify(teamData.TEAM || []),
+                archetype
             ];
 
             await pool.query(query, values);

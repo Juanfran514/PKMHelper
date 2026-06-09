@@ -8,6 +8,17 @@ export const getPublicTeams = async () => {
     return await response.json();
 };
 
+// GET Meta Teams (Public with filters)
+export const getMetaTeams = async (tag = '', search = '') => {
+    let url = `${API_URL}/meta?`;
+    if (tag && tag !== 'ALL') url += `tag=${encodeURIComponent(tag)}&`;
+    if (search) url += `search=${encodeURIComponent(search)}`;
+    
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Error al obtener los equipos meta');
+    return await response.json();
+};
+
 // POST Team
 export const createTeam = async (teamData) => {
     const response = await fetch(API_URL, {

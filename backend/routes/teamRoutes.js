@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { pool } = require('../dbManager'); // Importamos el pool de dbManager
+const { determineArchetype } = require('../utils/archetypeUtils');
 
 // GET: Enviar los equipos guardados al Frontend
 router.get('/', async (req, res) => {
@@ -41,6 +42,73 @@ router.get('/', async (req, res) => {
     }
 });
 
+// GET: Enviar equipos meta (públicos)
+router.get('/meta', async (req, res) => {
+    try {
+        const { tag, search } = req.query;
+        let query = `
+            SELECT t.*, u.username as trainer_name 
+            FROM teams t 
+            LEFT JOIN "user" u ON t.user_id = u.id 
+            WHERE t.publicity = 'Public'
+        `;
+        let values = [];
+        let paramIndex = 1;
+
+        if (tag && tag !== 'ALL') {
+            if (tag.toUpperCase() === 'WEATHER') {
+                query += ` AND (t.archetype ILIKE $${paramIndex} OR t.archetype ILIKE $${paramIndex+1} OR t.archetype ILIKE $${paramIndex+2} OR t.archetype ILIKE $${paramIndex+3})`;
+                values.push('%Rain%', '%Sun%', '%Sand%', '%Snow%');
+                paramIndex += 4;
+            } else if (tag.toUpperCase() === 'TR') {
+                query += ` AND t.archetype ILIKE $${paramIndex}`;
+                values.push('%Trick Room%');
+                paramIndex++;
+            } else if (tag.toUpperCase() === 'HYPEROFF') {
+                query += ` AND t.archetype ILIKE $${paramIndex}`;
+                values.push('%Hyper Offense%');
+                paramIndex++;
+            } else if (tag.toUpperCase() === 'BALANCED') {
+                query += ` AND t.archetype ILIKE $${paramIndex}`;
+                values.push('%Balanced%');
+                paramIndex++;
+            } else {
+                query += ` AND t.archetype ILIKE $${paramIndex}`;
+                values.push(`%${tag}%`);
+                paramIndex++;
+            }
+        }
+        
+        if (search) {
+            query += ` AND (t.team_name ILIKE $${paramIndex} OR t.archetype ILIKE $${paramIndex} OR EXISTS (
+                SELECT 1 FROM jsonb_array_elements(t.pokemon_list) AS p
+                WHERE p->>'name' ILIKE $${paramIndex}
+            ))`;
+            values.push(`%${search}%`);
+            paramIndex++;
+        }
+
+        query += ` ORDER BY t.likes DESC NULLS LAST`;
+
+        const dbRes = await pool.query(query, values);
+
+        const teams = dbRes.rows.map(row => ({
+            id: row.id,
+            trainerName: row.trainer_name || "Unknown Trainer",
+            teamName: row.team_name,
+            archetype: row.archetype,
+            likes: row.likes,
+            pokemon: row.pokemon_list,
+            createdAt: row.created_at
+        }));
+
+        res.json(teams);
+    } catch (error) {
+        console.error("❌ Error leyendo equipos meta de la BD:", error);
+        res.status(500).json({ error: "Error leyendo equipos meta" });
+    }
+});
+
 // POST: Recibir un equipo y guardarlo
 router.post('/', async (req, res) => {
     try {
@@ -69,24 +137,28 @@ router.post('/', async (req, res) => {
         }
 
         const query = `
-            INSERT INTO teams (id, user_id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
-            VALUES ($1, $2, $3, $4, false, $5, $6, NOW())
+            INSERT INTO teams (id, user_id, team_name, publicity, is_scrapped, pokemon_list, archetype, created_at, updated_at)
+            VALUES ($1, $2, $3, $4, false, $5, $6, $7, NOW())
             ON CONFLICT (id) DO UPDATE SET
                 user_id = EXCLUDED.user_id,
                 team_name = EXCLUDED.team_name,
                 publicity = EXCLUDED.publicity,
                 pokemon_list = EXCLUDED.pokemon_list,
+                archetype = EXCLUDED.archetype,
                 updated_at = NOW();
         `;
 
         const createdAt = newTeam.createdAt ? new Date(newTeam.createdAt) : new Date();
+        const pokemonListJson = newTeam.pokemon || [];
+        const archetype = determineArchetype(pokemonListJson);
 
         const values = [
             newTeam.id,
             userId,
             newTeam.teamName || 'Nuevo Equipo',
             newTeam.type || 'Private',
-            JSON.stringify(newTeam.pokemon || []),
+            JSON.stringify(pokemonListJson),
+            archetype,
             createdAt
         ];
 
