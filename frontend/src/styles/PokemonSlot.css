@@ -35,12 +35,14 @@
     color: rgba(255, 255, 255, 0.2);
 }
 
-/* La imagen del Pokémon cargada desde la PokéAPI */
 .pokemon-artwork {
-    height: 80%; /* Para que sobresalga un poco como en tu mockup */
+    width: 90%;
+    height: 80%;
     object-fit: contain;
     position: absolute;
-    bottom: 5%; /* Alineado hacia abajo */
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
     filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, ProgressBar } from 'react-bootstrap';
+import { teamService } from '../services/teamService';
 import '../styles/TeamAnalyticsModal.css';
 
 export default function TeamAnalyticsModal({ show, onHide, teamId }) {
@@ -9,8 +10,7 @@ export default function TeamAnalyticsModal({ show, onHide, teamId }) {
     useEffect(() => {
         if (show && teamId) {
             setLoading(true);
-            fetch(`http://localhost:5000/api/teams/${teamId}/analytics`)
-                .then(res => res.json())
+            teamService.getTeamAnalytics(teamId)
                 .then(data => {
                     setAnalytics(data);
                     setLoading(false);

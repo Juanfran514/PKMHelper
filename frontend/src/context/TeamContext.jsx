@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useAuth } from './AuthContext';
+import { teamService } from '../services/teamService';
 
 const TeamContext = createContext();
 
@@ -37,20 +38,7 @@ export const TeamProvider = ({ children }) => {
     // NUEVO: Función para enviar el equipo al Backend
     const saveTeamToBackend = async () => {
         try {
-            // Asegúrate de que el puerto (5000) sea el de tu backend
-            const response = await fetch('http://localhost:5000/api/teams', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(teamData)
-            });
-
-            if (!response.ok) {
-                throw new Error('Error en el servidor al guardar');
-            }
-
-            const result = await response.json();
+            const result = await teamService.saveTeam(teamData);
             
             // Actualizamos el contexto con el ID final, teamGroupId y versión
             if (result.team) {
