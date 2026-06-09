@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import PokemonSlotGrid from '../components/PokemonSlotGrid';
+import TeamAnalyticsModal from '../components/TeamAnalyticsModal';
 import { useTeamContext } from '../context/TeamContext';
 import { useAuth } from '../context/AuthContext';
 import '../styles/TeamBuilderPage.css';
@@ -10,6 +11,7 @@ export default function TeambuilderPage() {
     const navigate = useNavigate();
     const [selectedTeamId, setSelectedTeamId] = useState("");
     const [savedTeams, setSavedTeams] = useState([]); // Aquí guardaremos los equipos del JSON
+    const [showAnalytics, setShowAnalytics] = useState(false); // Estado del modal de analíticas
 
     // Traemos setTeamData para poder sobreescribir el equipo completo de golpe
     const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
@@ -46,6 +48,9 @@ export default function TeambuilderPage() {
         if (!selectedValue) {
             // Si elige "Crear Nuevo Equipo", limpiamos la pantalla
             setTeamData({
+                id: null,
+                teamGroupId: null,
+                version: null,
                 teamName: '',
                 trainerName: user?.username || 'MiNickname', // Usamos el usuario logueado
                 type: 'Public',
@@ -132,9 +137,20 @@ export default function TeambuilderPage() {
                     </Form.Select>
                 </div>
 
-                <Button variant="primary" onClick={handleSubmit} style={{ background: '#1c25f6', border: 'none' }}>
-                    Guardar Equipo
-                </Button>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                    {teamData.id && (
+                        <Button 
+                            variant="info" 
+                            onClick={() => setShowAnalytics(true)} 
+                            style={{ background: 'linear-gradient(45deg, #10b981, #3b82f6)', border: 'none', color: 'white', fontWeight: 'bold' }}
+                        >
+                            📊 Ver Analíticas
+                        </Button>
+                    )}
+                    <Button variant="primary" onClick={handleSubmit} style={{ background: '#1c25f6', border: 'none' }}>
+                        Guardar Equipo
+                    </Button>
+                </div>
             </div>
 
             <PokemonSlotGrid
@@ -142,6 +158,11 @@ export default function TeambuilderPage() {
                 onSlotClick={handleSlotClick}
             />
 
+            <TeamAnalyticsModal 
+                show={showAnalytics} 
+                onHide={() => setShowAnalytics(false)} 
+                teamId={teamData.teamGroupId || teamData.id} 
+            />
         </div>
     );
 }

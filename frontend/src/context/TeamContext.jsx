@@ -7,6 +7,9 @@ export const TeamProvider = ({ children }) => {
     const { user } = useAuth();
     
     const [teamData, setTeamData] = useState({
+        id: null,
+        teamGroupId: null,
+        version: null,
         teamName: '',
         trainerName: user?.username || 'MiNickname',
         type: 'Public',
@@ -48,6 +51,17 @@ export const TeamProvider = ({ children }) => {
             }
 
             const result = await response.json();
+            
+            // Actualizamos el contexto con el ID final, teamGroupId y versión
+            if (result.team) {
+                setTeamData(prev => ({
+                    ...prev,
+                    id: result.team.id,
+                    teamGroupId: result.team.teamGroupId,
+                    version: result.team.version
+                }));
+            }
+
             alert('¡Equipo guardado con éxito en el backend!'); 
             return result;
         } catch (error) {

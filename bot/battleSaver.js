@@ -23,8 +23,9 @@ class BattleSaver {
 
     async getRegisteredUsers() {
         try {
-            const res = await pool.query('SELECT username FROM "user" WHERE username IS NOT NULL AND username != \'\'');
-            return res.rows.map(row => row.username);
+            const res = await pool.query('SELECT username, "sdName" FROM "user" WHERE username IS NOT NULL AND username != \'\'');
+            // Devolvemos el sdName si existe, sino el username
+            return res.rows.map(row => row.sdName || row.username);
         } catch (e) {
             console.error('[SAVER] Error obteniendo usuarios registrados:', e);
             return [];
@@ -45,19 +46,33 @@ class BattleSaver {
     async getTeamId(userId, myTeam) {
         if (!myTeam || myTeam.length === 0) return null;
         
-        const res = await pool.query('SELECT id, pokemon_list FROM teams WHERE user_id = $1', [userId]);
+        // Obtenemos los equipos ordenados por version descendente para priorizar la iteración más reciente
+        const res = await pool.query('SELECT id, pokemon_list, version FROM teams WHERE user_id = $1 ORDER BY COALESCE(version, 1) DESC, updated_at DESC', [userId]);
         
+        let bestMatchId = null;
+        let bestMatchCount = -1;
+
         for (const row of res.rows) {
-            const teamPokemons = Array.isArray(row.pokemon_list) ? row.pokemon_list.map(p => p.name?.toLowerCase()) : [];
+            const teamPokemons = Array.isArray(row.pokemon_list) ? row.pokemon_list.map(p => p?.name?.toLowerCase()) : [];
             const battlePokemons = myTeam.map(p => p.toLowerCase());
             
-            // Verificamos si al menos coinciden la mitad de los Pokémon (o hasta 3)
+            // Verificamos cuántos Pokémon coinciden
             const matchCount = battlePokemons.filter(p => teamPokemons.some(tp => tp && (tp.includes(p) || p.includes(tp)))).length;
-            if (matchCount >= Math.min(battlePokemons.length, teamPokemons.length, 3)) {
-                return row.id;
+            
+            // Nos quedamos con el que más coincida. Como están ordenados por version DESC, 
+            // en caso de empate (ej: version 1 y 2 tienen los mismos 4 Pokémon usados), se queda el más reciente.
+            if (matchCount > bestMatchCount) {
+                bestMatchCount = matchCount;
+                bestMatchId = row.id;
             }
         }
-        return null; // Si no hay coincidencias claras
+        
+        // Exigimos un mínimo de coincidencias razonable (al menos la mitad de los enviados, con tope en 3)
+        if (bestMatchCount >= Math.min(myTeam.length, 3) && bestMatchCount > 0) {
+            return bestMatchId;
+        }
+
+        return null;
     }
 
     async saveBattle(username, roomID, rawLog, stats, isWin) {

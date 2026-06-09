@@ -8,17 +8,21 @@ router.get('/', async (req, res) => {
     try {
         const { trainerName } = req.query; 
 
-        // Modificamos la query dependiendo de si nos piden un entrenador concreto
+        // Modificamos la query usando ROW_NUMBER para obtener solo la versión más reciente por grupo
         let query = `
-            SELECT t.*, u.username as trainer_name 
-            FROM teams t 
-            LEFT JOIN "user" u ON t.user_id = u.id 
-            WHERE t.is_scrapped = false
+            WITH RankedTeams AS (
+                SELECT t.*, u.username as trainer_name,
+                       ROW_NUMBER() OVER(PARTITION BY COALESCE(t.team_group_id, t.id) ORDER BY COALESCE(t.version, 1) DESC, t.updated_at DESC) as rn
+                FROM teams t 
+                LEFT JOIN "user" u ON t.user_id = u.id 
+                WHERE t.is_scrapped = false
+            )
+            SELECT * FROM RankedTeams WHERE rn = 1
         `;
         let values = [];
 
         if (trainerName) {
-            query += ` AND u.username = $1`;
+            query += ` AND trainer_name = $1`;
             values.push(trainerName);
         }
 
@@ -27,6 +31,8 @@ router.get('/', async (req, res) => {
         // Mapeamos los resultados EXACTAMENTE como estaba el JSON anterior
         const teams = dbRes.rows.map(row => ({
             id: row.id,
+            teamGroupId: row.team_group_id,
+            version: row.version,
             trainerName: row.trainer_name || "Unknown Trainer",
             teamName: row.team_name,
             type: row.publicity,
@@ -47,9 +53,21 @@ router.post('/', async (req, res) => {
         const newTeam = req.body;
         console.log("📥 Recibiendo equipo para guardar:", newTeam.teamName);
 
-        // Le generamos un ID único si no lo tiene
-        if (!newTeam.id) {
-            newTeam.id = Date.now().toString();
+        // Lógica de Versiones
+        let teamGroupId = newTeam.teamGroupId;
+        let version = 1;
+        let finalId = newTeam.id;
+
+        if (!teamGroupId) {
+            // Equipo totalmente nuevo
+            teamGroupId = Date.now().toString();
+            finalId = `${teamGroupId}_v${version}`;
+        } else {
+            // Edición de un equipo existente: calculamos la nueva versión
+            const versionRes = await pool.query('SELECT COALESCE(MAX(version), 0) as max_v FROM teams WHERE team_group_id = $1', [teamGroupId]);
+            version = parseInt(versionRes.rows[0].max_v) + 1;
+            // Si la db devuelve 1 pero el equipo viejo no tenía version, forzamos que siga la cuenta
+            finalId = `${teamGroupId}_v${version}`;
         }
 
         let userId = null;
@@ -69,8 +87,8 @@ router.post('/', async (req, res) => {
         }
 
         const query = `
-            INSERT INTO teams (id, user_id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
-            VALUES ($1, $2, $3, $4, false, $5, $6, NOW())
+            INSERT INTO teams (id, team_group_id, version, user_id, team_name, publicity, is_scrapped, pokemon_list, created_at, updated_at)
+            VALUES ($1, $2, $3, $4, $5, $6, false, $7, $8, NOW())
             ON CONFLICT (id) DO UPDATE SET
                 user_id = EXCLUDED.user_id,
                 team_name = EXCLUDED.team_name,
@@ -82,7 +100,9 @@ router.post('/', async (req, res) => {
         const createdAt = newTeam.createdAt ? new Date(newTeam.createdAt) : new Date();
 
         const values = [
-            newTeam.id,
+            finalId,
+            teamGroupId,
+            version,
             userId,
             newTeam.teamName || 'Nuevo Equipo',
             newTeam.type || 'Private',
@@ -92,14 +112,63 @@ router.post('/', async (req, res) => {
 
         await pool.query(query, values);
 
-        console.log("✅ Equipo guardado o actualizado en la base de datos.");
+        console.log(`✅ Equipo guardado exitosamente. ID: ${finalId}, Grupo: ${teamGroupId}, Versión: ${version}`);
         
-        // Le avisamos al Frontend de que todo ha ido bien
-        res.status(200).json({ message: 'Equipo guardado correctamente', team: newTeam });
+        // Devolvemos el equipo actualizado para que el frontend lo reconozca
+        res.status(200).json({ 
+            message: 'Equipo guardado correctamente', 
+            team: {
+                ...newTeam,
+                id: finalId,
+                teamGroupId,
+                version
+            }
+        });
         
     } catch (error) {
         console.error("❌ Error CRÍTICO al intentar guardar el equipo:", error);
         res.status(500).json({ error: "Error interno al guardar el equipo" });
+    }
+});
+
+// GET: Obtener analíticas de rendimiento de un equipo o grupo de equipos
+router.get('/:id/analytics', async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        // Obtenemos los stats globales sumando todas las versiones del grupo
+        const query = `
+            SELECT tp.pokemon_name, 
+                   SUM(tp.matches_played) as total_matches, 
+                   SUM(tp.wins) as total_wins, 
+                   SUM(tp.losses) as total_losses
+            FROM team_pokemon_stats tp
+            JOIN teams t ON tp.team_id = t.id
+            WHERE t.team_group_id = $1 OR t.id = $1
+            GROUP BY tp.pokemon_name
+            ORDER BY total_matches DESC
+        `;
+        
+        const dbRes = await pool.query(query, [id]);
+        
+        // Formateamos para el frontend
+        const analytics = dbRes.rows.map(row => {
+            const matches = parseInt(row.total_matches);
+            const wins = parseInt(row.total_wins);
+            const winRate = matches > 0 ? ((wins / matches) * 100).toFixed(1) : 0;
+            return {
+                pokemonName: row.pokemon_name,
+                matches,
+                wins,
+                losses: parseInt(row.total_losses),
+                winRate: parseFloat(winRate)
+            };
+        });
+        
+        res.json(analytics);
+    } catch (error) {
+        console.error("❌ Error obteniendo analíticas:", error);
+        res.status(500).json({ error: "Error obteniendo analíticas" });
     }
 });
 
