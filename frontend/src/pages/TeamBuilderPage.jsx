@@ -1,21 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import PokemonSlotGrid from '../components/PokemonSlotGrid';
+import TeamAnalyticsModal from '../components/TeamAnalyticsModal';
+import ExportSmogonModal from '../components/ExportSmogonModal';
 import { useTeamContext } from '../context/TeamContext';
 import { useAuth } from '../context/AuthContext';
 import '../styles/TeamBuilderPage.css';
 
 export default function TeambuilderPage() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [selectedTeamId, setSelectedTeamId] = useState("");
     const [savedTeams, setSavedTeams] = useState([]); // Aquí guardaremos los equipos del JSON
+    const [showAnalytics, setShowAnalytics] = useState(false); // Estado del modal de analíticas
+    const [showExport, setShowExport] = useState(false); // Estado del modal de exportar
 
     // Traemos setTeamData para poder sobreescribir el equipo completo de golpe
     const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
     const { user } = useAuth();
 
-    // 1. Cargar equipos del backend al abrir la página
+    // Comprobar si venimos con un teamId por URL (ej: al darle a VIEW desde Meta Teams)
+    const queryParams = new URLSearchParams(location.search);
+    const urlTeamId = queryParams.get("teamId");
+
+    // 1. Cargar el equipo de la URL si existe
+    useEffect(() => {
+        if (urlTeamId && user?.username) {
+            fetch(`http://localhost:5000/api/teams/single/${urlTeamId}`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Team not found");
+                    return res.json();
+                })
+                .then(data => {
+                    const safePokemonList = [...(data.pokemon || [])];
+                    while (safePokemonList.length < 6) safePokemonList.push(null);
+
+                    // Importamos el equipo como uno NUEVO (sin IDs de versión ni grupo)
+                    setTeamData({
+                        ...data,
+                        id: null,
+                        teamGroupId: null,
+                        version: null,
+                        teamName: `${data.teamName || 'Equipo'} (Copia)`,
+                        trainerName: user.username,
+                        type: 'Private', // Privado por defecto para que no contamine Meta Teams
+                        pokemon: safePokemonList
+                    });
+
+                    // Limpiamos la URL para no re-importarlo si el usuario refresca la página
+                    navigate('/teambuilder', { replace: true });
+                })
+                .catch(err => console.error("Error cargando equipo de la URL:", err));
+        }
+    }, [urlTeamId, user, navigate, setTeamData]);
+
+    // 2. Cargar equipos guardados del backend al abrir la página
     useEffect(() => {
         const currentUser = user?.username;
         if (!currentUser) return;
@@ -46,6 +86,9 @@ export default function TeambuilderPage() {
         if (!selectedValue) {
             // Si elige "Crear Nuevo Equipo", limpiamos la pantalla
             setTeamData({
+                id: null,
+                teamGroupId: null,
+                version: null,
                 teamName: '',
                 trainerName: user?.username || 'MiNickname', // Usamos el usuario logueado
                 type: 'Public',
@@ -91,6 +134,45 @@ export default function TeambuilderPage() {
                 setSavedTeams(teamsArray);
             });
     };
+    const handleDelete = async () => {
+        if (!teamData.id) return;
+        
+        if (!window.confirm("¿Seguro que quieres borrar este equipo? Se perderán permanentemente el equipo, sus versiones y sus estadísticas de uso.")) return;
+
+        try {
+            const teamIdToDelete = teamData.teamGroupId || teamData.id;
+            const res = await fetch(`http://localhost:5000/api/teams/${teamIdToDelete}`, {
+                method: 'DELETE'
+            });
+
+            if (res.ok) {
+                setTeamData({
+                    id: null,
+                    teamName: '',
+                    type: 'Private',
+                    pokemon: Array(6).fill(null)
+                });
+                
+                // Recargar equipos guardados
+                const currentUser = user?.username;
+                if (currentUser) {
+                    fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            const teamsArray = Array.isArray(data) ? data : Object.values(data);
+                            setSavedTeams(teamsArray);
+                        });
+                }
+                
+                navigate('/teambuilder');
+            } else {
+                alert("Error al borrar el equipo en el servidor.");
+            }
+        } catch (error) {
+            console.error("Error de red:", error);
+            alert("Error de conexión al intentar borrar el equipo.");
+        }
+    };
 
     return (
         <div className="container-fluid px-4 py-3" style={{ color: 'white' }}>
@@ -132,9 +214,36 @@ export default function TeambuilderPage() {
                     </Form.Select>
                 </div>
 
-                <Button variant="primary" onClick={handleSubmit} style={{ background: '#1c25f6', border: 'none' }}>
-                    Guardar Equipo
-                </Button>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                    {teamData.id && (
+                        <Button 
+                            variant="secondary" 
+                            onClick={() => setShowAnalytics(true)} 
+                            style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
+                        >
+                            Ver Analíticas
+                        </Button>
+                    )}
+                    {teamData.id && (
+                        <Button 
+                            variant="secondary" 
+                            onClick={handleDelete} 
+                            style={{ background: 'rgba(220, 38, 38, 0.2)', color: '#ef4444', border: '1px solid #ef4444' }}
+                        >
+                            Borrar
+                        </Button>
+                    )}
+                    <Button 
+                        variant="secondary" 
+                        onClick={() => setShowExport(true)} 
+                        style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
+                    >
+                        Exportar
+                    </Button>
+                    <Button variant="primary" onClick={handleSubmit} style={{ background: '#1c25f6', border: 'none' }}>
+                        Guardar Equipo
+                    </Button>
+                </div>
             </div>
 
             <PokemonSlotGrid
@@ -142,6 +251,16 @@ export default function TeambuilderPage() {
                 onSlotClick={handleSlotClick}
             />
 
+            <TeamAnalyticsModal 
+                show={showAnalytics} 
+                onHide={() => setShowAnalytics(false)} 
+                teamId={teamData.teamGroupId || teamData.id} 
+            />
+
+            <ExportSmogonModal
+                show={showExport}
+                onHide={() => setShowExport(false)}
+            />
         </div>
     );
 }

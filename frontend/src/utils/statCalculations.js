@@ -32,7 +32,7 @@ export const calculatePokemonStat = (statKey, baseStats, currentPokemon) => {
 
 export const calculateEvsRemaining = (currentEvs) => {
     const totalEvsSpent = Object.values(currentEvs).reduce((a, b) => a + b, 0);
-    return 68 - totalEvsSpent;
+    return 66 - totalEvsSpent;
 };
 
 export const calculateMaxAllowedEv = (statKey, currentEvs, requestedValue) => {
@@ -43,7 +43,7 @@ export const calculateMaxAllowedEv = (statKey, currentEvs, requestedValue) => {
         }
     }
 
-    const maxAllowed = Math.min(32, 68 - otherEvsSum);
+    const maxAllowed = Math.min(32, 66 - otherEvsSum);
     let numValue = parseInt(requestedValue, 10) || 0;
     
     if (numValue > maxAllowed) numValue = maxAllowed;

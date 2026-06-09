@@ -42,7 +42,11 @@ export default function MetaTeamsPage() {
                 <div className="search-section">
                     <label>SEARCH POKEMON OR ARCHETYPE</label>
                     <div className="search-input-wrapper">
-                        <i className="search-icon">🔍</i>
+                        <i className="search-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: '8px' }}>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </i>
                         <input 
                             type="text" 
                             value={searchTerm}
@@ -90,16 +94,41 @@ export default function MetaTeamsPage() {
                                 <div className="team-tags">
                                     <span className="info-label">TAGS</span>
                                     <div className="tags-list">
-                                        {team.archetype ? team.archetype.split(' ').map((tag, i) => (
+                                        {team.archetype ? team.archetype.split(' / ').map((tag, i) => (
                                             <span key={i} className="tag-item">{tag.toUpperCase()}</span>
                                         )) : <span className="tag-item">UNKNOWN</span>}
                                     </div>
                                 </div>
                                 <div className="team-standings">
-                                    <span className="info-label">STANDINGS</span>
+                                    <span className="info-label">SOURCE</span>
                                     <div className="standings-list">
-                                        <span className="standing-item">{team.teamName || 'Ranked Team'}</span>
-                                        {team.likes > 0 && <span className="standing-item">{team.likes} Likes</span>}
+                                        {(() => {
+                                            const urlMatch = team.teamName ? team.teamName.match(/https?:\/\/[^\s]+/) : null;
+                                            if (urlMatch) {
+                                                const url = urlMatch[0];
+                                                
+                                                let displaySource = team.trainerName;
+                                                if (!displaySource || displaySource === 'Unknown Trainer') {
+                                                    if (url.includes('limitless')) displaySource = 'Limitless';
+                                                    else if (url.includes('pokepast')) displaySource = 'Pokepaste';
+                                                    else displaySource = 'Source Link';
+                                                }
+
+                                                return (
+                                                    <a href={url} target="_blank" rel="noreferrer" className="standing-item source-link" style={{ color: '#4facfe', textDecoration: 'none' }}>
+                                                        {displaySource}
+                                                    </a>
+                                                );
+                                            }
+                                            
+                                            let fallbackSource = team.trainerName || team.teamName || 'Unknown Source';
+                                            if (fallbackSource === 'Unknown Trainer') fallbackSource = 'Unknown Source';
+                                            
+                                            return (
+                                                <span className="standing-item">{fallbackSource}</span>
+                                            );
+                                        })()}
+                                        {team.likes > 0 && <span className="standing-item" style={{ color: '#a0a0b5', fontSize: '0.8rem' }}>{team.likes} Likes</span>}
                                     </div>
                                 </div>
                                 <button className="view-btn" onClick={() => navigate(`/teambuilder?teamId=${team.id}`)}>

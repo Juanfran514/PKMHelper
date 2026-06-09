@@ -39,4 +39,31 @@ router.get('/:pokemonName', async (req, res) => {
     }
 });
 
+// GET Sprite by Pokemon Name from pokedex table
+router.get('/sprite/:pokemonName', async (req, res) => {
+    try {
+        const requestedName = req.params.pokemonName;
+        const normalize = (name) => name.toLowerCase().replace(/[- ]/g, '');
+        const normalizedRequest = normalize(requestedName);
+
+        const query = `
+            SELECT sprite FROM pokedex 
+            WHERE REPLACE(REPLACE(LOWER(name), '-', ''), ' ', '') = $1
+            OR REPLACE(REPLACE(LOWER(showdown_name), '-', ''), ' ', '') = $1
+        `;
+        
+        const dbRes = await pool.query(query, [normalizedRequest]);
+
+        if (dbRes.rows.length === 0) {
+            return res.status(404).json({ error: "No sprite found" });
+        }
+
+        res.json({ sprite: dbRes.rows[0].sprite });
+
+    } catch (error) {
+        console.error("Error fetching sprite from DB:", error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
 module.exports = router;
