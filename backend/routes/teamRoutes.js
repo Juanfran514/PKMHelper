@@ -347,4 +347,30 @@ router.get('/:id/analytics', async (req, res) => {
     }
 });
 
+// DELETE: Eliminar un equipo por su team_group_id (y por cascada todo lo relacionado)
+router.delete('/:id', async (req, res) => {
+    try {
+        const teamGroupId = req.params.id;
+        
+        // Si no es un equipo raspado, borramos todas las versiones usando team_group_id
+        // Si es raspado, usaba el id normal, así que borramos por team_group_id O por id
+        const deleteQuery = `
+            DELETE FROM teams 
+            WHERE team_group_id = $1 OR id = $1
+            RETURNING id;
+        `;
+        
+        const dbRes = await pool.query(deleteQuery, [teamGroupId]);
+        
+        if (dbRes.rows.length === 0) {
+            return res.status(404).json({ error: "Equipo no encontrado" });
+        }
+        
+        res.json({ message: "Equipo y sus estadísticas eliminados correctamente", deletedCount: dbRes.rows.length });
+    } catch (error) {
+        console.error("Error al borrar equipo:", error);
+        res.status(500).json({ error: "Error interno al borrar equipo" });
+    }
+});
+
 module.exports = router;

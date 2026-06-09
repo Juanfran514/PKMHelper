@@ -163,16 +163,30 @@
     letter-spacing: 1px;
 }
 
-.tags-list, .standings-list {
+.standings-list {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+}
+
+.tags-list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 1.2rem; /* Altura fija para que no haya disonancia entre tarjetas */
+    align-items: center;
 }
 
 .tag-item, .standing-item {
     font-size: 0.9rem;
     color: white;
     font-weight: 500;
+}
+
+.source-link:hover {
+    text-decoration: underline !important;
 }
 
 .team-standings {

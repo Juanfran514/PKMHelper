@@ -22,6 +22,18 @@ async function testConnection() {
     try {
         const client = await pool.connect();
         const res = await client.query('SELECT NOW()');
+        
+        // Update constraint to preserve match history on team deletion
+        try {
+            await client.query(`
+                ALTER TABLE matches DROP CONSTRAINT IF EXISTS matches_team_id_fkey;
+                ALTER TABLE matches ADD CONSTRAINT matches_team_id_fkey FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE SET NULL;
+            `);
+            console.log('Constraint matches_team_id_fkey actualizada a ON DELETE SET NULL');
+        } catch (err) {
+            console.error('Error alterando constraint matches_team_id_fkey:', err.message);
+        }
+
         console.log('Conexión con PostgreSQL. Hora de la DB:', res.rows[0].now);
         client.release();
     } catch (error) {

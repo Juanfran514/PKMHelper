@@ -134,6 +134,45 @@ export default function TeambuilderPage() {
                 setSavedTeams(teamsArray);
             });
     };
+    const handleDelete = async () => {
+        if (!teamData.id) return;
+        
+        if (!window.confirm("¿Seguro que quieres borrar este equipo? Se perderán permanentemente el equipo, sus versiones y sus estadísticas de uso.")) return;
+
+        try {
+            const teamIdToDelete = teamData.teamGroupId || teamData.id;
+            const res = await fetch(`http://localhost:5000/api/teams/${teamIdToDelete}`, {
+                method: 'DELETE'
+            });
+
+            if (res.ok) {
+                setTeamData({
+                    id: null,
+                    teamName: '',
+                    type: 'Private',
+                    pokemon: Array(6).fill(null)
+                });
+                
+                // Recargar equipos guardados
+                const currentUser = user?.username;
+                if (currentUser) {
+                    fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            const teamsArray = Array.isArray(data) ? data : Object.values(data);
+                            setSavedTeams(teamsArray);
+                        });
+                }
+                
+                navigate('/teambuilder');
+            } else {
+                alert("Error al borrar el equipo en el servidor.");
+            }
+        } catch (error) {
+            console.error("Error de red:", error);
+            alert("Error de conexión al intentar borrar el equipo.");
+        }
+    };
 
     return (
         <div className="container-fluid px-4 py-3" style={{ color: 'white' }}>
@@ -183,6 +222,15 @@ export default function TeambuilderPage() {
                             style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                         >
                             Ver Analíticas
+                        </Button>
+                    )}
+                    {teamData.id && (
+                        <Button 
+                            variant="secondary" 
+                            onClick={handleDelete} 
+                            style={{ background: 'rgba(220, 38, 38, 0.2)', color: '#ef4444', border: '1px solid #ef4444' }}
+                        >
+                            Borrar
                         </Button>
                     )}
                     <Button 

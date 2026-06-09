@@ -40,7 +40,7 @@ export const PokemonEvStats = ({
             <div className="stats-side-controls">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'stretch' }}>
                     <div className={`ev-counter ${evsRemaining === 0 ? 'empty' : ''}`} style={{ textAlign: 'center' }}>
-                        PUNTOS: {evsRemaining}/68
+                        PUNTOS: {evsRemaining}/66
                     </div>
                     <div style={{ position: 'relative' }}>
                         <input 

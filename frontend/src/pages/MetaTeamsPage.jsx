@@ -94,16 +94,41 @@ export default function MetaTeamsPage() {
                                 <div className="team-tags">
                                     <span className="info-label">TAGS</span>
                                     <div className="tags-list">
-                                        {team.archetype ? team.archetype.split(' ').map((tag, i) => (
+                                        {team.archetype ? team.archetype.split(' / ').map((tag, i) => (
                                             <span key={i} className="tag-item">{tag.toUpperCase()}</span>
                                         )) : <span className="tag-item">UNKNOWN</span>}
                                     </div>
                                 </div>
                                 <div className="team-standings">
-                                    <span className="info-label">STANDINGS</span>
+                                    <span className="info-label">SOURCE</span>
                                     <div className="standings-list">
-                                        <span className="standing-item">{team.teamName || 'Ranked Team'}</span>
-                                        {team.likes > 0 && <span className="standing-item">{team.likes} Likes</span>}
+                                        {(() => {
+                                            const urlMatch = team.teamName ? team.teamName.match(/https?:\/\/[^\s]+/) : null;
+                                            if (urlMatch) {
+                                                const url = urlMatch[0];
+                                                
+                                                let displaySource = team.trainerName;
+                                                if (!displaySource || displaySource === 'Unknown Trainer') {
+                                                    if (url.includes('limitless')) displaySource = 'Limitless';
+                                                    else if (url.includes('pokepast')) displaySource = 'Pokepaste';
+                                                    else displaySource = 'Source Link';
+                                                }
+
+                                                return (
+                                                    <a href={url} target="_blank" rel="noreferrer" className="standing-item source-link" style={{ color: '#4facfe', textDecoration: 'none' }}>
+                                                        {displaySource}
+                                                    </a>
+                                                );
+                                            }
+                                            
+                                            let fallbackSource = team.trainerName || team.teamName || 'Unknown Source';
+                                            if (fallbackSource === 'Unknown Trainer') fallbackSource = 'Unknown Source';
+                                            
+                                            return (
+                                                <span className="standing-item">{fallbackSource}</span>
+                                            );
+                                        })()}
+                                        {team.likes > 0 && <span className="standing-item" style={{ color: '#a0a0b5', fontSize: '0.8rem' }}>{team.likes} Likes</span>}
                                     </div>
                                 </div>
                                 <button className="view-btn" onClick={() => navigate(`/teambuilder?teamId=${team.id}`)}>

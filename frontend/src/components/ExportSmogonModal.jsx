@@ -27,7 +27,8 @@ export const generateSmogonExport = (pokemonList) => {
             const evLabels = { hp: 'HP', atk: 'Atk', def: 'Def', spa: 'SpA', spd: 'SpD', spe: 'Spe' };
             for (const [key, label] of Object.entries(evLabels)) {
                 if (pkmn.evs[key] > 0) {
-                    evPairs.push(`${pkmn.evs[key]} ${label}`);
+                    const realEv = (pkmn.evs[key] - 1) * 8 + 4;
+                    evPairs.push(`${realEv} ${label}`);
                 }
             }
             if (evPairs.length > 0) {
