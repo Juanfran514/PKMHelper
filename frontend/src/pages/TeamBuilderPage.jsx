@@ -1,23 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import PokemonSlotGrid from '../components/PokemonSlotGrid';
 import TeamAnalyticsModal from '../components/TeamAnalyticsModal';
+import ExportSmogonModal from '../components/ExportSmogonModal';
 import { useTeamContext } from '../context/TeamContext';
 import { useAuth } from '../context/AuthContext';
 import '../styles/TeamBuilderPage.css';
 
 export default function TeambuilderPage() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [selectedTeamId, setSelectedTeamId] = useState("");
     const [savedTeams, setSavedTeams] = useState([]); // Aquí guardaremos los equipos del JSON
     const [showAnalytics, setShowAnalytics] = useState(false); // Estado del modal de analíticas
+    const [showExport, setShowExport] = useState(false); // Estado del modal de exportar
 
     // Traemos setTeamData para poder sobreescribir el equipo completo de golpe
     const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
     const { user } = useAuth();
 
-    // 1. Cargar equipos del backend al abrir la página
+    // Comprobar si venimos con un teamId por URL (ej: al darle a VIEW desde Meta Teams)
+    const queryParams = new URLSearchParams(location.search);
+    const urlTeamId = queryParams.get("teamId");
+
+    // 1. Cargar el equipo de la URL si existe
+    useEffect(() => {
+        if (urlTeamId && user?.username) {
+            fetch(`http://localhost:5000/api/teams/single/${urlTeamId}`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Team not found");
+                    return res.json();
+                })
+                .then(data => {
+                    const safePokemonList = [...(data.pokemon || [])];
+                    while (safePokemonList.length < 6) safePokemonList.push(null);
+
+                    // Importamos el equipo como uno NUEVO (sin IDs de versión ni grupo)
+                    setTeamData({
+                        ...data,
+                        id: null,
+                        teamGroupId: null,
+                        version: null,
+                        teamName: `${data.teamName || 'Equipo'} (Copia)`,
+                        trainerName: user.username,
+                        type: 'Private', // Privado por defecto para que no contamine Meta Teams
+                        pokemon: safePokemonList
+                    });
+
+                    // Limpiamos la URL para no re-importarlo si el usuario refresca la página
+                    navigate('/teambuilder', { replace: true });
+                })
+                .catch(err => console.error("Error cargando equipo de la URL:", err));
+        }
+    }, [urlTeamId, user, navigate, setTeamData]);
+
+    // 2. Cargar equipos guardados del backend al abrir la página
     useEffect(() => {
         const currentUser = user?.username;
         if (!currentUser) return;
@@ -140,13 +178,20 @@ export default function TeambuilderPage() {
                 <div style={{ display: 'flex', gap: '10px' }}>
                     {teamData.id && (
                         <Button 
-                            variant="info" 
+                            variant="secondary" 
                             onClick={() => setShowAnalytics(true)} 
-                            style={{ background: 'linear-gradient(45deg, #10b981, #3b82f6)', border: 'none', color: 'white', fontWeight: 'bold' }}
+                            style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                         >
-                            📊 Ver Analíticas
+                            Ver Analíticas
                         </Button>
                     )}
+                    <Button 
+                        variant="secondary" 
+                        onClick={() => setShowExport(true)} 
+                        style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
+                    >
+                        Exportar
+                    </Button>
                     <Button variant="primary" onClick={handleSubmit} style={{ background: '#1c25f6', border: 'none' }}>
                         Guardar Equipo
                     </Button>
@@ -162,6 +207,11 @@ export default function TeambuilderPage() {
                 show={showAnalytics} 
                 onHide={() => setShowAnalytics(false)} 
                 teamId={teamData.teamGroupId || teamData.id} 
+            />
+
+            <ExportSmogonModal
+                show={showExport}
+                onHide={() => setShowExport(false)}
             />
         </div>
     );

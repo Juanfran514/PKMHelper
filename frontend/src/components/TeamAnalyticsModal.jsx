@@ -29,15 +29,15 @@ export default function TeamAnalyticsModal({ show, onHide, teamId }) {
     };
 
     return (
-        <Modal 
-            show={show} 
-            onHide={onHide} 
-            size="lg" 
+        <Modal
+            show={show}
+            onHide={onHide}
+            size="lg"
             centered
             contentClassName="analytics-modal-content"
         >
             <Modal.Header closeButton className="analytics-modal-header">
-                <Modal.Title>📊 Analíticas de Rendimiento</Modal.Title>
+                <Modal.Title>Analíticas de Rendimiento</Modal.Title>
             </Modal.Header>
             <Modal.Body className="analytics-modal-body">
                 {loading ? (
@@ -47,7 +47,7 @@ export default function TeamAnalyticsModal({ show, onHide, teamId }) {
                         </div>
                     </div>
                 ) : analytics.length === 0 ? (
-                    <div className="text-center py-5 text-muted">
+                    <div className="text-center py-5">
                         <h4>Aún no hay datos</h4>
                         <p>Juega combates con este equipo para generar estadísticas.</p>
                     </div>
@@ -64,15 +64,15 @@ export default function TeamAnalyticsModal({ show, onHide, teamId }) {
                                         <img src={spriteUrl} alt={pkmn.pokemonName} className="pokemon-sprite" />
                                         <h5>{pkmn.pokemonName}</h5>
                                     </div>
-                                    
+
                                     <div className="stats-info">
                                         <div className="stats-row">
                                             <span>Win Rate</span>
                                             <span style={{ color, fontWeight: 'bold' }}>{pkmn.winRate}%</span>
                                         </div>
                                         <div className="progress-container">
-                                            <div 
-                                                className="progress-bar-animated" 
+                                            <div
+                                                className="progress-bar-animated"
                                                 style={{ width: `${pkmn.winRate}%`, backgroundColor: color }}
                                             />
                                         </div>
@@ -81,6 +81,22 @@ export default function TeamAnalyticsModal({ show, onHide, teamId }) {
                                             <span>{pkmn.losses} D</span>
                                             <span>({pkmn.matches} Totales)</span>
                                         </div>
+
+                                        {pkmn.moves && pkmn.moves.length > 0 && (
+                                            <div className="moves-stats-container mt-3" style={{ fontSize: '0.85rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '10px' }}>
+                                                <div style={{ color: '#aaa', marginBottom: '5px', fontWeight: 'bold' }}>Movimientos (Top 4):</div>
+                                                {pkmn.moves.slice(0, 4).map((m, i) => (
+                                                    <div key={i} className="d-flex justify-content-between mb-1 align-items-center">
+                                                        <span style={{ color: '#eee', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '70%' }}>
+                                                            {m.moveName}
+                                                        </span>
+                                                        <span style={{ color: '#888', whiteSpace: 'nowrap' }}>
+                                                            {m.timesUsed} {m.timesUsed === 1 ? 'uso' : 'usos'}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             );

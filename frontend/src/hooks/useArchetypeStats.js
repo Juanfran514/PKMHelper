@@ -1,33 +1,19 @@
-import {useMemo} from 'react';
-import teamsData from '../../../backend/data/classified_teams.json'
+import { useState, useEffect } from 'react';
 
 export const useArchetypeStats = () => {
-    return useMemo(() => {
-        if (!teamsData || teamsData.length === 0) return [];
+    const [stats, setStats] = useState([]);
 
-        const totalTeams = teamsData.length;
-        const tagCounts = {};
+    useEffect(() => {
+        fetch('http://localhost:5000/api/teams/meta/archetypes')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data)) {
+                    // Solo cogemos el top 5 para no saturar el panel
+                    setStats(data.slice(0, 5));
+                }
+            })
+            .catch(err => console.error("Error fetching archetypes:", err));
+    }, []);
 
-        teamsData.forEach(team => {
-            if (team.tags) {
-                team.tags.forEach(tag => {
-                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-                });
-            }
-        });
-
-        const statsArray = Object.keys(tagCounts).map(tag => {
-            const count = tagCounts[tag];
-            const percentage = ((count / totalTeams) * 100).toFixed(1); 
-            
-            return {
-                name: tag,
-                count: count,
-                usage: Number(percentage)
-            };
-        });
-
-        return statsArray.sort((a, b) => b.usage - a.usage);
-
-    }, []); 
-    }
+    return stats;
+};
