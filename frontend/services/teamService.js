@@ -1,5 +1,5 @@
 
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/teams`;
+const API_URL = `${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/teams`;
 
 // GET Teams
 export const getPublicTeams = async () => {
