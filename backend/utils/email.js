@@ -1,17 +1,23 @@
 const nodemailer = require('nodemailer');
-const dns = require('dns');
-
-// Railway y otros hostings tienen problemas con IPv6 hacia Gmail. Forzamos IPv4.
-dns.setDefaultResultOrder('ipv4first');
+const dns = require('dns').promises;
 
 const sendVerificationEmail = async (to, token) => {
     try {
-        // Configuración para usar Gmail (o cualquier otro proveedor SMTP)
+        // Obtenemos la IP (v4) directa de Gmail para saltarnos el fallo de IPv6 de Railway
+        const ipv4Addresses = await dns.resolve4('smtp.gmail.com');
+        const smtpIp = ipv4Addresses[0];
+
+        // Configuración forzando la IP directa
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: smtpIp,
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
+            },
+            tls: {
+                rejectUnauthorized: false // Evita errores de certificado al usar IP en lugar de dominio
             }
         });
 
