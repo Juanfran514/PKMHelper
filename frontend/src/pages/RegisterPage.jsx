@@ -75,7 +75,7 @@ export default function RegisterPage() {
                 <button type="submit" className="auth-button">REGISTER</button>
                 
                 <div className="auth-center-link">
-                    <Link to="/login" className="auth-link">LOGIN</Link>
+                    <Link to="/login" className="auth-link">← VOLVER AL LOGIN</Link>
                 </div>
             </form>
         </div>
