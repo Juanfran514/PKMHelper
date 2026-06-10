@@ -37,10 +37,12 @@ const DashboardPage = () => {
     <div className="dashboard-page container-fluid px-4 py-3">
       <Row className="h-100">
 
-        <Col lg={9} className="main-dashboard-col">
+        <Col lg={9} className="main-dashboard-col d-flex flex-column h-100">
           <SearchBar value={query} onChange={setQuery} />
           <PokemonList pokemonData={datosFiltrados} />
-          <StatList elo={stats.elo} winrate={stats.winrate} />
+          <div className="mt-auto mb-4">
+            <StatList elo={stats.elo} winrate={stats.winrate} />
+          </div>
         </Col>
 
         <Col lg={3} className="extra-data-col">
