@@ -6,6 +6,7 @@ import TeamAnalyticsModal from '../components/TeamAnalyticsModal';
 import ExportSmogonModal from '../components/ExportSmogonModal';
 import { useTeamContext } from '../context/TeamContext';
 import { useAuth } from '../context/AuthContext';
+import { teamService } from '../services/teamService';
 import '../styles/TeamBuilderPage.css';
 
 export default function TeambuilderPage() {
@@ -27,11 +28,7 @@ export default function TeambuilderPage() {
     // 1. Cargar el equipo de la URL si existe
     useEffect(() => {
         if (urlTeamId && user?.username) {
-            fetch(`http://localhost:5000/api/teams/single/${urlTeamId}`)
-                .then(res => {
-                    if (!res.ok) throw new Error("Team not found");
-                    return res.json();
-                })
+            teamService.getTeamById(urlTeamId)
                 .then(data => {
                     const safePokemonList = [...(data.pokemon || [])];
                     while (safePokemonList.length < 6) safePokemonList.push(null);
@@ -60,8 +57,7 @@ export default function TeambuilderPage() {
         const currentUser = user?.username;
         if (!currentUser) return;
 
-        fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
-            .then(res => res.json())
+        teamService.getTeamsByTrainer(currentUser)
             .then(data => {
                 const teamsArray = Array.isArray(data) ? data : Object.values(data);
                 setSavedTeams(teamsArray);
@@ -127,8 +123,7 @@ export default function TeambuilderPage() {
         if (!currentUser) return;
 
         // Recargamos la lista de equipos, pidiendo SOLO los nuestros otra vez
-        fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
-            .then(res => res.json())
+        teamService.getTeamsByTrainer(currentUser)
             .then(data => {
                 const teamsArray = Array.isArray(data) ? data : Object.values(data);
                 setSavedTeams(teamsArray);
@@ -141,33 +136,26 @@ export default function TeambuilderPage() {
 
         try {
             const teamIdToDelete = teamData.teamGroupId || teamData.id;
-            const res = await fetch(`http://localhost:5000/api/teams/${teamIdToDelete}`, {
-                method: 'DELETE'
-            });
+            await teamService.deleteTeam(teamIdToDelete);
 
-            if (res.ok) {
-                setTeamData({
-                    id: null,
-                    teamName: '',
-                    type: 'Private',
-                    pokemon: Array(6).fill(null)
-                });
-                
-                // Recargar equipos guardados
-                const currentUser = user?.username;
-                if (currentUser) {
-                    fetch(`http://localhost:5000/api/teams?trainerName=${currentUser}`)
-                        .then(res => res.json())
-                        .then(data => {
-                            const teamsArray = Array.isArray(data) ? data : Object.values(data);
-                            setSavedTeams(teamsArray);
-                        });
-                }
-                
-                navigate('/teambuilder');
-            } else {
-                alert("Error al borrar el equipo en el servidor.");
+            setTeamData({
+                id: null,
+                teamName: '',
+                type: 'Private',
+                pokemon: Array(6).fill(null)
+            });
+            
+            // Recargar equipos guardados
+            const currentUser = user?.username;
+            if (currentUser) {
+                teamService.getTeamsByTrainer(currentUser)
+                    .then(data => {
+                        const teamsArray = Array.isArray(data) ? data : Object.values(data);
+                        setSavedTeams(teamsArray);
+                    });
             }
+            
+            navigate('/teambuilder');
         } catch (error) {
             console.error("Error de red:", error);
             alert("Error de conexión al intentar borrar el equipo.");
