@@ -6,18 +6,48 @@ export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [unverified, setUnverified] = useState(false);
+    const [resendMsg, setResendMsg] = useState('');
+    const [isResending, setIsResending] = useState(false);
     const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+        setUnverified(false);
+        setResendMsg('');
         
         const result = await login(username, password);
         if (result.success) {
             navigate('/');
         } else {
             setError(result.error || 'Login failed');
+            if (result.unverified) {
+                setUnverified(true);
+            }
+        }
+    };
+
+    const handleResend = async () => {
+        setIsResending(true);
+        setResendMsg('');
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/auth/resend-verification`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setResendMsg('Correo reenviado exitosamente. Por favor, revisa tu bandeja de entrada.');
+            } else {
+                setResendMsg(data.error || 'Error al reenviar el correo.');
+            }
+        } catch (err) {
+            setResendMsg('Error de conexión al intentar reenviar el correo.');
+        } finally {
+            setIsResending(false);
         }
     };
 
@@ -52,6 +82,19 @@ export default function LoginPage() {
                 </div>
 
                 {error && <div className="auth-error">{error}</div>}
+                {unverified && (
+                    <div style={{ textAlign: 'center', marginBottom: '15px' }}>
+                        <button 
+                            type="button" 
+                            onClick={handleResend} 
+                            disabled={isResending}
+                            style={{ background: 'none', border: 'none', color: '#ffeb3b', cursor: 'pointer', textDecoration: 'underline' }}
+                        >
+                            {isResending ? 'Enviando...' : 'Reenviar correo de verificación'}
+                        </button>
+                    </div>
+                )}
+                {resendMsg && <div className="auth-success" style={{ color: '#4caf50', marginBottom: '15px', textAlign: 'center' }}>{resendMsg}</div>}
 
                 <button type="submit" className="auth-button">LOGIN</button>
                 
