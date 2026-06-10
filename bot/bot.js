@@ -42,9 +42,8 @@ async function syncTargetUsers() {
     }
 }
 
-// Ejecutar al iniciar y cada 5 minutos
+// Ejecutar al iniciar
 syncTargetUsers();
-setInterval(syncTargetUsers, 5 * 60 * 1000);
 
 // Socket
 const socket = initClient((ws, rawMessage) => {
@@ -68,10 +67,10 @@ const socket = initClient((ws, rawMessage) => {
         case 'updateuser':
             { const currentBotUser = parsed.name || parsed.user || "";
             
-            if (currentBotUser.toLowerCase().includes(config.SH_USER.toLowerCase())) {
+            if (config.SH_USER && currentBotUser.toLowerCase().includes(config.SH_USER.toLowerCase())) {
                 console.log(`\nBot logeado: ${currentBotUser}`);
                 if (!globalThis.scannerStarted) {
-                    const scanner = new Scanner(ws, config.SCAN_INTERVAL);
+                    const scanner = new Scanner(ws, config.SCAN_INTERVAL, syncTargetUsers);
                     scanner.start();
                     globalThis.scannerStarted = true;
                     console.log(`[SCANNER] Radar activado (Intervalo: ${config.SCAN_INTERVAL}ms)`);

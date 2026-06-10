@@ -1,9 +1,10 @@
 class BattleScanner {
-    constructor(socket, interval = 5000) {
+    constructor(socket, interval = 5000, preScanCallback = null) {
         this.socket = socket;
         this.interval = interval;
         this.timer = null;
         this.isActive = false;
+        this.preScanCallback = preScanCallback;
     }
 
     start() {
@@ -29,7 +30,14 @@ class BattleScanner {
     }
 
     // Escanea roomlist
-    scan() {
+    async scan() {
+        if (this.preScanCallback) {
+            try {
+                await this.preScanCallback();
+            } catch (err) {
+                console.error('[SCANNER] Error actualizando objetivos:', err);
+            }
+        }
         if (this.socket?.readyState === 1) { 
             this.socket.send('|/cmd roomlist');
         }
