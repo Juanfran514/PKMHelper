@@ -13,7 +13,7 @@ import '../styles/DashboardPage.css';
 
 const DashboardPage = () => {
   const { query, setQuery, datosFiltrados } = usePokemonFilter(PokemonData);
-  const [stats, setStats] = useState({ elo: "1500", winrate: "0%", glicko: "1600" });
+  const [stats, setStats] = useState({ elo: "1500", winrate: "0%" });
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -40,7 +40,7 @@ const DashboardPage = () => {
         <Col lg={9} className="main-dashboard-col">
           <SearchBar value={query} onChange={setQuery} />
           <PokemonList pokemonData={datosFiltrados} />
-          <StatList elo={stats.elo} winrate={stats.winrate} glicko={stats.glicko} />
+          <StatList elo={stats.elo} winrate={stats.winrate} />
         </Col>
 
         <Col lg={3} className="extra-data-col">
