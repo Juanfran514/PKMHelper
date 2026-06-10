@@ -76,11 +76,11 @@ export const PokemonEvStats = ({
                                                 className="move-item" 
                                                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 8px' }}
                                                 onClick={() => {
-                                                    setCurrentPokemon(prev => ({ ...prev, nature: nature.name.toUpperCase() }));
+                                                    setCurrentPokemon(prev => ({ ...prev, nature: nature.name }));
                                                     setIsNatureMenuOpen(false);
                                                 }}
                                             >
-                                                <span style={{ fontSize: '0.7rem', fontWeight: 'bold' }}>{nature.name.toUpperCase()}</span>
+                                                <span style={{ fontSize: '0.7rem', fontWeight: 'bold' }}>{nature.name}</span>
                                                 {nature.plus && nature.minus && (
                                                     <span style={{ fontSize: '0.65rem', opacity: 0.9 }}>
                                                         <span style={{ color: '#4CAF50', marginRight: '4px' }}>+{nature.plus}</span>
