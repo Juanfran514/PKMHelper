@@ -34,16 +34,6 @@ async function testConnection() {
             console.error('Error alterando constraint matches_team_id_fkey:', err.message);
         }
 
-        // Add is_verified to user table if it doesn't exist
-        try {
-            await client.query(`
-                ALTER TABLE "user" ADD COLUMN IF NOT EXISTS is_verified BOOLEAN DEFAULT FALSE;
-            `);
-            console.log('Columna is_verified añadida a user');
-        } catch (err) {
-            console.error('Error alterando la tabla user:', err.message);
-        }
-
         console.log('Conexión con PostgreSQL. Hora de la DB:', res.rows[0].now);
         client.release();
     } catch (error) {

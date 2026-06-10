@@ -8,8 +8,7 @@ CREATE TABLE "user" (
     password VARCHAR,
     email VARCHAR,
     "sdName" VARCHAR,
-    "lastOnline" TIMESTAMP,
-    is_verified BOOLEAN DEFAULT FALSE
+    "lastOnline" TIMESTAMP
 );
 
 CREATE TABLE pokedex (

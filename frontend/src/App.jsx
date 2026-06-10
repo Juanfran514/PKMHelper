@@ -12,7 +12,6 @@ import TeambuilderPage from './pages/TeamBuilderPage';
 import PokemonEditor from './pages/PokemonEditor';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import VerifyEmailPage from './pages/VerifyEmailPage';
 import ProfilePage from './pages/ProfilePage';
 
 import MatchHistoryPage from './pages/MatchHistoryPage';
@@ -36,7 +35,6 @@ function App() {
             <Route element={<AuthLayout />}>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
-              <Route path="/verify-email" element={<VerifyEmailPage />} />
             </Route>
 
             {/* Protected Routes */}
