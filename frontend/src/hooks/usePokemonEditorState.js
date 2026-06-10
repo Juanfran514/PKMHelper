@@ -81,7 +81,7 @@ export const usePokemonEditorState = (activeIndex) => {
     useEffect(() => {
         if (currentPokemon.name) {
             const nameForBackend = SHOWDOWN_MAPPER[currentPokemon.name] || currentPokemon.name;
-            const backendUrl = `http://localhost:5000/api/stats/${nameForBackend}`; 
+            const backendUrl = `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/stats/${nameForBackend}`; 
             
             fetch(backendUrl)
                 .then(res => {

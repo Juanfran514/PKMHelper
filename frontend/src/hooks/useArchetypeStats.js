@@ -4,7 +4,7 @@ export const useArchetypeStats = () => {
     const [stats, setStats] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/teams/meta/archetypes')
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/teams/meta/archetypes`)
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) {
