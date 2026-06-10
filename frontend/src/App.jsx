@@ -15,6 +15,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 
 import MatchHistoryPage from './pages/MatchHistoryPage';
+import ReplayPage from './pages/ReplayPage';
 import MetaTeamsPage from './pages/MetaTeamsPage';
 
 const ProtectedRoute = ({ children }) => {
@@ -50,6 +51,7 @@ function App() {
               <Route path="teambuilder/editor/:slotIndex" element={<PokemonEditor />} />
 
               <Route path="match-history" element={<MatchHistoryPage />} />
+              <Route path="replay/:id" element={<ReplayPage />} />
 
               <Route path="profile" element={<ProfilePage />} />
             </Route>

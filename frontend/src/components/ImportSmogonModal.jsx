@@ -117,7 +117,7 @@ export default function ImportSmogonModal({ show, onHide }) {
             for (let pkmn of parsedPokemonList) {
                 if (pkmn && pkmn.name) {
                     try {
-                        const res = await fetch(`http://localhost:5000/api/pokemon/sprite/${pkmn.name}`);
+                        const res = await fetch(`http://localhost:5000/api/stats/sprite/${pkmn.name}`);
                         if (res.ok) {
                             const data = await res.json();
                             pkmn.sprite = data.sprite;
