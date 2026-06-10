@@ -98,31 +98,13 @@ export const usePokeAPI = () => {
     const fetchBaseStats = async (pokemonName) => {
         if (!pokemonName) return null;
         try {
-            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
-            if (!res.ok) throw new Error("Not Found");
+            const backendUrl = `${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/stats/base/${encodeURIComponent(pokemonName)}`;
+            const res = await fetch(backendUrl);
+            if (!res.ok) throw new Error("Not Found in DB");
             const data = await res.json();
             
-            const statMap = {
-                'hp': 'hp',
-                'attack': 'atk',
-                'defense': 'def',
-                'special-attack': 'spa',
-                'special-defense': 'spd',
-                'speed': 'spe'
-            };
-            
-            const baseStats = {};
-            data.stats.forEach(s => {
-                const key = statMap[s.stat.name];
-                if (key) baseStats[key] = s.base_stat;
-            });
-            
-            const abilities = data.abilities.map(a => ({
-                name: a.ability.name.toUpperCase(),
-                isHidden: a.is_hidden
-            }));
-            
-            return { baseStats, abilities };
+            // data ya viene formateado desde el backend: { baseStats: {...}, abilities: [...] }
+            return data;
         } catch (error) {
             console.error("Error obteniendo base stats", error);
             return null;
