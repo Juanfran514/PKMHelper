@@ -3,9 +3,11 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { pool } = require('../dbManager');
+const { Resend } = require('resend');
 
 // Obtener el secreto de las variables de entorno, o usar un default para desarrollo
 const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_jwt_key_for_dev';
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // REGISTRO
 router.post('/register', async (req, res) => {
@@ -37,22 +39,35 @@ router.post('/register', async (req, res) => {
 
         // Insertar usuario
         const result = await pool.query(
-            'INSERT INTO "user" (username, password, email, "sdName") VALUES ($1, $2, $3, $4) RETURNING id, username, email, "sdName"',
+            'INSERT INTO "user" (username, password, email, "sdName", is_verified) VALUES ($1, $2, $3, $4, false) RETURNING id, username, email, "sdName"',
             [username, hashedPassword, email, sdName || null]
         );
 
         const newUser = result.rows[0];
 
-        // Crear token
-        const token = jwt.sign(
-            { id: newUser.id, username: newUser.username },
+        // Crear token de verificacion
+        const verificationToken = jwt.sign(
+            { id: newUser.id, action: 'verify_email' },
             JWT_SECRET,
-            { expiresIn: '7d' }
+            { expiresIn: '24h' }
         );
 
+        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost';
+        const verifyLink = `${frontendUrl}/verify-email?token=${verificationToken}`;
+
+        try {
+            await resend.emails.send({
+                from: 'Acme <onboarding@resend.dev>', // Cambiar a tu dominio verificado cuando sea posible
+                to: email,
+                subject: 'Verify your email address',
+                html: `<p>Please click the link below to verify your email address:</p><p><a href="${verifyLink}">${verifyLink}</a></p>`
+            });
+        } catch (emailError) {
+            console.error('Error sending verification email:', emailError);
+        }
+
         res.status(201).json({
-            message: 'User registered successfully',
-            token,
+            message: 'User registered successfully. Please check your email to verify your account.',
             user: newUser
         });
 
@@ -82,6 +97,10 @@ router.post('/login', async (req, res) => {
         }
 
         const user = result.rows[0];
+
+        if (!user.is_verified) {
+            return res.status(403).json({ error: 'Please verify your email first.' });
+        }
 
         // Verificar la contraseña
         const isValidPassword = await bcrypt.compare(password, user.password);
@@ -117,6 +136,34 @@ router.post('/login', async (req, res) => {
     } catch (error) {
         console.error('Error in /login:', error);
         res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
+// VERIFY EMAIL
+router.get('/verify-email', async (req, res) => {
+    try {
+        const { token } = req.query;
+
+        if (!token) {
+            return res.status(400).json({ error: 'Token is required' });
+        }
+
+        const decoded = jwt.verify(token, JWT_SECRET);
+
+        if (decoded.action !== 'verify_email') {
+            return res.status(400).json({ error: 'Invalid token' });
+        }
+
+        await pool.query(
+            'UPDATE "user" SET is_verified = true WHERE id = $1',
+            [decoded.id]
+        );
+
+        res.status(200).json({ message: 'Email verified successfully' });
+
+    } catch (error) {
+        console.error('Error in /verify-email:', error);
+        res.status(400).json({ error: 'Invalid or expired token.' });
     }
 });
 

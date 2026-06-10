@@ -8,16 +8,22 @@ export default function RegisterPage() {
     const [email, setEmail] = useState('');
     const [sdName, setSdName] = useState('');
     const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const { register } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+        setSuccessMessage('');
         
         const result = await register(username, password, email, sdName);
         if (result.success) {
-            navigate('/');
+            setSuccessMessage(result.message || 'Registration successful! Please check your email to verify your account.');
+            setUsername('');
+            setPassword('');
+            setEmail('');
+            setSdName('');
         } else {
             setError(result.error || 'Registration failed');
         }
@@ -71,6 +77,7 @@ export default function RegisterPage() {
                 </div>
 
                 {error && <div className="auth-error">{error}</div>}
+                {successMessage && <div className="auth-success" style={{color: '#4caf50', marginBottom: '1rem', textAlign: 'center'}}>{successMessage}</div>}
 
                 <button type="submit" className="auth-button">REGISTER</button>
                 
