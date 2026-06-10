@@ -56,7 +56,7 @@ export const usePokemonEditorState = (activeIndex) => {
             .catch(err => console.error("Error cargando items.json", err));
     }, []);
 
-    // 2. Cargar el estado al cambiar de pestaña
+    // 2. Cargar el estado al cambiar de pestaÃ±a
     useEffect(() => {
         const savedPokemon = teamData.pokemon[activeTab];
         if (savedPokemon) {
@@ -77,11 +77,11 @@ export const usePokemonEditorState = (activeIndex) => {
         setIsAbilityMenuOpen(false);
     }, [activeTab, teamData.pokemon]);
 
-    // 3. Traer datos del backend cuando el Pokémon cambia
+    // 3. Traer datos del backend cuando el PokÃ©mon cambia
     useEffect(() => {
         if (currentPokemon.name) {
             const nameForBackend = SHOWDOWN_MAPPER[currentPokemon.name] || currentPokemon.name;
-            const backendUrl = `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/stats/${nameForBackend}`; 
+            const backendUrl = `${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/stats/${nameForBackend}`; 
             
             fetch(backendUrl)
                 .then(res => {

@@ -1,6 +1,6 @@
 // src/pages/DashboardPage.jsx
 import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap'; // Importación más limpia
+import { Row, Col } from 'react-bootstrap'; // ImportaciÃ³n mÃ¡s limpia
 import PokemonList from '../components/PokemonList';
 import SearchBar from '../components/SearchBar';
 import { usePokemonFilter } from "../hooks/usePokemonFilter";
@@ -19,7 +19,7 @@ const DashboardPage = () => {
     const fetchStats = async () => {
       const token = localStorage.getItem('token');
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/users/stats`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/users/stats`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {

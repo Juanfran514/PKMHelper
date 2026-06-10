@@ -12,7 +12,7 @@ function evToPoints(evStr) {
 }
 
 export const parseSmogonImport = (text) => {
-    // Separa el texto por líneas en blanco (cada bloque es un pokemon)
+    // Separa el texto por lÃ­neas en blanco (cada bloque es un pokemon)
     const blocks = text.trim().split(/\n\s*\n/);
     const team = [];
 
@@ -117,7 +117,7 @@ export default function ImportSmogonModal({ show, onHide }) {
             for (let pkmn of parsedPokemonList) {
                 if (pkmn && pkmn.name) {
                     try {
-                        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/stats/sprite/${pkmn.name}`);
+                        const res = await fetch(`${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/stats/sprite/${pkmn.name}`);
                         if (res.ok) {
                             const data = await res.json();
                             pkmn.sprite = data.sprite;
@@ -136,7 +136,7 @@ export default function ImportSmogonModal({ show, onHide }) {
             onHide();
         } catch (error) {
             console.error("Error importando paste:", error);
-            alert("No se pudo parsear el texto. Asegúrate de que está en formato Showdown/Smogon.");
+            alert("No se pudo parsear el texto. AsegÃºrate de que estÃ¡ en formato Showdown/Smogon.");
         }
     };
 
@@ -155,7 +155,7 @@ export default function ImportSmogonModal({ show, onHide }) {
                 <textarea 
                     value={pasteText} 
                     onChange={(e) => setPasteText(e.target.value)}
-                    placeholder="Pega aquí tu equipo copiado desde Pokémon Showdown o Pokepaste..."
+                    placeholder="Pega aquÃ­ tu equipo copiado desde PokÃ©mon Showdown o Pokepaste..."
                     style={{
                         width: '100%',
                         height: '300px',

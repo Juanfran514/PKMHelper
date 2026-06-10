@@ -14,7 +14,7 @@ export default function MatchHistoryPage() {
         const fetchMatches = async () => {
             const token = localStorage.getItem('token');
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/users/matches`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/users/matches`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await response.json();
@@ -34,7 +34,7 @@ export default function MatchHistoryPage() {
             fetchMatches();
         } else {
             setLoading(false);
-            setError('Inicia sesión para ver tu historial de partidas.');
+            setError('Inicia sesiÃ³n para ver tu historial de partidas.');
         }
     }, [user]);
 
