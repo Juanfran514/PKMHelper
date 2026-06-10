@@ -45,7 +45,7 @@ export const usePokemonEditorState = (activeIndex) => {
     const [pokemonStats, setPokemonStats] = useState(null);
     const [baseStats, setBaseStats] = useState(null);
 
-    // 1. Cargar la lista completa de objetos
+
     useEffect(() => {
         fetch('/items.json')
             .then(res => {
@@ -56,7 +56,7 @@ export const usePokemonEditorState = (activeIndex) => {
             .catch(err => console.error("Error cargando items.json", err));
     }, []);
 
-    // 2. Cargar el estado al cambiar de pestaÃ±a
+
     useEffect(() => {
         const savedPokemon = teamData.pokemon[activeTab];
         if (savedPokemon) {
@@ -77,7 +77,7 @@ export const usePokemonEditorState = (activeIndex) => {
         setIsAbilityMenuOpen(false);
     }, [activeTab, teamData.pokemon]);
 
-    // 3. Traer datos del backend cuando el PokÃ©mon cambia
+
     useEffect(() => {
         if (currentPokemon.name) {
             const nameForBackend = SHOWDOWN_MAPPER[currentPokemon.name] || currentPokemon.name;

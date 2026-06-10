@@ -1,4 +1,4 @@
-// SRP: Utilitarios de parseo separados
+
 const parsePokemonId = (idString) => {
     const player = idString.substring(0, 2);
     const slot = idString.substring(0, 3);
@@ -21,7 +21,7 @@ const parseHP = (hpString) => {
     return { current: currentHp, max: maxHp, status, fainted: currentHp === 0 };
 };
 
-// DRY: Handlers comunes
+
 const handleSwitch = (ctx, parts) => {
     const sw = parsePokemonId(parts[2]);
     const swBaseName = parts[3].split(', ')[0];
@@ -56,7 +56,7 @@ const handleDamageHeal = (ctx, parts, action) => {
     ctx.currentTurn.events.push(`${dmgTarget.name} ${verb} (${dmgHp.current}/${dmgHp.max})`);
 };
 
-// OCP: Mapa de Estrategias (Action Handlers) en lugar de un switch gigante
+
 const actionHandlers = {
     'player': (ctx, parts) => {
         if (parts[2] === 'p1') ctx.state.p1.name = parts[3];

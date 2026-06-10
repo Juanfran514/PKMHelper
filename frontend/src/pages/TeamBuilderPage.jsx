@@ -33,7 +33,7 @@ export default function TeambuilderPage() {
                     const safePokemonList = [...(data.pokemon || [])];
                     while (safePokemonList.length < 6) safePokemonList.push(null);
 
-                    // Importamos el equipo como uno NUEVO (sin IDs de versión ni grupo)
+
                     setTeamData({
                         ...data,
                         id: null,
@@ -45,7 +45,7 @@ export default function TeambuilderPage() {
                         pokemon: safePokemonList
                     });
 
-                    // Limpiamos la URL para no re-importarlo si el usuario refresca la página
+
                     navigate('/teambuilder', { replace: true });
                 })
                 .catch(err => console.error("Error cargando equipo de la URL:", err));
@@ -80,7 +80,7 @@ export default function TeambuilderPage() {
         setSelectedTeamId(selectedValue);
 
         if (!selectedValue) {
-            // Si elige "Crear Nuevo Equipo", limpiamos la pantalla
+
             setTeamData({
                 id: null,
                 teamGroupId: null,
@@ -101,7 +101,7 @@ export default function TeambuilderPage() {
             const safePokemonList = [...(selectedTeam.pokemon || [])];
             while (safePokemonList.length < 6) safePokemonList.push(null);
 
-            // ¡Inyectamos el equipo recuperado en el Teambuilder!
+
             setTeamData({
                 ...selectedTeam,
                 pokemon: safePokemonList

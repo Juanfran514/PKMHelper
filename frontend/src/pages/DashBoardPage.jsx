@@ -1,6 +1,6 @@
 // src/pages/DashboardPage.jsx
 import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap'; // ImportaciÃ³n mÃ¡s limpia
+import { Row, Col } from 'react-bootstrap';
 import PokemonList from '../components/PokemonList';
 import SearchBar from '../components/SearchBar';
 import { usePokemonFilter } from "../hooks/usePokemonFilter";
@@ -8,7 +8,7 @@ import StatList from '../components/StatList';
 import ArchetypeList from '../components/ArchetypeList';
 import PokemonData from '../../../backend/data/competitive_sets.json';
 
-// Importamos tu nuevo archivo de estilos
+
 import '../styles/DashboardPage.css';
 
 const DashboardPage = () => {

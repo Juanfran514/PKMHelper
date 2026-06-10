@@ -88,9 +88,9 @@ const socket = initClient((ws, rawMessage) => {
                 if (tracker.targetUsers.length > 0) {
                     console.log(`\n[SCANNER] Rastreo completado. Buscando a: ${tracker.targetUsers.join(', ')}`);
                     if (foundTargets.length > 0) {
-                        console.log(`[SCANNER] ✅ Encontrados en combate: ${foundTargets.join(', ')}`);
+                        console.log(`[SCANNER] Encontrados en combate: ${foundTargets.join(', ')}`);
                     } else {
-                        console.log(`[SCANNER] ❌ Ninguno de los objetivos está jugando en este momento.`);
+                        console.log(`[SCANNER] Ninguno de los objetivos está jugando en este momento.`);
                     }
                 } else {
                     console.log(`\n[SCANNER] Esperando objetivos en la base de datos...`);

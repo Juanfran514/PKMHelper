@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/Sidebar.css';
+import logo from '../assets/imgs/logo.png';
 
 export default function Sidebar() {
     const location = useLocation();
@@ -9,8 +10,8 @@ export default function Sidebar() {
     return (
         <aside className="custom-sidebar">
 
-            <div className="sidebar-header">
-                <div className="logo-placeholder">T!</div>
+            <div className="sidebar-header" style={{ justifyContent: 'center' }}>
+                <img src={logo} alt="PKMHelper Logo" className="sidebar-logo" />
             </div>
 
             <nav className="sidebar-nav">

@@ -35,7 +35,7 @@ export const TeamProvider = ({ children }) => {
         });
     };
 
-    // NUEVO: Función para enviar el equipo al Backend
+
     const saveTeamToBackend = async () => {
         try {
             const result = await teamService.saveTeam(teamData);
