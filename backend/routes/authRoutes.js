@@ -16,14 +16,19 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'Username, password and email are required.' });
         }
 
-        // Verificar si el usuario o email ya existe
-        const userExists = await pool.query(
-            'SELECT id FROM "user" WHERE username = $1 OR email = $2',
-            [username, email]
-        );
+        // Verificar si el usuario, email o sdName ya existe
+        let query = 'SELECT id FROM "user" WHERE username = $1 OR email = $2';
+        let params = [username, email];
+
+        if (sdName) {
+            query += ' OR "sdName" = $3';
+            params.push(sdName);
+        }
+
+        const userExists = await pool.query(query, params);
 
         if (userExists.rows.length > 0) {
-            return res.status(409).json({ error: 'Username or Email already exists.' });
+            return res.status(409).json({ error: 'Username, Email or Showdown Name already exists.' });
         }
 
         // Hashear la contraseña
