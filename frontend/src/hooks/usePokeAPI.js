@@ -32,10 +32,10 @@ export const usePokeAPI = () => {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
             if (!res.ok) throw new Error("Not Found");
             const data = await res.json();
-            
+
             const defaultAbility = data.abilities.find(a => !a.is_hidden)?.ability.name || data.abilities[0].ability.name;
             const defaultTera = data.types[0].type.name;
-            
+
             setPokemonSprite(data.sprites.other['official-artwork'].front_default);
 
             return {
@@ -63,15 +63,28 @@ export const usePokeAPI = () => {
         let allMoves = [];
         try {
             const res = await fetch('/learnsets.json');
-            
+
             // Si la respuesta no es OK, forzamos un error para que no intente parsear HTML
             if (!res.ok) throw new Error("Archivo no encontrado");
-            
+
             const db = await res.json();
             const key = pokemonName.toUpperCase();
             allMoves = db[key] || [];
         } catch (e) {
             console.error("No se pudo cargar learnsets.json", e);
+        }
+
+        // Fallback: Si no está en learnsets.json (ej. Manectric), lo sacamos de PokeAPI
+        if (allMoves.length === 0) {
+            try {
+                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase().replace(/[^a-z0-9-]/g, '')}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    allMoves = data.moves.map(m => m.move.name.toUpperCase().replace('-', ' '));
+                }
+            } catch (e) {
+                console.error("Error obteniendo movimientos de PokeAPI como fallback", e);
+            }
         }
 
         let topMoves = [];
@@ -83,7 +96,7 @@ export const usePokeAPI = () => {
                     name: m.toUpperCase(),
                     usage: movesObj[m]
                 }));
-            
+
             topMoves.sort((a, b) => parseFloat(b.usage) - parseFloat(a.usage));
         }
 
@@ -102,7 +115,7 @@ export const usePokeAPI = () => {
             const res = await fetch(backendUrl);
             if (!res.ok) throw new Error("Not Found in DB");
             const data = await res.json();
-            
+
             // data ya viene formateado desde el backend: { baseStats: {...}, abilities: [...] }
             return data;
         } catch (error) {

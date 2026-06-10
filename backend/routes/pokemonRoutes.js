@@ -18,7 +18,7 @@ router.get('/:pokemonName', async (req, res) => {
             SELECT * FROM pikalytics_stats 
             WHERE REPLACE(REPLACE(LOWER(pokemon_name), '-', ''), ' ', '') = $1
         `;
-        
+
         const dbRes = await pool.query(query, [normalizedRequest]);
 
         if (dbRes.rows.length === 0) {
@@ -60,7 +60,7 @@ router.get('/base/:pokemonName', async (req, res) => {
             WHERE REPLACE(REPLACE(LOWER(name), '-', ''), ' ', '') = $1
             OR REPLACE(REPLACE(LOWER(showdown_name), '-', ''), ' ', '') = $1
         `;
-        
+
         const dbRes = await pool.query(query, [normalizedRequest]);
 
         if (dbRes.rows.length === 0) {
@@ -68,7 +68,7 @@ router.get('/base/:pokemonName', async (req, res) => {
         }
 
         const row = dbRes.rows[0];
-        
+
         // Parse abilities (JSON string or array in DB)
         let parsedAbilities = [];
         try {
@@ -77,7 +77,7 @@ router.get('/base/:pokemonName', async (req, res) => {
             } else if (Array.isArray(row.abilities)) {
                 parsedAbilities = row.abilities;
             }
-        } catch(e) {
+        } catch (e) {
             console.error("Error parsing abilities", e);
         }
 
@@ -120,7 +120,7 @@ router.get('/sprite/:pokemonName', async (req, res) => {
             WHERE REPLACE(REPLACE(LOWER(name), '-', ''), ' ', '') = $1
             OR REPLACE(REPLACE(LOWER(showdown_name), '-', ''), ' ', '') = $1
         `;
-        
+
         const dbRes = await pool.query(query, [normalizedRequest]);
 
         if (dbRes.rows.length === 0) {

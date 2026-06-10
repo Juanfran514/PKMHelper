@@ -8,8 +8,8 @@ import { calculateMaxAllowedEv } from '../utils/statCalculations';
 export const usePokemonEditorState = (activeIndex) => {
     const navigate = useNavigate();
     const { teamData, updatePokemon } = useTeamContext();
-    const { 
-        pokemonSprite, setPokemonSprite, loadSprite, 
+    const {
+        pokemonSprite, setPokemonSprite, loadSprite,
         fetchPokemonDetails, getFilteredList, getSortedMoves,
         fetchBaseStats
     } = usePokeAPI();
@@ -22,12 +22,12 @@ export const usePokemonEditorState = (activeIndex) => {
 
     const [activeTab, setActiveTab] = useState(activeIndex);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    
+
     // Estados para Movimientos
     const [activeMoveSlot, setActiveMoveSlot] = useState(null);
     const [moveSearchTerm, setMoveSearchTerm] = useState("");
     const [availableMoves, setAvailableMoves] = useState({ topMoves: [], otherMoves: [] });
-    
+
     // Estados para Objetos
     const [isItemMenuOpen, setIsItemMenuOpen] = useState(false);
     const [itemSearchTerm, setItemSearchTerm] = useState("");
@@ -40,9 +40,9 @@ export const usePokemonEditorState = (activeIndex) => {
     // Estados para Habilidades
     const [isAbilityMenuOpen, setIsAbilityMenuOpen] = useState(false);
     const [availableAbilities, setAvailableAbilities] = useState([]);
-    
+
     // Stats del Backend
-    const [pokemonStats, setPokemonStats] = useState(null); 
+    const [pokemonStats, setPokemonStats] = useState(null);
     const [baseStats, setBaseStats] = useState(null);
 
     // 1. Cargar la lista completa de objetos
@@ -81,8 +81,8 @@ export const usePokemonEditorState = (activeIndex) => {
     useEffect(() => {
         if (currentPokemon.name) {
             const nameForBackend = SHOWDOWN_MAPPER[currentPokemon.name] || currentPokemon.name;
-            const backendUrl = `${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/stats/${nameForBackend}`; 
-            
+            const backendUrl = `${import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api'}/stats/${nameForBackend}`;
+
             fetch(backendUrl)
                 .then(res => {
                     if (!res.ok) throw new Error("404");
@@ -126,11 +126,11 @@ export const usePokemonEditorState = (activeIndex) => {
                 name: details.name,
                 ability: details.ability,
                 teraType: details.teraType,
-                moves: ['', '', '', ''], 
-                item: '' 
+                moves: ['', '', '', ''],
+                item: ''
             }));
         }
-        setIsSearchOpen(false); 
+        setIsSearchOpen(false);
     };
 
     const handleInputChange = (e) => {
@@ -141,9 +141,9 @@ export const usePokemonEditorState = (activeIndex) => {
     const handleEvChange = (key, value) => {
         setCurrentPokemon(prev => {
             const numValue = calculateMaxAllowedEv(key, prev.evs, value);
-            return { 
-                ...prev, 
-                evs: { ...prev.evs, [key]: numValue } 
+            return {
+                ...prev,
+                evs: { ...prev.evs, [key]: numValue }
             };
         });
     };
@@ -155,7 +155,7 @@ export const usePokemonEditorState = (activeIndex) => {
         }
         setActiveMoveSlot(slotIndex);
         setMoveSearchTerm("");
-        setIsItemMenuOpen(false); 
+        setIsItemMenuOpen(false);
 
         const sortedMoves = await getSortedMoves(currentPokemon.name, pokemonStats);
         setAvailableMoves(sortedMoves);
@@ -165,14 +165,14 @@ export const usePokemonEditorState = (activeIndex) => {
         const newMoves = [...currentPokemon.moves];
         newMoves[activeMoveSlot] = moveName;
         setCurrentPokemon(prev => ({ ...prev, moves: newMoves }));
-        setActiveMoveSlot(null); 
+        setActiveMoveSlot(null);
     };
 
     const handleDone = (e) => {
         if (e) e.preventDefault();
         const pokemonToSave = {
             ...currentPokemon,
-            sprite: pokemonSprite 
+            sprite: pokemonSprite
         };
         updatePokemon(activeTab, pokemonToSave);
         navigate('/teambuilder');
