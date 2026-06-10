@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Modal, Button } from 'react-bootstrap';
 
 export default function RegisterPage() {
     const [username, setUsername] = useState('');
@@ -9,7 +8,6 @@ export default function RegisterPage() {
     const [email, setEmail] = useState('');
     const [sdName, setSdName] = useState('');
     const [error, setError] = useState('');
-    const [showModal, setShowModal] = useState(false);
     const { register } = useAuth();
     const navigate = useNavigate();
 
@@ -19,15 +17,10 @@ export default function RegisterPage() {
         
         const result = await register(username, password, email, sdName);
         if (result.success) {
-            setShowModal(true);
+            navigate('/login', { state: { registeredEmail: email } });
         } else {
             setError(result.error || 'Registration failed');
         }
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-        navigate('/login');
     };
 
     return (
@@ -85,25 +78,6 @@ export default function RegisterPage() {
                     <Link to="/login" className="auth-link">← VOLVER AL LOGIN</Link>
                 </div>
             </form>
-
-            <Modal show={showModal} onHide={handleCloseModal} centered backdrop="static">
-                <Modal.Header>
-                    <Modal.Title>Verifica tu correo</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>
-                        Tu cuenta ha sido creada exitosamente. Hemos enviado un correo a <strong>{email}</strong> con un enlace para verificar tu cuenta.
-                    </p>
-                    <p>
-                        Por favor, haz clic en el enlace para poder iniciar sesión.
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleCloseModal}>
-                        Ir al Login
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </div>
     );
 }

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Modal, Button } from 'react-bootstrap';
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
@@ -8,6 +9,19 @@ export default function LoginPage() {
     const [error, setError] = useState('');
     const { login } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const [showModal, setShowModal] = useState(false);
+    const [registeredEmail, setRegisteredEmail] = useState('');
+
+    useEffect(() => {
+        if (location.state?.registeredEmail) {
+            setRegisteredEmail(location.state.registeredEmail);
+            setShowModal(true);
+            // Clear state so modal doesn't show again on refresh
+            window.history.replaceState({}, document.title);
+        }
+    }, [location]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -59,6 +73,25 @@ export default function LoginPage() {
                     <Link to="/register" className="auth-link">REGISTER</Link>
                 </div>
             </form>
+
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Verifica tu correo</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>
+                        Tu cuenta ha sido creada exitosamente. Hemos enviado un correo a <strong>{registeredEmail}</strong> con un enlace para verificar tu cuenta.
+                    </p>
+                    <p>
+                        Por favor, haz clic en el enlace de tu correo para poder iniciar sesión.
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={() => setShowModal(false)}>
+                        Entendido
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 }
