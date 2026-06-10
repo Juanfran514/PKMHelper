@@ -10,8 +10,8 @@ const sendVerificationEmail = async (to, token) => {
         // Configuración forzando la IP directa
         const transporter = nodemailer.createTransport({
             host: smtpIp,
-            port: 465,
-            secure: true,
+            port: 587, // Puerto 587 en lugar del 465 suele estar desbloqueado en Railway
+            secure: false, // false significa que usará STARTTLS (seguro igualmente)
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
