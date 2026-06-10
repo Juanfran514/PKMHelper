@@ -31,7 +31,7 @@ export default function ForgotPasswordPage() {
         <div className="auth-card">
             <h2 className="auth-title">FORGOT PASSWORD</h2>
             <form className="auth-form" onSubmit={handleSubmit}>
-                <p className="text-muted text-center mb-4" style={{ color: '#aaa', fontSize: '0.9rem' }}>
+                <p className="text-center mb-4" style={{ color: '#f8f9fa', fontSize: '0.95rem' }}>
                     Introduce tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
                 </p>
 

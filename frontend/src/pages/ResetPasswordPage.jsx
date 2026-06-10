@@ -61,7 +61,7 @@ export default function ResetPasswordPage() {
         <div className="auth-card">
             <h2 className="auth-title">NUEVA CONTRASEÑA</h2>
             <form className="auth-form" onSubmit={handleSubmit}>
-                <p className="text-muted text-center mb-4" style={{ color: '#aaa', fontSize: '0.9rem' }}>
+                <p className="text-center mb-4" style={{ color: '#f8f9fa', fontSize: '0.95rem' }}>
                     Introduce tu nueva contraseña.
                 </p>
 
