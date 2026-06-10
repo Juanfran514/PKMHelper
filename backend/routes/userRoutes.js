@@ -114,4 +114,27 @@ router.get('/stats', verifyToken, async (req, res) => {
     }
 });
 
+// GET /api/users/matches/:id/log
+// Obtiene el log raw de una partida concreta
+router.get('/matches/:id/log', verifyToken, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const matchId = req.params.id;
+        
+        const result = await pool.query(
+            `SELECT log_raw FROM matches WHERE id = $1 AND user_id = $2`,
+            [matchId, userId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Match not found or unauthorized.' });
+        }
+
+        res.json({ log: result.rows[0].log_raw });
+    } catch (error) {
+        console.error('Error fetching match log:', error);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
 module.exports = router;

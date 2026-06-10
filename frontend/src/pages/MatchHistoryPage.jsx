@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/AuthStyles.css';
 
 export default function MatchHistoryPage() {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const [matches, setMatches] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -128,7 +130,7 @@ export default function MatchHistoryPage() {
                                             borderRadius: '6px',
                                             fontWeight: '500'
                                         }}
-                                        onClick={() => alert('¡El visor de replays estará disponible próximamente!')}
+                                        onClick={() => navigate(`/replay/${match.id}`)}
                                         onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
                                         onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.1)'}
                                     >

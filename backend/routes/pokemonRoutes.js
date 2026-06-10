@@ -6,7 +6,11 @@ const { pool } = require('../dbManager');
 router.get('/:pokemonName', async (req, res) => {
     try {
         const requestedName = req.params.pokemonName;
-        const normalize = (name) => name.toLowerCase().replace(/[- ]/g, '');
+        const normalize = (name) => {
+            let n = name.toLowerCase().replace(/[- ]/g, '');
+            if (n === 'meowstic') return 'meowsticmale';
+            return n;
+        };
         const normalizedRequest = normalize(requestedName);
 
         // Buscamos en PostgreSQL ignorando espacios y guiones y en minúsculas
@@ -43,7 +47,11 @@ router.get('/:pokemonName', async (req, res) => {
 router.get('/sprite/:pokemonName', async (req, res) => {
     try {
         const requestedName = req.params.pokemonName;
-        const normalize = (name) => name.toLowerCase().replace(/[- ]/g, '');
+        const normalize = (name) => {
+            let n = name.toLowerCase().replace(/[- ]/g, '');
+            if (n === 'meowstic') return 'meowsticmale';
+            return n;
+        };
         const normalizedRequest = normalize(requestedName);
 
         const query = `

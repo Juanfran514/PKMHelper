@@ -1,0 +1,165 @@
+.replay-container {
+    background: rgba(20, 20, 30, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.replay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.replay-player-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0e68c;
+}
+
+.replay-turn-indicator {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.replay-hud {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.player-side {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.active-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    text-align: center;
+    width: 100%;
+}
+
+.active-pokemon:hover {
+    transform: scale(1.02);
+}
+
+.pokemon-sprite {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.pokemon-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.hp-bar-container {
+    width: 100%;
+    height: 18px;
+    background: #333;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.hp-bar {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.hp-text {
+    font-size: 0.85rem;
+    color: #ccc;
+    text-align: right;
+}
+
+.fainted-text {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.replay-log-box {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: 200px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.log-event {
+    margin-bottom: 0.5rem;
+    border-left: 3px solid #5c6bc0;
+    padding-left: 10px;
+}
+
+.replay-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.replay-btn {
+    background: rgba(92, 107, 192, 0.2);
+    border: 1px solid rgba(92, 107, 192, 0.5);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.replay-btn:hover:not(:disabled) {
+    background: rgba(92, 107, 192, 0.4);
+    transform: translateY(-2px);
+}
+
+.replay-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
