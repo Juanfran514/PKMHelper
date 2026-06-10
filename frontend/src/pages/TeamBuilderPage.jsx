@@ -12,14 +12,12 @@ import '../styles/TeamBuilderPage.css';
 export default function TeambuilderPage() {
     const navigate = useNavigate();
     const location = useLocation();
-    const [selectedTeamId, setSelectedTeamId] = useState("");
+    const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
+    const { user } = useAuth();
+    const [selectedTeamId, setSelectedTeamId] = useState(() => teamData?.teamName || teamData?.id || "");
     const [savedTeams, setSavedTeams] = useState([]); // Aquí guardaremos los equipos del JSON
     const [showAnalytics, setShowAnalytics] = useState(false); // Estado del modal de analíticas
     const [showExport, setShowExport] = useState(false); // Estado del modal de exportar
-
-    // Traemos setTeamData para poder sobreescribir el equipo completo de golpe
-    const { teamData, setTeamData, updateTeamDetails, saveTeamToBackend } = useTeamContext();
-    const { user } = useAuth();
 
     // Comprobar si venimos con un teamId por URL (ej: al darle a VIEW desde Meta Teams)
     const queryParams = new URLSearchParams(location.search);
@@ -118,6 +116,7 @@ export default function TeambuilderPage() {
         }
 
         await saveTeamToBackend();
+        setSelectedTeamId(teamData.teamName || teamData.id);
 
         const currentUser = user?.username;
         if (!currentUser) return;
@@ -144,6 +143,7 @@ export default function TeambuilderPage() {
                 type: 'Private',
                 pokemon: Array(6).fill(null)
             });
+            setSelectedTeamId("");
             
             // Recargar equipos guardados
             const currentUser = user?.username;
