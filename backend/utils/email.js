@@ -1,4 +1,8 @@
 const nodemailer = require('nodemailer');
+const dns = require('dns');
+
+// Railway y otros hostings tienen problemas con IPv6 hacia Gmail. Forzamos IPv4.
+dns.setDefaultResultOrder('ipv4first');
 
 const sendVerificationEmail = async (to, token) => {
     try {
