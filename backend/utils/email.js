@@ -18,7 +18,9 @@ const sendVerificationEmail = async (to, token) => {
             },
             tls: {
                 rejectUnauthorized: false // Evita errores de certificado al usar IP en lugar de dominio
-            }
+            },
+            logger: true, // Habilita logs completos de Nodemailer
+            debug: true   // Habilita el modo debug de Nodemailer
         });
 
         const verificationLink = `http://localhost:5173/verify-email?token=${token}`;
