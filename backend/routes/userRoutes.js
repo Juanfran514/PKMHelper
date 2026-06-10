@@ -71,7 +71,7 @@ router.get('/matches', verifyToken, async (req, res) => {
     try {
         const userId = req.user.id;
         const result = await pool.query(
-            `SELECT m.id, m.opponent_name, m.result, m.played_at, m.elo_change, t.team_name 
+            `SELECT m.id, m.opponent_name, m.result, m.played_at, t.team_name
              FROM matches m 
              LEFT JOIN teams t ON m.team_id = t.id 
              WHERE m.user_id = $1 

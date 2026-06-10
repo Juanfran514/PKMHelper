@@ -141,7 +141,7 @@ const getMetaTeams = async (req, res) => {
             paramIndex++;
         }
 
-        query += ` ORDER BY likes DESC NULLS LAST`;
+        query += ` ORDER BY created_at DESC`;
 
         const dbRes = await pool.query(query, values);
 
@@ -150,7 +150,6 @@ const getMetaTeams = async (req, res) => {
             trainerName: row.trainer_name || "Unknown Trainer",
             teamName: row.team_name,
             archetype: row.archetype,
-            likes: row.likes,
             pokemon: row.pokemon_list,
             createdAt: row.created_at
         }));

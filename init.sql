@@ -22,18 +22,9 @@ CREATE TABLE pokedex (
     "spDef" INTEGER,
     spe INTEGER,
     sprite VARCHAR,
-    legal_moves JSONB,
-    abilities JSONB,
-    legal_items JSONB
+    abilities JSONB
 );
 
-CREATE TABLE moves (
-    name VARCHAR PRIMARY KEY,
-    type VARCHAR,
-    category VARCHAR,
-    power INTEGER,
-    accuracy INTEGER
-);
 
 -- ====================================================================
 -- 2. TABLAS QUE DEPENDEN DIRECTAMENTE DE LAS ANTERIORES
@@ -62,8 +53,7 @@ CREATE TABLE teams (
     is_scrapped BOOLEAN,
     pokemon_list JSONB,
     created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    likes INTEGER DEFAULT 0
+    updated_at TIMESTAMP
 );
 
 CREATE TABLE pikalytics_stats (
@@ -79,13 +69,6 @@ CREATE TABLE pikalytics_stats (
 -- 3. TABLAS QUE DEPENDEN DE LOS EQUIPOS
 -- ====================================================================
 
-CREATE TABLE team_likes (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES "user"(id) ON DELETE CASCADE,
-    team_group_id VARCHAR,
-    created_at TIMESTAMP,
-    UNIQUE(user_id, team_group_id)
-);
 
 CREATE TABLE team_pokemon_stats (
     id SERIAL PRIMARY KEY,
@@ -113,6 +96,5 @@ CREATE TABLE matches (
     opponent_name VARCHAR,
     result VARCHAR,
     log_raw JSONB,
-    elo_change INTEGER,
     played_at TIMESTAMP
 );

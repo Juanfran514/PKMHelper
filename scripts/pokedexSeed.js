@@ -40,16 +40,14 @@ async function runPokedexScraper() {
 
                 const sprite = data.sprites?.front_default || "";
 
-                const legal_moves = data.moves ? data.moves.map(m => m.move.name) : [];
                 const abilities = data.abilities ? data.abilities.map(a => a.ability.name) : [];
-                const legal_items = data.held_items ? data.held_items.map(i => i.item.name) : [];
 
                 const query = `
                     INSERT INTO pokedex (
                         id, name, showdown_name, hp, atk, def, "spAtk", "spDef", spe, 
-                        sprite, legal_moves, abilities, legal_items
+                        sprite, abilities
                     ) VALUES (
-                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13
+                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
                     )
                     ON CONFLICT (id) DO UPDATE SET
                         name = EXCLUDED.name,
@@ -61,14 +59,12 @@ async function runPokedexScraper() {
                         "spDef" = EXCLUDED."spDef",
                         spe = EXCLUDED.spe,
                         sprite = EXCLUDED.sprite,
-                        legal_moves = EXCLUDED.legal_moves,
-                        abilities = EXCLUDED.abilities,
-                        legal_items = EXCLUDED.legal_items;
+                        abilities = EXCLUDED.abilities;
                 `;
 
                 const values = [
                     id, name, showdown_name, hp, atk, def, spAtk, spDef, spe,
-                    sprite, JSON.stringify(legal_moves), JSON.stringify(abilities), JSON.stringify(legal_items)
+                    sprite, JSON.stringify(abilities)
                 ];
 
                 await pool.query(query, values);

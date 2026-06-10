@@ -128,7 +128,6 @@ export default function MetaTeamsPage() {
                                                 <span className="standing-item">{fallbackSource}</span>
                                             );
                                         })()}
-                                        {team.likes > 0 && <span className="standing-item" style={{ color: '#a0a0b5', fontSize: '0.8rem' }}>{team.likes} Likes</span>}
                                     </div>
                                 </div>
                                 <button className="view-btn" onClick={() => navigate(`/teambuilder?teamId=${team.id}`)}>
