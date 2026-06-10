@@ -62,7 +62,7 @@ export default function LoginPage() {
                 </div>
 
                 <div className="auth-links">
-                    <span className="auth-link">FORGOT PASSWORD</span>
+                    <Link to="/forgot-password" className="auth-link">FORGOT PASSWORD</Link>
                 </div>
 
                 {error && <div className="auth-error">{error}</div>}

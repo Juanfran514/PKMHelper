@@ -6,7 +6,7 @@ const { pool } = require('../dbManager');
 
 // Obtener el secreto de las variables de entorno, o usar un default para desarrollo
 const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_jwt_key_for_dev';
-const { sendVerificationEmail } = require('../utils/mailer');
+const { sendVerificationEmail, sendPasswordResetEmail } = require('../utils/mailer');
 
 // REGISTRO
 router.post('/register', async (req, res) => {
@@ -170,6 +170,78 @@ router.post('/login', async (req, res) => {
 
     } catch (error) {
         console.error('Error in /login:', error);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
+// FORGOT PASSWORD
+router.post('/forgot-password', async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).json({ error: 'Email is required.' });
+        }
+
+        const result = await pool.query('SELECT id, username, password FROM "user" WHERE email = $1', [email]);
+        if (result.rows.length === 0) {
+            // Return 200 even if not found to prevent email enumeration
+            return res.status(200).json({ message: 'If an account with that email exists, we have sent a password reset link.' });
+        }
+
+        const user = result.rows[0];
+
+        // Create a JWT that incorporates the user's current password hash.
+        // If the password changes, this token becomes invalid.
+        const secret = JWT_SECRET + user.password;
+        const resetToken = jwt.sign({ id: user.id, email }, secret, { expiresIn: '15m' });
+
+        await sendPasswordResetEmail(email, user.username, resetToken);
+
+        res.status(200).json({ message: 'If an account with that email exists, we have sent a password reset link.' });
+    } catch (error) {
+        console.error('Error in /forgot-password:', error);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
+// RESET PASSWORD
+router.post('/reset-password', async (req, res) => {
+    try {
+        const { token, newPassword } = req.body;
+        if (!token || !newPassword) {
+            return res.status(400).json({ error: 'Token and new password are required.' });
+        }
+
+        // Decode to get the user ID without verifying yet
+        const decoded = jwt.decode(token);
+        if (!decoded || !decoded.id) {
+            return res.status(400).json({ error: 'Invalid token.' });
+        }
+
+        const result = await pool.query('SELECT id, password FROM "user" WHERE id = $1', [decoded.id]);
+        if (result.rows.length === 0) {
+            return res.status(400).json({ error: 'Invalid token or user not found.' });
+        }
+
+        const user = result.rows[0];
+        const secret = JWT_SECRET + user.password;
+
+        // Verify the token with the custom secret
+        try {
+            jwt.verify(token, secret);
+        } catch (err) {
+            return res.status(400).json({ error: 'Token is invalid or has expired.' });
+        }
+
+        // Hash new password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        await pool.query('UPDATE "user" SET password = $1 WHERE id = $2', [hashedPassword, user.id]);
+
+        res.status(200).json({ message: 'Password reset successfully. You can now login.' });
+    } catch (error) {
+        console.error('Error in /reset-password:', error);
         res.status(500).json({ error: 'Internal server error.' });
     }
 });
