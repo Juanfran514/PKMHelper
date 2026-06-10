@@ -20,11 +20,13 @@ const VerifyEmailPage = () => {
 
         const verifyEmail = async () => {
             try {
-                // Ensure to point to the correct backend API URL if not proxied
-                // Assuming VITE_API_URL or relative path is used across the app
-                const apiUrl = import.meta.env.VITE_API_URL || '';
+                // Ensure to point to the correct backend API URL
+                const apiUrl = import.meta.env.VITE_API_URL || 'https://pkmhelper-production.up.railway.app/api';
                 
-                const response = await axios.get(`${apiUrl}/api/auth/verify?token=${token}`);
+                // Si la URL ya termina en /api (como el default de arriba), no la duplicamos
+                const endpoint = apiUrl.endsWith('/api') ? '/auth/verify' : '/api/auth/verify';
+
+                const response = await axios.get(`${apiUrl}${endpoint}?token=${token}`);
                 
                 if (response.status === 200) {
                     setStatus('success');
