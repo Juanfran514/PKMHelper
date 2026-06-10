@@ -130,7 +130,7 @@ export default function TeambuilderPage() {
     };
     const handleDelete = async () => {
         if (!teamData.id) return;
-        
+
         if (!window.confirm("¿Seguro que quieres borrar este equipo? Se perderán permanentemente el equipo, sus versiones y sus estadísticas de uso.")) return;
 
         try {
@@ -144,7 +144,7 @@ export default function TeambuilderPage() {
                 pokemon: Array(6).fill(null)
             });
             setSelectedTeamId("");
-            
+
             // Recargar equipos guardados
             const currentUser = user?.username;
             if (currentUser) {
@@ -154,7 +154,7 @@ export default function TeambuilderPage() {
                         setSavedTeams(teamsArray);
                     });
             }
-            
+
             navigate('/teambuilder');
         } catch (error) {
             console.error("Error de red:", error);
@@ -173,6 +173,10 @@ export default function TeambuilderPage() {
                         onChange={handleTeamSelect}
                     >
                         <option value="">Crear Nuevo Equipo</option>
+                        {/* Mostrar opción temporal si el equipo seleccionado no está guardado */}
+                        {selectedTeamId && !savedTeams.some(t => (t.teamName || t.id) === selectedTeamId) && (
+                            <option value={selectedTeamId}>{teamData?.teamName || selectedTeamId} (Pendiente)</option>
+                        )}
                         {/* 3. Mapeamos los equipos reales desde el backend */}
                         {savedTeams.map((team, idx) => (
                             <option key={team.id || idx} value={team.teamName || team.id}>
@@ -204,26 +208,26 @@ export default function TeambuilderPage() {
 
                 <div style={{ display: 'flex', gap: '10px' }}>
                     {teamData.id && (
-                        <Button 
-                            variant="secondary" 
-                            onClick={() => setShowAnalytics(true)} 
+                        <Button
+                            variant="secondary"
+                            onClick={() => setShowAnalytics(true)}
                             style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                         >
                             Ver Analíticas
                         </Button>
                     )}
                     {teamData.id && (
-                        <Button 
-                            variant="secondary" 
-                            onClick={handleDelete} 
+                        <Button
+                            variant="secondary"
+                            onClick={handleDelete}
                             style={{ background: 'rgba(220, 38, 38, 0.2)', color: '#ef4444', border: '1px solid #ef4444' }}
                         >
                             Borrar
                         </Button>
                     )}
-                    <Button 
-                        variant="secondary" 
-                        onClick={() => setShowExport(true)} 
+                    <Button
+                        variant="secondary"
+                        onClick={() => setShowExport(true)}
                         style={{ background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid #555' }}
                     >
                         Exportar
@@ -239,10 +243,10 @@ export default function TeambuilderPage() {
                 onSlotClick={handleSlotClick}
             />
 
-            <TeamAnalyticsModal 
-                show={showAnalytics} 
-                onHide={() => setShowAnalytics(false)} 
-                teamId={teamData.teamGroupId || teamData.id} 
+            <TeamAnalyticsModal
+                show={showAnalytics}
+                onHide={() => setShowAnalytics(false)}
+                teamId={teamData.teamGroupId || teamData.id}
             />
 
             <ExportSmogonModal
