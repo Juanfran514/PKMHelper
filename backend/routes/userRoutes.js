@@ -98,13 +98,33 @@ router.get('/stats', verifyToken, async (req, res) => {
         );
         
         let winrate = "0%";
-        let elo = 1500; // Por defecto
+        let elo = 1000; // Por defecto
         let glicko = 1600; // Por defecto
         
         if (result.rows.length > 0 && result.rows[0].total_matches > 0) {
             const wins = parseInt(result.rows[0].total_wins) || 0;
             const matches = parseInt(result.rows[0].total_matches) || 0;
             winrate = Math.round((wins / matches) * 100) + "%";
+        }
+
+        // Obtener el sdName del usuario para buscar su ELO real en Showdown
+        try {
+            const userResult = await pool.query('SELECT "sdName" FROM "user" WHERE id = $1', [userId]);
+            if (userResult.rows.length > 0 && userResult.rows[0].sdName) {
+                const sdName = userResult.rows[0].sdName;
+                // Limpiar el sdName (Showdown usa minúsculas y sin espacios/símbolos en las URLs de sus JSONs)
+                const cleanSdName = sdName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                
+                const sdResponse = await fetch(`https://pokemonshowdown.com/users/${cleanSdName}.json`);
+                if (sdResponse.ok) {
+                    const sdData = await sdResponse.json();
+                    if (sdData.ratings && sdData.ratings["gen9championsvgc2026regma"]) {
+                        elo = Math.trunc(sdData.ratings["gen9championsvgc2026regma"].elo);
+                    }
+                }
+            }
+        } catch (fetchErr) {
+            console.error("Error fetching showdown elo:", fetchErr);
         }
 
         res.json({ elo, winrate, glicko });

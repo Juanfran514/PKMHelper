@@ -13,7 +13,7 @@ import '../styles/DashboardPage.css';
 
 const DashboardPage = () => {
   const { query, setQuery, datosFiltrados } = usePokemonFilter(PokemonData);
-  const [stats, setStats] = useState({ elo: "1500", winrate: "0%" });
+  const [stats, setStats] = useState({ elo: "1000", winrate: "0%" });
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -30,7 +30,14 @@ const DashboardPage = () => {
         console.error("Error fetching stats:", err);
       }
     };
+
+    // Llamada inicial
     fetchStats();
+
+    // Actualizar cada minuto (60000 ms)
+    const intervalId = setInterval(fetchStats, 60000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
