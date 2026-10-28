@@ -1,0 +1,11 @@
+.slot-grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0; 
+    height: 450px; 
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}

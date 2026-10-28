@@ -1,0 +1,4515 @@
+[
+  {
+    "name": "Urshifu-Rapid-Strike",
+    "usage": "46.29%",
+    "set": {
+      "moves": {
+        "Surging Strikes": "99.997%",
+        "Close Combat": "98.769%",
+        "Aqua Jet": "88.913%",
+        "Detect": "46.652%",
+        "U-turn": "29.127%",
+        "Protect": "24.589%",
+        "Other": "11.952%"
+      },
+      "teammates": {
+        "Incineroar": "51.939%",
+        "Raging Bolt": "43.914%",
+        "Flutter Mane": "41.944%",
+        "Tornadus": "39.740%",
+        "Rillaboom": "36.023%",
+        "Landorus": "30.131%",
+        "Chien-Pao": "27.087%",
+        "Ogerpon-Hearthflame": "25.704%",
+        "Amoonguss": "23.974%",
+        "Indeedee-F": "18.659%"
+      },
+      "items": {
+        "Mystic Water": "34.255%",
+        "Focus Sash": "25.021%",
+        "Choice Scarf": "23.345%",
+        "Safety Goggles": "6.420%",
+        "Choice Band": "4.909%",
+        "Life Orb": "4.123%",
+        "Other": "1.928%"
+      },
+      "ability": {
+        "Unseen Fist": "100.000%"
+      },
+      "evs": {
+        "Adamant": "0//252//4//0//0//252",
+        "Jolly": "0//252//0//0//4//248"
+      }
+    }
+  },
+  {
+    "name": "Flutter Mane",
+    "usage": "43.26%",
+    "set": {
+      "moves": {
+        "Moonblast": "96.526%",
+        "Shadow Ball": "65.642%",
+        "Dazzling Gleam": "64.809%",
+        "Icy Wind": "45.279%",
+        "Protect": "40.707%",
+        "Power Gem": "21.276%",
+        "Taunt": "21.108%",
+        "Thunder Wave": "17.192%",
+        "Substitute": "6.231%",
+        "Pain Split": "4.457%",
+        "Other": "16.772%"
+      },
+      "teammates": {
+        "Raging Bolt": "49.305%",
+        "Incineroar": "45.997%",
+        "Urshifu-Rapid-Strike": "44.881%",
+        "Tornadus": "38.578%",
+        "Ogerpon-Hearthflame": "25.239%",
+        "Rillaboom": "24.825%",
+        "Ogerpon-Wellspring": "21.223%",
+        "Urshifu": "19.007%",
+        "Amoonguss": "18.740%",
+        "Farigiraf": "16.021%"
+      },
+      "items": {
+        "Booster Energy": "52.412%",
+        "Choice Specs": "41.734%",
+        "Focus Sash": "3.614%",
+        "Other": "2.240%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Timid": "212//0//132//4//4//156",
+        "Bold": "244//0//236//4//4//20",
+        "Modest": "116//0//76//116//4//196"
+      }
+    }
+  },
+  {
+    "name": "Raging Bolt",
+    "usage": "36.62%",
+    "set": {
+      "moves": {
+        "Thunderclap": "97.169%",
+        "Dragon Pulse": "58.032%",
+        "Protect": "47.751%",
+        "Draco Meteor": "39.060%",
+        "Thunderbolt": "37.283%",
+        "Snarl": "36.695%",
+        "Electroweb": "35.305%",
+        "Calm Mind": "35.044%",
+        "Other": "13.660%"
+      },
+      "teammates": {
+        "Flutter Mane": "58.240%",
+        "Urshifu-Rapid-Strike": "55.505%",
+        "Incineroar": "53.301%",
+        "Rillaboom": "38.190%",
+        "Landorus": "29.098%",
+        "Chien-Pao": "27.251%",
+        "Tornadus": "25.458%",
+        "Ogerpon-Wellspring": "23.660%",
+        "Ogerpon-Hearthflame": "21.416%",
+        "Urshifu": "14.292%"
+      },
+      "items": {
+        "Assault Vest": "50.903%",
+        "Leftovers": "22.444%",
+        "Booster Energy": "18.865%",
+        "Life Orb": "3.510%",
+        "Other": "4.278%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Timid": "68//0//4//228//4//204",
+        "Modest": "244//0//60//100//20//84"
+      }
+    }
+  },
+  {
+    "name": "Incineroar",
+    "usage": "35.95%",
+    "set": {
+      "moves": {
+        "Fake Out": "99.777%",
+        "Flare Blitz": "84.299%",
+        "Knock Off": "83.333%",
+        "Parting Shot": "72.845%",
+        "U-turn": "25.979%",
+        "Taunt": "18.775%",
+        "Other": "14.993%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "66.874%",
+        "Flutter Mane": "55.347%",
+        "Raging Bolt": "54.296%",
+        "Rillaboom": "38.283%",
+        "Amoonguss": "27.513%",
+        "Tornadus": "24.916%",
+        "Landorus": "24.855%",
+        "Chien-Pao": "22.556%",
+        "Ogerpon-Hearthflame": "21.289%",
+        "Ursaluna": "14.172%"
+      },
+      "items": {
+        "Safety Goggles": "35.103%",
+        "Sitrus Berry": "26.935%",
+        "Assault Vest": "25.456%",
+        "Ability Shield": "4.252%",
+        "Rocky Helmet": "3.968%",
+        "Other": "4.287%"
+      },
+      "ability": {
+        "Intimidate": "99.847%",
+        "Blaze": "0.153%"
+      },
+      "evs": {
+        "Jolly": "244//4//4//0//20//236",
+        "Careful": "252//4//140//0//76//36",
+        "Relaxed": "252//0//188//0//68//0",
+        "Adamant": "172//196//4//0//60//76"
+      }
+    }
+  },
+  {
+    "name": "Tornadus",
+    "usage": "32.71%",
+    "set": {
+      "moves": {
+        "Tailwind": "99.952%",
+        "Bleakwind Storm": "99.156%",
+        "Protect": "63.212%",
+        "Rain Dance": "43.480%",
+        "Taunt": "33.181%",
+        "Sunny Day": "30.943%",
+        "Icy Wind": "24.614%",
+        "Other": "5.462%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "56.233%",
+        "Flutter Mane": "51.016%",
+        "Ogerpon-Hearthflame": "28.601%",
+        "Raging Bolt": "28.501%",
+        "Indeedee-F": "28.017%",
+        "Urshifu": "27.623%",
+        "Iron Crown": "27.419%",
+        "Incineroar": "27.383%",
+        "Landorus": "26.093%",
+        "Amoonguss": "19.112%"
+      },
+      "items": {
+        "Covert Cloak": "43.657%",
+        "Focus Sash": "18.417%",
+        "Mental Herb": "12.352%",
+        "Rocky Helmet": "7.176%",
+        "Sitrus Berry": "7.056%",
+        "Sharp Beak": "6.785%",
+        "Other": "4.557%"
+      },
+      "ability": {
+        "Prankster": "99.992%",
+        "Defiant": "0.008%"
+      },
+      "evs": {
+        "Bold": "252//0//164//4//84//0",
+        "Timid": "4//0//0//252//0//252",
+        "Modest": "244//0//204//36//4//20"
+      }
+    }
+  },
+  {
+    "name": "Landorus",
+    "usage": "23.68%",
+    "set": {
+      "moves": {
+        "Protección": "99.277%",
+        "Bomba Lodo": "99.029%",
+        "Tierra Viva": "98.539%",
+        "Sandsear Storm": "60.821%",
+        "Sustituto": "34.246%",
+        "Other": "8.087%"
+      },
+      "teammates": {
+        "Urshifu": "58.890%",
+        "Raging Bolt": "44.994%",
+        "Incineroar": "37.730%",
+        "Tornadus": "36.039%",
+        "Indeedee": "26.075%",
+        "Iron Crown": "26.025%",
+        "Rillaboom": "25.704%",
+        "Flutter Mane": "25.509%",
+        "Ogerpon-Wellspring": "23.159%",
+        "Chien-Pao": "18.226%"
+      },
+      "items": {
+        "Vidasfera": "99.076%",
+        "Other": "0.924%"
+      },
+      "ability": {
+        "Potencia Bruta": "99.478%",
+        "Poder Arena": "0.522%"
+      },
+      "evs": {
+        "Modesta": "52//0//4//196//4//252",
+        "Miedosa": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Rillaboom",
+    "usage": "22.22%",
+    "set": {
+      "moves": {
+        "Fake Out": "98.970%",
+        "Grassy Glide": "97.668%",
+        "Wood Hammer": "94.341%",
+        "U-turn": "48.269%",
+        "High Horsepower": "46.096%",
+        "Other": "14.655%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "75.038%",
+        "Raging Bolt": "62.940%",
+        "Incineroar": "61.936%",
+        "Flutter Mane": "48.328%",
+        "Chien-Pao": "40.020%",
+        "Ogerpon-Hearthflame": "34.333%",
+        "Landorus": "27.396%",
+        "Tornadus": "19.718%",
+        "Gholdengo": "11.289%",
+        "Regidrago": "8.657%"
+      },
+      "items": {
+        "Assault Vest": "87.869%",
+        "Miracle Seed": "3.281%",
+        "Clear Amulet": "2.415%",
+        "Sitrus Berry": "1.409%",
+        "Loaded Dice": "1.223%",
+        "Other": "3.802%"
+      },
+      "ability": {
+        "Grassy Surge": "99.837%",
+        "Overgrow": "0.163%"
+      },
+      "evs": {
+        "Adamant": "188//116//4//0//44//156"
+      }
+    }
+  },
+  {
+    "name": "Chien-Pao",
+    "usage": "20.34%",
+    "set": {
+      "moves": {
+        "Protect": "98.000%",
+        "Sucker Punch": "90.943%",
+        "Icicle Crash": "56.194%",
+        "Sacred Sword": "53.816%",
+        "Ice Spinner": "43.284%",
+        "Ice Shard": "20.374%",
+        "Icy Wind": "20.229%",
+        "Other": "17.161%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "61.649%",
+        "Raging Bolt": "49.069%",
+        "Rillaboom": "43.726%",
+        "Incineroar": "39.871%",
+        "Dragonite": "36.696%",
+        "Flutter Mane": "30.706%",
+        "Landorus": "21.224%",
+        "Amoonguss": "17.081%",
+        "Ogerpon-Wellspring": "16.721%",
+        "Dondozo": "15.738%"
+      },
+      "items": {
+        "Focus Sash": "88.943%",
+        "Life Orb": "6.353%",
+        "Other": "4.705%"
+      },
+      "ability": {
+        "Sword of Ruin": "100.000%"
+      },
+      "evs": {
+        "Adamant": "4//252//0//0//0//252",
+        "Jolly": "0//252//0//0//4//248"
+      }
+    }
+  },
+  {
+    "name": "Ogerpon-Hearthflame",
+    "usage": "18.76%",
+    "set": {
+      "moves": {
+        "Ivy Cudgel": "99.975%",
+        "Spiky Shield": "97.978%",
+        "Follow Me": "64.052%",
+        "Wood Hammer": "56.485%",
+        "Grassy Glide": "32.757%",
+        "Swords Dance": "21.774%",
+        "Stomping Tantrum": "8.777%",
+        "Other": "18.201%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "63.421%",
+        "Flutter Mane": "58.198%",
+        "Tornadus": "49.870%",
+        "Raging Bolt": "41.806%",
+        "Incineroar": "40.797%",
+        "Rillaboom": "40.667%",
+        "Indeedee-F": "24.659%",
+        "Iron Crown": "23.932%",
+        "Farigiraf": "21.362%",
+        "Urshifu": "14.463%"
+      },
+      "items": {
+        "Hearthflame Mask": "100.000%"
+      },
+      "ability": {
+        "Mold Breaker": "100.000%"
+      },
+      "evs": {
+        "Jolly": "36//212//4//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Amoonguss",
+    "usage": "17.90%",
+    "set": {
+      "moves": {
+        "Spore": "99.831%",
+        "Rage Powder": "99.608%",
+        "Protect": "80.628%",
+        "Sludge Bomb": "74.259%",
+        "Pollen Puff": "30.853%",
+        "Other": "14.822%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "62.010%",
+        "Incineroar": "55.271%",
+        "Flutter Mane": "45.300%",
+        "Tornadus": "34.935%",
+        "Raging Bolt": "25.410%",
+        "Landorus": "22.801%",
+        "Archaludon": "20.452%",
+        "Pelipper": "19.999%",
+        "Chien-Pao": "19.412%",
+        "Ursaluna": "16.884%"
+      },
+      "items": {
+        "Rocky Helmet": "60.845%",
+        "Sitrus Berry": "26.422%",
+        "Mental Herb": "6.619%",
+        "Covert Cloak": "1.832%",
+        "Other": "4.283%"
+      },
+      "ability": {
+        "Regenerator": "98.381%",
+        "Effect Spore": "1.619%"
+      },
+      "evs": {
+        "Bold": "252//0//120//0//132//0",
+        "Relaxed": "236//0//156//0//116//0"
+      }
+    }
+  },
+  {
+    "name": "Ogerpon-Wellspring",
+    "usage": "17.69%",
+    "set": {
+      "moves": {
+        "Ivy Cudgel": "99.959%",
+        "Spiky Shield": "99.080%",
+        "Follow Me": "95.555%",
+        "Horn Leech": "79.493%",
+        "Wood Hammer": "14.040%",
+        "Other": "11.872%"
+      },
+      "teammates": {
+        "Flutter Mane": "51.884%",
+        "Raging Bolt": "48.968%",
+        "Tornadus": "31.205%",
+        "Landorus": "30.997%",
+        "Urshifu": "30.821%",
+        "Incineroar": "26.398%",
+        "Chien-Pao": "19.218%",
+        "Arcanine-Hisui": "16.811%",
+        "Heatran": "16.715%",
+        "Dragonite": "14.529%"
+      },
+      "items": {
+        "Wellspring Mask": "100.000%"
+      },
+      "ability": {
+        "Water Absorb": "100.000%"
+      },
+      "evs": {
+        "Adamant": "228//76//4//0//12//188",
+        "Jolly": "252//4//0//0//0//252",
+        "Impish": "252//4//204//0//28//20"
+      }
+    }
+  },
+  {
+    "name": "Indeedee-F",
+    "usage": "15.73%",
+    "set": {
+      "moves": {
+        "Follow Me": "99.788%",
+        "Helping Hand": "85.253%",
+        "Trick Room": "72.023%",
+        "Dazzling Gleam": "51.457%",
+        "Protect": "28.845%",
+        "Imprison": "25.508%",
+        "Psychic": "13.789%",
+        "Healing Wish": "10.976%",
+        "Other": "12.361%"
+      },
+      "teammates": {
+        "Iron Crown": "70.745%",
+        "Tornadus": "58.279%",
+        "Urshifu-Rapid-Strike": "54.923%",
+        "Landorus": "39.270%",
+        "Ogerpon-Hearthflame": "29.417%",
+        "Ogerpon-Cornerstone": "24.060%",
+        "Urshifu": "23.296%",
+        "Torkoal": "20.907%",
+        "Hatterene": "20.243%",
+        "Farigiraf": "12.918%"
+      },
+      "items": {
+        "Rocky Helmet": "77.321%",
+        "Safety Goggles": "7.893%",
+        "Psychic Seed": "7.116%",
+        "Mental Herb": "4.061%",
+        "Other": "3.608%"
+      },
+      "ability": {
+        "Psychic Surge": "98.851%",
+        "Synchronize": "0.999%",
+        "Own Tempo": "0.150%"
+      },
+      "evs": {
+        "Bold": "244//0//196//0//0//68",
+        "Relaxed": "252//0//248//0//4//0"
+      }
+    }
+  },
+  {
+    "name": "Urshifu",
+    "usage": "14.19%",
+    "set": {
+      "moves": {
+        "Wicked Blow": "99.992%",
+        "Close Combat": "99.460%",
+        "Sucker Punch": "96.812%",
+        "Detect": "47.669%",
+        "U-turn": "17.121%",
+        "Poison Jab": "14.940%",
+        "Iron Head": "10.876%",
+        "Other": "13.130%"
+      },
+      "teammates": {
+        "Tornadus": "63.693%",
+        "Flutter Mane": "57.956%",
+        "Farigiraf": "41.111%",
+        "Ogerpon-Wellspring": "38.442%",
+        "Raging Bolt": "36.893%",
+        "Indeedee-F": "25.823%",
+        "Torkoal": "20.527%",
+        "Ogerpon-Hearthflame": "19.126%",
+        "Heatran": "16.990%",
+        "Landorus": "16.929%"
+      },
+      "items": {
+        "Focus Sash": "51.042%",
+        "Choice Band": "38.073%",
+        "Life Orb": "2.804%",
+        "Choice Scarf": "2.553%",
+        "Black Glasses": "2.348%",
+        "Other": "3.180%"
+      },
+      "ability": {
+        "Unseen Fist": "100.000%"
+      },
+      "evs": {
+        "Adamant": "0//252//0//0//4//252",
+        "Jolly": "0//252//0//0//4//248",
+        "Brave": "252//252//0//0//0//4"
+      }
+    }
+  },
+  {
+    "name": "Farigiraf",
+    "usage": "13.18%",
+    "set": {
+      "moves": {
+        "Trick Room": "99.052%",
+        "Hyper Voice": "83.649%",
+        "Protect": "62.367%",
+        "Psychic": "60.103%",
+        "Helping Hand": "27.788%",
+        "Expanding Force": "14.687%",
+        "Psyshock": "13.414%",
+        "Dazzling Gleam": "12.890%",
+        "Imprison": "11.559%",
+        "Other": "14.490%"
+      },
+      "teammates": {
+        "Flutter Mane": "52.595%",
+        "Urshifu": "44.263%",
+        "Incineroar": "36.176%",
+        "Tornadus": "34.723%",
+        "Torkoal": "33.997%",
+        "Ogerpon-Hearthflame": "30.414%",
+        "Ursaluna": "24.206%",
+        "Raging Bolt": "21.440%",
+        "Urshifu-Rapid-Strike": "19.950%",
+        "Ursaluna-Bloodmoon": "17.509%"
+      },
+      "items": {
+        "Throat Spray": "54.203%",
+        "Sitrus Berry": "24.660%",
+        "Psychic Seed": "8.683%",
+        "Safety Goggles": "7.068%",
+        "Mental Herb": "2.221%",
+        "Other": "3.164%"
+      },
+      "ability": {
+        "Armor Tail": "98.713%",
+        "Cud Chew": "0.865%",
+        "Sap Sipper": "0.422%"
+      },
+      "evs": {
+        "Modest": "108//0//60//164//68//108",
+        "Quiet": "100//0//52//164//188//0",
+        "Bold": "180//0//172//0//156//0"
+      }
+    }
+  },
+  {
+    "name": "Iron Crown",
+    "usage": "11.37%",
+    "set": {
+      "moves": {
+        "Tachyon Cutter": "99.751%",
+        "Expanding Force": "99.055%",
+        "Protect": "98.503%",
+        "Tera Blast": "59.226%",
+        "Calm Mind": "32.650%",
+        "Other": "10.815%"
+      },
+      "teammates": {
+        "Indeedee-F": "97.814%",
+        "Tornadus": "78.859%",
+        "Urshifu-Rapid-Strike": "73.087%",
+        "Landorus": "54.192%",
+        "Ogerpon-Hearthflame": "39.474%",
+        "Ogerpon-Cornerstone": "32.649%",
+        "Regidrago": "13.708%",
+        "Urshifu": "12.041%",
+        "Ogerpon-Wellspring": "11.993%",
+        "Whimsicott": "10.780%"
+      },
+      "items": {
+        "Booster Energy": "96.651%",
+        "Other": "3.349%"
+      },
+      "ability": {
+        "Quark Drive": "100.000%"
+      },
+      "evs": {
+        "Modest": "252//0//20//220//4//12",
+        "Timid": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Dragonite",
+    "usage": "10.14%",
+    "set": {
+      "moves": {
+        "Extreme Speed": "93.621%",
+        "Outrage": "55.578%",
+        "Stomping Tantrum": "44.519%",
+        "Aerial Ace": "42.969%",
+        "Iron Head": "37.985%",
+        "Protect": "29.001%",
+        "Scale Shot": "27.635%",
+        "Aqua Jet": "11.761%",
+        "Ice Spinner": "8.930%",
+        "Haze": "8.546%",
+        "Earthquake": "7.767%",
+        "Tailwind": "6.302%",
+        "Thunder Punch": "6.092%",
+        "Other": "19.294%"
+      },
+      "teammates": {
+        "Chien-Pao": "73.632%",
+        "Dondozo": "39.354%",
+        "Tatsugiri": "34.183%",
+        "Flutter Mane": "30.358%",
+        "Urshifu-Rapid-Strike": "26.302%",
+        "Ogerpon-Wellspring": "25.365%",
+        "Gouging Fire": "23.017%",
+        "Amoonguss": "18.025%",
+        "Ting-Lu": "18.004%",
+        "Raging Bolt": "17.382%"
+      },
+      "items": {
+        "Choice Band": "66.540%",
+        "Loaded Dice": "26.075%",
+        "Life Orb": "2.876%",
+        "Other": "4.508%"
+      },
+      "ability": {
+        "Inner Focus": "72.130%",
+        "Multiscale": "27.870%"
+      },
+      "evs": {
+        "Adamant": "252//248//0//0//0//4"
+      }
+    }
+  },
+  {
+    "name": "Gholdengo",
+    "usage": "9.16%",
+    "set": {
+      "moves": {
+        "Make It Rain": "99.968%",
+        "Shadow Ball": "98.931%",
+        "Protect": "67.708%",
+        "Nasty Plot": "67.569%",
+        "Trick": "25.775%",
+        "Power Gem": "17.712%",
+        "Dazzling Gleam": "14.702%",
+        "Other": "7.635%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "53.603%",
+        "Incineroar": "40.061%",
+        "Tornadus": "36.178%",
+        "Regidrago": "34.879%",
+        "Rillaboom": "27.376%",
+        "Whimsicott": "22.485%",
+        "Ogerpon-Wellspring": "20.905%",
+        "Chien-Pao": "20.217%",
+        "Raging Bolt": "17.341%",
+        "Amoonguss": "15.499%"
+      },
+      "items": {
+        "Metal Coat": "33.798%",
+        "Choice Specs": "30.383%",
+        "Life Orb": "16.050%",
+        "Sitrus Berry": "10.280%",
+        "Leftovers": "5.258%",
+        "Other": "4.231%"
+      },
+      "ability": {
+        "Good as Gold": "100.000%"
+      },
+      "evs": {
+        "Modest": "252//0//220//4//4//28",
+        "Timid": "0//0//0//252//4//248"
+      }
+    }
+  },
+  {
+    "name": "Ogerpon-Cornerstone",
+    "usage": "8.86%",
+    "set": {
+      "moves": {
+        "Ivy Cudgel": "99.997%",
+        "Follow Me": "99.621%",
+        "Spiky Shield": "96.954%",
+        "Power Whip": "44.508%",
+        "Focus Energy": "40.661%",
+        "Other": "18.259%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "65.902%",
+        "Tornadus": "47.440%",
+        "Landorus": "45.850%",
+        "Indeedee-F": "42.722%",
+        "Iron Crown": "41.928%",
+        "Incineroar": "30.607%",
+        "Flutter Mane": "25.967%",
+        "Farigiraf": "21.814%",
+        "Torkoal": "18.856%",
+        "Whimsicott": "16.835%"
+      },
+      "items": {
+        "Cornerstone Mask": "100.000%"
+      },
+      "ability": {
+        "Sturdy": "100.000%"
+      },
+      "evs": {
+        "Adamant": "20//236//36//0//4//212",
+        "Jolly": "4//196//52//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Ursaluna",
+    "usage": "8.54%",
+    "set": {
+      "moves": {
+        "Protect": "96.395%",
+        "Facade": "96.246%",
+        "Headlong Rush": "92.455%",
+        "Earthquake": "91.880%",
+        "Swords Dance": "4.546%",
+        "Other": "18.478%"
+      },
+      "teammates": {
+        "Incineroar": "59.680%",
+        "Flutter Mane": "49.516%",
+        "Farigiraf": "37.361%",
+        "Amoonguss": "35.392%",
+        "Urshifu-Rapid-Strike": "32.942%",
+        "Tornadus": "31.422%",
+        "Torkoal": "27.911%",
+        "Cresselia": "23.062%",
+        "Ogerpon-Hearthflame": "16.415%"
+      },
+      "items": {
+        "Flame Orb": "96.667%",
+        "Other": "3.333%"
+      },
+      "ability": {
+        "Guts": "97.047%",
+        "Bulletproof": "1.704%",
+        "Unnerve": "1.248%"
+      },
+      "evs": {
+        "Brave": "156//252//12//0//84//0",
+        "Adamant": "140//252//4//0//44//68"
+      }
+    }
+  },
+  {
+    "name": "Torkoal",
+    "usage": "8.31%",
+    "set": {
+      "moves": {
+        "Eruption": "91.099%",
+        "Heat Wave": "77.360%",
+        "Protect": "51.471%",
+        "Earth Power": "45.301%",
+        "Weather Ball": "44.551%",
+        "Helping Hand": "40.577%",
+        "Yawn": "14.400%",
+        "Solar Beam": "9.883%",
+        "Overheat": "6.699%",
+        "Other": "18.660%"
+      },
+      "teammates": {
+        "Farigiraf": "53.880%",
+        "Flutter Mane": "42.412%",
+        "Indeedee-F": "39.544%",
+        "Hatterene": "35.342%",
+        "Urshifu": "35.026%",
+        "Ursaluna": "28.659%",
+        "Raging Bolt": "27.392%",
+        "Incineroar": "21.297%",
+        "Ogerpon-Cornerstone": "20.086%",
+        "Iron Hands": "18.342%"
+      },
+      "items": {
+        "Charcoal": "42.221%",
+        "Choice Specs": "33.978%",
+        "Heat Rock": "8.257%",
+        "Eject Pack": "4.543%",
+        "Sitrus Berry": "4.495%",
+        "Flame Plate": "1.918%",
+        "Other": "4.588%"
+      },
+      "ability": {
+        "Drought": "99.777%",
+        "White Smoke": "0.223%",
+        "Shell Armor": "0.000%"
+      },
+      "evs": {
+        "Quiet": "244//0//0//248//4//0",
+        "Relaxed": "252//0//4//0//252//0",
+        "Modest": "252//0//0//248//4//0"
+      }
+    }
+  },
+  {
+    "name": "Chi-Yu",
+    "usage": "8.18%",
+    "set": {
+      "moves": {
+        "熱風": "97.497%",
+        "惡之波動": "93.754%",
+        "過熱": "88.926%",
+        "大聲咆哮": "66.644%",
+        "守住": "30.962%",
+        "噴射火焰": "12.310%",
+        "Other": "9.908%"
+      },
+      "teammates": {
+        "Flutter Mane": "79.375%",
+        "龍捲雲": "50.045%",
+        "Dondozo": "39.300%",
+        "Tatsugiri": "38.815%",
+        "Raging Bolt": "26.404%",
+        "武道熊師": "16.253%",
+        "快龍": "21.173%",
+        "Glimmora": "20.654%",
+        "Ogerpon-Wellspring": "19.879%"
+      },
+      "items": {
+        "講究眼鏡": "48.826%",
+        "講究圍巾": "19.495%",
+        "氣勢披帶": "19.393%",
+        "生命寶珠": "6.875%",
+        "Covert Cloak": "1.960%",
+        "Other": "3.452%"
+      },
+      "ability": {
+        "Beads of Ruin": "100.000%"
+      },
+      "evs": {
+        "膽小": "0//0//0//252//4//252",
+        "內斂": "212//0//4//52//4//236"
+      }
+    }
+  },
+  {
+    "name": "Dondozo",
+    "usage": "8.09%",
+    "set": {
+      "moves": {
+        "Protect": "95.453%",
+        "Order Up": "83.243%",
+        "Wave Crash": "83.054%",
+        "Earthquake": "82.560%",
+        "Substitute": "11.801%",
+        "Yawn": "9.116%",
+        "Body Press": "8.895%",
+        "Fissure": "5.852%",
+        "Heavy Slam": "5.790%",
+        "Other": "14.237%"
+      },
+      "teammates": {
+        "Tatsugiri": "90.298%",
+        "Dragonite": "49.308%",
+        "Flutter Mane": "41.147%",
+        "Chi-Yu": "39.718%",
+        "Chien-Pao": "39.567%",
+        "Glimmora": "29.593%",
+        "Weezing-Galar": "20.895%",
+        "Ogerpon-Wellspring": "12.460%",
+        "Ting-Lu": "10.384%",
+        "Tornadus": "8.347%"
+      },
+      "items": {
+        "Leftovers": "53.599%",
+        "Rocky Helmet": "24.455%",
+        "Covert Cloak": "15.629%",
+        "Clear Amulet": "3.117%",
+        "Other": "3.200%"
+      },
+      "ability": {
+        "Unaware": "61.294%",
+        "Oblivious": "38.573%",
+        "Water Veil": "0.132%"
+      },
+      "evs": {
+        "Jolly": "4//244//4//0//4//248",
+        "Adamant": "28//244//4//0//4//228",
+        "Impish": "4//4//36//0//228//236"
+      }
+    }
+  },
+  {
+    "name": "Tatsugiri",
+    "usage": "7.31%",
+    "set": {
+      "moves": {
+        "Draco Meteor": "98.621%",
+        "Muddy Water": "90.680%",
+        "Protect": "54.109%",
+        "Icy Wind": "52.959%",
+        "Helping Hand": "28.641%",
+        "Dragon Pulse": "23.730%",
+        "Taunt": "14.040%",
+        "Sleep Talk": "12.787%",
+        "Whirlpool": "4.654%",
+        "Other": "19.780%"
+      },
+      "teammates": {
+        "Dondozo": "99.872%",
+        "Dragonite": "47.370%",
+        "Chi-Yu": "43.386%",
+        "Flutter Mane": "43.122%",
+        "Chien-Pao": "36.693%",
+        "Glimmora": "32.504%",
+        "Weezing-Galar": "23.123%",
+        "Ogerpon-Wellspring": "10.920%",
+        "Tornadus": "9.130%",
+        "Raging Bolt": "8.840%"
+      },
+      "items": {
+        "Choice Scarf": "40.409%",
+        "Focus Sash": "26.385%",
+        "Safety Goggles": "22.040%",
+        "Toxic Orb": "4.436%",
+        "Sitrus Berry": "1.993%",
+        "Other": "4.737%"
+      },
+      "ability": {
+        "Commander": "99.845%",
+        "Storm Drain": "0.155%"
+      },
+      "evs": {
+        "Timid": "0//0//4//252//0//252",
+        "Modest": "4//0//0//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Whimsicott",
+    "usage": "7.10%",
+    "set": {
+      "moves": {
+        "Viento Afín": "99.178%",
+        "Fuerza Lunar": "95.566%",
+        "Otra Vez": "82.265%",
+        "Pantalla de Luz": "41.659%",
+        "Día Soleado": "14.469%",
+        "Llanto Falso": "14.282%",
+        "Paliza": "10.101%",
+        "Protección": "9.967%",
+        "Mofa": "8.327%",
+        "Refuerzo": "6.497%",
+        "Other": "17.688%"
+      },
+      "teammates": {
+        "Urshifu": "50.587%",
+        "Incineroar": "43.869%",
+        "Gholdengo": "29.027%",
+        "Raging Bolt": "28.818%",
+        "Regidrago": "25.768%",
+        "Flutter Mane": "22.290%",
+        "Ogerpon-Cornerstone": "21.004%",
+        "Ogerpon-Wellspring": "19.745%",
+        "Indeedee": "17.426%",
+        "Iron Crown": "17.273%"
+      },
+      "items": {
+        "Covert Cloak": "70.517%",
+        "Banda Focus": "23.999%",
+        "Restos": "3.819%",
+        "Other": "1.664%"
+      },
+      "ability": {
+        "Bromista": "99.967%",
+        "Clorofila": "0.024%",
+        "Allanamiento": "0.009%"
+      },
+      "evs": {
+        "Osada": "252//0//212//0//44//0",
+        "Miedosa": "252//0//4//4//28//220"
+      }
+    }
+  },
+  {
+    "name": "Regidrago",
+    "usage": "6.49%",
+    "set": {
+      "moves": {
+        "Dragon Energy": "99.933%",
+        "Protect": "88.406%",
+        "Draco Meteor": "84.186%",
+        "Earth Power": "77.342%",
+        "Tera Blast": "25.075%",
+        "Dragon Pulse": "21.538%",
+        "Other": "3.519%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "78.039%",
+        "Tornadus": "56.210%",
+        "Gholdengo": "49.270%",
+        "Ogerpon-Hearthflame": "38.145%",
+        "Rillaboom": "29.653%",
+        "Whimsicott": "28.196%",
+        "Incineroar": "26.538%",
+        "Indeedee-F": "25.087%",
+        "Iron Crown": "24.034%",
+        "Ogerpon-Cornerstone": "18.391%"
+      },
+      "items": {
+        "Dragon Fang": "44.585%",
+        "Life Orb": "39.380%",
+        "Choice Scarf": "7.680%",
+        "Choice Specs": "3.780%",
+        "Other": "4.575%"
+      },
+      "ability": {},
+      "evs": {
+        "Timid": "4//0//0//252//0//252",
+        "Modest": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Archaludon",
+    "usage": "5.86%",
+    "set": {
+      "moves": {
+        "Electro Shot": "92.581%",
+        "Flash Cannon": "91.568%",
+        "Body Press": "90.314%",
+        "Dragon Pulse": "52.945%",
+        "Draco Meteor": "42.062%",
+        "Snarl": "15.807%",
+        "Other": "14.723%"
+      },
+      "teammates": {
+        "Pelipper": "70.054%",
+        "Urshifu-Rapid-Strike": "67.528%",
+        "Amoonguss": "62.436%",
+        "Flutter Mane": "28.031%",
+        "Incineroar": "23.984%",
+        "Landorus": "22.907%",
+        "Chien-Pao": "20.692%",
+        "Tornadus": "19.000%",
+        "Ursaluna": "13.627%",
+        "Rillaboom": "13.374%"
+      },
+      "items": {
+        "Assault Vest": "90.160%",
+        "Power Herb": "6.206%",
+        "Other": "3.634%"
+      },
+      "ability": {
+        "Stamina": "94.737%",
+        "Sturdy": "3.890%",
+        "Stalwart": "1.373%"
+      },
+      "evs": {
+        "Modest": "252//0//28//36//164//28",
+        "Calm": "4//0//252//0//248//0",
+        "Bold": "236//0//4//4//228//36",
+        "Timid": "0//0//0//252//4//248"
+      }
+    }
+  },
+  {
+    "name": "Pelipper",
+    "usage": "5.45%",
+    "set": {
+      "moves": {
+        "Vendaval": "99.024%",
+        "Meteorobola": "90.122%",
+        "Vastaguardia": "80.459%",
+        "Viento Afín": "55.744%",
+        "Protección": "45.165%",
+        "Ida y Vuelta": "12.291%",
+        "Other": "17.194%"
+      },
+      "teammates": {
+        "Archaludon": "75.351%",
+        "Amoonguss": "65.668%",
+        "Urshifu": "60.103%",
+        "Landorus": "26.216%",
+        "Flutter Mane": "25.686%",
+        "Incineroar": "22.825%",
+        "Chien-Pao": "17.173%",
+        "Ursaluna": "17.106%",
+        "Iron Hands": "13.380%",
+        "Rillaboom": "13.334%"
+      },
+      "items": {
+        "Banda Focus": "61.321%",
+        "Pañuelo Elección": "10.287%",
+        "Vidasfera": "7.251%",
+        "Casco Dentado": "6.806%",
+        "Roca Lluvia": "5.533%",
+        "Covert Cloak": "2.648%",
+        "Baya Zidra": "1.820%",
+        "Other": "4.336%"
+      },
+      "ability": {
+        "Llovizna": "99.948%",
+        "Vista Lince": "0.036%",
+        "Cura Lluvia": "0.016%"
+      },
+      "evs": {
+        "Modesta": "12//0//4//236//4//252",
+        "Miedosa": "4//0//0//252//0//248",
+        "Mansa": "252//0//28//228//0//0"
+      }
+    }
+  },
+  {
+    "name": "Arcanine-Hisui",
+    "usage": "5.09%",
+    "set": {
+      "moves": {
+        "Flare Blitz": "99.538%",
+        "Rock Slide": "96.712%",
+        "Extreme Speed": "88.866%",
+        "Head Smash": "60.560%",
+        "Protect": "32.357%",
+        "Will-O-Wisp": "8.499%",
+        "Other": "13.468%"
+      },
+      "teammates": {
+        "Raging Bolt": "77.643%",
+        "Ogerpon-Wellspring": "58.485%",
+        "Landorus": "55.006%",
+        "Ninetales-Alola": "44.349%",
+        "Flutter Mane": "36.185%",
+        "Articuno": "30.324%",
+        "Urshifu-Rapid-Strike": "29.458%",
+        "Moltres-Galar": "25.526%",
+        "Chien-Pao": "17.310%",
+        "Whimsicott": "13.606%"
+      },
+      "items": {
+        "Choice Band": "62.723%",
+        "Life Orb": "14.765%",
+        "Clear Amulet": "11.443%",
+        "Ability Shield": "3.236%",
+        "Assault Vest": "2.748%",
+        "Safety Goggles": "1.815%",
+        "Other": "3.269%"
+      },
+      "ability": {
+        "Intimidate": "98.080%",
+        "Rock Head": "1.879%",
+        "Flash Fire": "0.040%"
+      },
+      "evs": {
+        "Adamant": "180//240//4//0//4//76",
+        "Jolly": "100//52//116//0//4//236"
+      }
+    }
+  },
+  {
+    "name": "Gouging Fire",
+    "usage": "4.80%",
+    "set": {
+      "moves": {
+        "Breaking Swipe": "85.774%",
+        "Heat Crash": "84.132%",
+        "Howl": "58.890%",
+        "Protect": "51.319%",
+        "Burning Bulwark": "40.719%",
+        "Dragon Dance": "30.766%",
+        "Flare Blitz": "28.844%",
+        "Other": "19.557%"
+      },
+      "teammates": {
+        "Chien-Pao": "59.893%",
+        "Dragonite": "48.555%",
+        "Ting-Lu": "40.862%",
+        "Rillaboom": "37.061%",
+        "Flutter Mane": "30.553%",
+        "Urshifu-Rapid-Strike": "20.701%",
+        "Ogerpon-Wellspring": "19.296%",
+        "Sinistcha": "19.253%",
+        "Thundurus": "18.494%",
+        "Kingambit": "17.058%"
+      },
+      "items": {
+        "Booster Energy": "59.635%",
+        "Clear Amulet": "30.800%",
+        "Choice Band": "5.267%",
+        "Other": "4.298%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Adamant": "252//36//4//0//4//212",
+        "Jolly": "212//52//12//0//4//228"
+      }
+    }
+  },
+  {
+    "name": "Landorus-Therian",
+    "usage": "4.58%",
+    "set": {
+      "moves": {
+        "岩崩": "94.696%",
+        "跺腳": "91.568%",
+        "急速折返": "86.517%",
+        "地震": "81.260%",
+        "Tera Blast": "19.074%",
+        "守住": "14.851%",
+        "Other": "12.034%"
+      },
+      "teammates": {
+        "龍捲雲": "67.696%",
+        "武道熊師": "48.021%",
+        "Flutter Mane": "46.777%",
+        "Raging Bolt": "31.710%",
+        "Ogerpon-Wellspring": "27.482%",
+        "Ogerpon-Hearthflame": "26.906%",
+        "愛管侍": "24.609%",
+        "Iron Crown": "23.652%",
+        "Chi-Yu": "17.261%",
+        "Gholdengo": "16.488%"
+      },
+      "items": {
+        "講究頭帶": "66.010%",
+        "講究圍巾": "14.462%",
+        "生命寶珠": "11.811%",
+        "突擊背心": "3.959%",
+        "Other": "3.758%"
+      },
+      "ability": {
+        "威嚇": "100.000%"
+      },
+      "evs": {
+        "爽朗": "4//252//0//0//0//252",
+        "固執": "0//248//0//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Ninetales-Alola",
+    "usage": "4.55%",
+    "set": {
+      "moves": {
+        "Aurora Veil": "98.374%",
+        "Blizzard": "75.606%",
+        "Moonblast": "71.413%",
+        "Helping Hand": "46.040%",
+        "Icy Wind": "32.500%",
+        "Protect": "20.020%",
+        "Encore": "18.174%",
+        "Freeze-Dry": "15.857%",
+        "Roar": "13.227%",
+        "Other": "8.789%"
+      },
+      "teammates": {
+        "Articuno": "63.832%",
+        "Raging Bolt": "59.000%",
+        "Arcanine-Hisui": "49.596%",
+        "Ogerpon-Wellspring": "43.780%",
+        "Landorus": "42.199%",
+        "Urshifu-Rapid-Strike": "19.218%",
+        "Chien-Pao": "15.791%",
+        "Whimsicott": "15.349%",
+        "Dondozo": "14.258%",
+        "Tatsugiri": "13.601%"
+      },
+      "items": {
+        "Light Clay": "78.184%",
+        "Covert Cloak": "10.743%",
+        "Focus Sash": "5.061%",
+        "Rocky Helmet": "1.811%",
+        "Other": "4.201%"
+      },
+      "ability": {
+        "Snow Warning": "99.924%",
+        "Snow Cloak": "0.076%"
+      },
+      "evs": {
+        "Timid": "252//0//0//4//0//252"
+      }
+    }
+  },
+  {
+    "name": "Heatran",
+    "usage": "4.50%",
+    "set": {
+      "moves": {
+        "Earth Power": "94.126%",
+        "Protect": "92.201%",
+        "Heat Wave": "89.358%",
+        "Substitute": "55.564%",
+        "Flash Cannon": "39.267%",
+        "Magma Storm": "12.480%",
+        "Other": "17.005%"
+      },
+      "teammates": {
+        "Raging Bolt": "69.939%",
+        "Ogerpon-Wellspring": "65.668%",
+        "Flutter Mane": "64.983%",
+        "Tornadus": "59.384%",
+        "Urshifu": "53.515%",
+        "Amoonguss": "13.243%",
+        "Landorus": "11.806%",
+        "Baxcalibur": "11.678%",
+        "Iron Bundle": "11.352%",
+        "Landorus-Therian": "11.246%"
+      },
+      "items": {
+        "Leftovers": "60.213%",
+        "Life Orb": "11.492%",
+        "Safety Goggles": "10.067%",
+        "Sitrus Berry": "7.402%",
+        "Assault Vest": "7.255%",
+        "Other": "3.571%"
+      },
+      "ability": {
+        "Flash Fire": "99.552%",
+        "Flame Body": "0.448%"
+      },
+      "evs": {
+        "Modest": "212//0//4//208//4//76"
+      }
+    }
+  },
+  {
+    "name": "Ursaluna-Bloodmoon",
+    "usage": "3.84%",
+    "set": {
+      "moves": {
+        "Blood Moon": "98.863%",
+        "Earth Power": "98.390%",
+        "Hyper Voice": "96.660%",
+        "Protect": "80.119%",
+        "Vacuum Wave": "18.532%",
+        "Other": "7.436%"
+      },
+      "teammates": {
+        "Farigiraf": "60.076%",
+        "Flutter Mane": "48.414%",
+        "Urshifu": "41.940%",
+        "Ogerpon-Hearthflame": "36.785%",
+        "Tornadus": "35.937%",
+        "Incineroar": "26.351%",
+        "Ogerpon-Wellspring": "18.081%",
+        "Urshifu-Rapid-Strike": "15.622%",
+        "Dragonite": "13.783%",
+        "Amoonguss": "13.511%"
+      },
+      "items": {
+        "Life Orb": "68.321%",
+        "Assault Vest": "16.210%",
+        "Throat Spray": "4.898%",
+        "Covert Cloak": "3.802%",
+        "Leftovers": "2.321%",
+        "Other": "4.447%"
+      },
+      "ability": {},
+      "evs": {
+        "Modest": "4//0//0//248//0//252",
+        "Quiet": "252//0//0//248//4//0",
+        "Timid": "4//0//0//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Weezing-Galar",
+    "usage": "3.82%",
+    "set": {
+      "moves": {
+        "Protect": "97.239%",
+        "Gunk Shot": "46.310%",
+        "Taunt": "44.450%",
+        "Toxic Spikes": "44.304%",
+        "Will-O-Wisp": "43.234%",
+        "Poison Gas": "37.561%",
+        "Sludge Bomb": "28.108%",
+        "Dazzling Gleam": "21.189%",
+        "Strange Steam": "16.704%",
+        "Toxic": "10.184%",
+        "Other": "10.718%"
+      },
+      "teammates": {
+        "Flutter Mane": "60.754%",
+        "Raging Bolt": "57.057%",
+        "Urshifu-Rapid-Strike": "45.029%",
+        "Tatsugiri": "44.249%",
+        "Dondozo": "44.226%",
+        "Incineroar": "40.570%",
+        "Dragonite": "37.869%",
+        "Roaring Moon": "33.055%",
+        "Chien-Pao": "27.186%",
+        "Chi-Yu": "22.974%"
+      },
+      "items": {
+        "Sitrus Berry": "58.857%",
+        "Leftovers": "33.344%",
+        "Rocky Helmet": "1.816%",
+        "Choice Specs": "1.783%",
+        "Other": "4.201%"
+      },
+      "ability": {
+        "Neutralizing Gas": "98.939%",
+        "Misty Surge": "0.785%",
+        "Levitate": "0.276%"
+      },
+      "evs": {
+        "Impish": "220//4//36//0//236//12",
+        "Bold": "252//0//76//0//180//0",
+        "Calm": "252//0//4//0//252//0"
+      }
+    }
+  },
+  {
+    "name": "Roaring Moon",
+    "usage": "3.75%",
+    "set": {
+      "moves": {
+        "Knock Off": "98.145%",
+        "Protect": "86.304%",
+        "Tailwind": "74.836%",
+        "Acrobatics": "70.516%",
+        "Breaking Swipe": "21.093%",
+        "Dragon Dance": "10.826%",
+        "Dragon Claw": "10.775%",
+        "Earthquake": "10.668%",
+        "Other": "16.838%"
+      },
+      "teammates": {
+        "Incineroar": "56.686%",
+        "Flutter Mane": "55.401%",
+        "Urshifu-Rapid-Strike": "52.068%",
+        "Raging Bolt": "36.711%",
+        "Weezing-Galar": "33.652%",
+        "Amoonguss": "30.093%",
+        "Landorus": "25.321%",
+        "Gholdengo": "18.525%",
+        "Ogerpon-Wellspring": "15.486%",
+        "Tornadus": "11.574%"
+      },
+      "items": {
+        "Booster Energy": "86.540%",
+        "Choice Band": "9.941%",
+        "Other": "3.519%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Jolly": "100//68//124//0//20//196",
+        "Adamant": "164//252//4//0//4//84"
+      }
+    }
+  },
+  {
+    "name": "Iron Hands",
+    "usage": "3.74%",
+    "set": {
+      "moves": {
+        "Fake Out": "94.056%",
+        "Wild Charge": "87.356%",
+        "Drain Punch": "61.540%",
+        "Heavy Slam": "46.913%",
+        "Close Combat": "39.350%",
+        "Swords Dance": "29.857%",
+        "Volt Switch": "11.093%",
+        "Ice Punch": "4.862%",
+        "Protect": "4.113%",
+        "Thunder Punch": "4.050%",
+        "Other": "16.811%"
+      },
+      "teammates": {
+        "Farigiraf": "44.735%",
+        "Torkoal": "40.725%",
+        "Urshifu": "37.538%",
+        "Indeedee-F": "37.494%",
+        "Hatterene": "33.832%",
+        "Amoonguss": "32.326%",
+        "Ogerpon-Wellspring": "25.321%",
+        "Flutter Mane": "19.925%",
+        "Pelipper": "19.474%",
+        "Landorus": "16.726%"
+      },
+      "items": {
+        "Assault Vest": "49.804%",
+        "Safety Goggles": "27.573%",
+        "Clear Amulet": "11.078%",
+        "Booster Energy": "4.519%",
+        "Sitrus Berry": "4.088%",
+        "Other": "2.938%"
+      },
+      "ability": {
+        "Quark Drive": "100.000%"
+      },
+      "evs": {
+        "Brave": "4//252//0//0//252//0",
+        "Adamant": "76//156//12//0//252//12"
+      }
+    }
+  },
+  {
+    "name": "Glimmora",
+    "usage": "3.66%",
+    "set": {
+      "moves": {
+        "大地之力": "77.810%",
+        "污泥炸彈": "77.365%",
+        "尖刺防守": "66.752%",
+        "Mortal Spin": "56.435%",
+        "流星光束": "56.281%",
+        "力量寶石": "41.508%",
+        "毒液衝擊": "10.865%",
+        "Other": "12.984%"
+      },
+      "teammates": {
+        "Dondozo": "65.376%",
+        "Tatsugiri": "64.923%",
+        "Flutter Mane": "47.592%",
+        "Chi-Yu": "46.112%",
+        "Ogerpon-Wellspring": "31.883%",
+        "龍捲雲": "31.472%",
+        "快龍": "28.357%",
+        "武道熊師": "26.142%",
+        "Chien-Pao": "16.891%",
+        "雷吉艾勒奇": "15.672%"
+      },
+      "items": {
+        "強力香草": "55.978%",
+        "突擊背心": "30.750%",
+        "氣勢披帶": "12.042%",
+        "Other": "1.230%"
+      },
+      "ability": {
+        "Toxic Debris": "99.942%",
+        "腐蝕": "0.058%"
+      },
+      "evs": {
+        "內斂": "244//0//4//76//20//164",
+        "膽小": "0//0//4//252//0//248"
+      }
+    }
+  },
+  {
+    "name": "Hatterene",
+    "usage": "3.33%",
+    "set": {
+      "moves": {
+        "Dazzling Gleam": "98.867%",
+        "Trick Room": "97.115%",
+        "Expanding Force": "94.346%",
+        "Protect": "73.559%",
+        "Psyshock": "11.203%",
+        "Mystical Fire": "6.056%",
+        "Other": "18.854%"
+      },
+      "teammates": {
+        "Indeedee-F": "95.538%",
+        "Torkoal": "88.187%",
+        "Urshifu": "66.273%",
+        "Farigiraf": "59.002%",
+        "Iron Hands": "38.021%",
+        "Smeargle": "19.331%",
+        "Gallade": "18.801%",
+        "Ursaluna": "18.257%",
+        "Amoonguss": "6.319%",
+        "Lilligant-Hisui": "6.089%"
+      },
+      "items": {
+        "Life Orb": "66.163%",
+        "Covert Cloak": "22.243%",
+        "Psychic Seed": "3.504%",
+        "Focus Sash": "3.220%",
+        "Other": "4.870%"
+      },
+      "ability": {
+        "Magic Bounce": "99.424%",
+        "Healer": "0.556%",
+        "Anticipation": "0.020%"
+      },
+      "evs": {
+        "Quiet": "252//0//44//212//0//0"
+      }
+    }
+  },
+  {
+    "name": "Entei",
+    "usage": "3.26%",
+    "set": {
+      "moves": {
+        "Sacred Fire": "98.333%",
+        "Extreme Speed": "98.251%",
+        "Stomping Tantrum": "78.741%",
+        "Protect": "30.000%",
+        "Roar": "23.740%",
+        "Flare Blitz": "19.318%",
+        "Stone Edge": "18.954%",
+        "Snarl": "12.474%",
+        "Crunch": "5.326%",
+        "Other": "14.864%"
+      },
+      "teammates": {
+        "Flutter Mane": "45.120%",
+        "Chien-Pao": "43.204%",
+        "Ogerpon-Wellspring": "41.454%",
+        "Rillaboom": "37.862%",
+        "Gholdengo": "35.601%",
+        "Urshifu-Rapid-Strike": "32.628%",
+        "Regidrago": "30.969%",
+        "Raging Bolt": "29.689%",
+        "Tornadus": "27.655%",
+        "Dragonite": "18.780%"
+      },
+      "items": {
+        "Choice Band": "51.133%",
+        "Life Orb": "22.513%",
+        "Assault Vest": "16.774%",
+        "Sitrus Berry": "3.192%",
+        "Safety Goggles": "3.133%",
+        "Other": "3.255%"
+      },
+      "ability": {
+        "Inner Focus": "99.933%",
+        "Pressure": "0.067%"
+      },
+      "evs": {
+        "Jolly": "4//252//0//0//0//252",
+        "Adamant": "52//248//0//0//4//196"
+      }
+    }
+  },
+  {
+    "name": "Kingambit",
+    "usage": "3.05%",
+    "set": {
+      "moves": {
+        "Sucker Punch": "98.700%",
+        "Kowtow Cleave": "96.090%",
+        "Iron Head": "73.778%",
+        "Protect": "71.631%",
+        "Swords Dance": "28.086%",
+        "Tera Blast": "13.496%",
+        "Other": "18.219%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "42.093%",
+        "Flutter Mane": "35.750%",
+        "Rillaboom": "34.129%",
+        "Gouging Fire": "26.852%",
+        "Ogerpon-Hearthflame": "23.700%",
+        "Raging Bolt": "23.609%",
+        "Farigiraf": "23.230%",
+        "Chien-Pao": "22.851%",
+        "Dragonite": "20.817%",
+        "Ogerpon-Wellspring": "16.109%"
+      },
+      "items": {
+        "Safety Goggles": "34.395%",
+        "Black Glasses": "32.111%",
+        "Assault Vest": "22.573%",
+        "Life Orb": "3.878%",
+        "Dread Plate": "3.428%",
+        "Other": "3.616%"
+      },
+      "ability": {
+        "Defiant": "98.117%",
+        "Supreme Overlord": "1.864%",
+        "Pressure": "0.019%"
+      },
+      "evs": {
+        "Brave": "252//248//0//0//4//0",
+        "Adamant": "236//196//0//0//76//0"
+      }
+    }
+  },
+  {
+    "name": "Articuno",
+    "usage": "2.92%",
+    "set": {
+      "moves": {
+        "暴風雪": "99.791%",
+        "冷凍乾燥": "97.099%",
+        "絕對零度": "80.319%",
+        "冰凍光束": "71.434%",
+        "守住": "10.836%",
+        "暴風": "7.218%",
+        "羽棲": "7.045%",
+        "順風": "6.666%",
+        "Other": "19.592%"
+      },
+      "teammates": {
+        "九尾": "99.408%",
+        "Raging Bolt": "62.990%",
+        "Ogerpon-Wellspring": "61.331%",
+        "土地雲": "60.471%",
+        "Arcanine-Hisui": "52.813%",
+        "Dondozo": "15.179%",
+        "Tatsugiri": "14.242%",
+        "轟擂金剛猩": "9.421%",
+        "Roaring Moon": "8.987%",
+        "Ogerpon-Cornerstone": "8.174%"
+      },
+      "items": {
+        "講究眼鏡": "83.075%",
+        "光粉": "7.250%",
+        "冰柱石板": "3.555%",
+        "生命寶珠": "2.253%",
+        "Other": "3.867%"
+      },
+      "ability": {
+        "雪隱": "99.218%",
+        "壓迫感": "0.782%"
+      },
+      "evs": {
+        "內斂": "252//0//4//168//4//76",
+        "膽小": "0//0//0//252//4//248",
+        "大膽": "204//0//188//60//4//52"
+      }
+    }
+  },
+  {
+    "name": "Ting-Lu",
+    "usage": "2.91%",
+    "set": {
+      "moves": {
+        "まもる": "81.676%",
+        "Tera Blast": "50.463%",
+        "じごくづき": "49.407%",
+        "じしん": "47.945%",
+        "Ruination": "36.290%",
+        "すなじごく": "28.839%",
+        "じだんだ": "26.029%",
+        "バークアウト": "17.372%",
+        "ボディプレス": "14.434%",
+        "ヘビーボンバー": "13.699%",
+        "ちょうはつ": "12.553%",
+        "ふきとばし": "6.474%",
+        "Other": "14.819%"
+      },
+      "teammates": {
+        "Gouging Fire": "67.453%",
+        "カイリュー": "62.694%",
+        "Chien-Pao": "61.725%",
+        "ボルトロス": "30.300%",
+        "Dondozo": "28.860%",
+        "ウーラオス": "28.650%",
+        "Sinistcha": "15.324%",
+        "サンダー": "15.157%",
+        "Ogerpon-Wellspring": "14.670%",
+        "Flutter Mane": "10.640%"
+      },
+      "items": {
+        "Clear Amulet": "47.032%",
+        "ゴツゴツメット": "25.132%",
+        "とつげきチョッキ": "10.733%",
+        "たべのこし": "4.552%",
+        "Ability Shield": "3.793%",
+        "Covert Cloak": "3.718%",
+        "オボンのみ": "2.901%",
+        "Other": "2.138%"
+      },
+      "ability": {
+        "Vessel of Ruin": "100.000%"
+      },
+      "evs": {
+        "いじっぱり": "236//92//20//0//84//76",
+        "のんき": "212//0//44//0//252//0",
+        "わんぱく": "212//4//36//0//252//4"
+      }
+    }
+  },
+  {
+    "name": "Cresselia",
+    "usage": "2.89%",
+    "set": {
+      "moves": {
+        "Lunar Blessing": "92.595%",
+        "Trick Room": "83.729%",
+        "Moonblast": "61.948%",
+        "Ally Switch": "29.991%",
+        "Psychic": "23.253%",
+        "Helping Hand": "22.521%",
+        "Icy Wind": "21.551%",
+        "Ice Beam": "12.081%",
+        "Protect": "10.334%",
+        "Stored Power": "8.950%",
+        "Calm Mind": "7.444%",
+        "Dazzling Gleam": "5.922%",
+        "Other": "19.681%"
+      },
+      "teammates": {
+        "Ursaluna": "68.121%",
+        "Amoonguss": "51.450%",
+        "Urshifu-Rapid-Strike": "40.988%",
+        "Flutter Mane": "30.901%",
+        "Incineroar": "27.593%",
+        "Pelipper": "24.756%",
+        "Archaludon": "24.534%",
+        "Ogerpon-Wellspring": "18.033%",
+        "Dondozo": "14.261%",
+        "Raging Bolt": "12.143%"
+      },
+      "items": {
+        "Safety Goggles": "55.211%",
+        "Mental Herb": "28.587%",
+        "Rocky Helmet": "8.037%",
+        "Leftovers": "3.041%",
+        "Sitrus Berry": "2.162%",
+        "Other": "2.962%"
+      },
+      "ability": {
+        "Levitate": "100.000%"
+      },
+      "evs": {
+        "Bold": "252//0//236//4//4//12",
+        "Timid": "252//0//0//4//0//248",
+        "Calm": "252//0//100//0//156//0"
+      }
+    }
+  },
+  {
+    "name": "Moltres-Galar",
+    "usage": "2.72%",
+    "set": {
+      "moves": {
+        "Fiery Wrath": "99.745%",
+        "Air Slash": "85.194%",
+        "Snarl": "62.299%",
+        "Tera Blast": "29.185%",
+        "Protect": "28.247%",
+        "Dark Pulse": "23.962%",
+        "Tailwind": "21.036%",
+        "Hurricane": "12.075%",
+        "Nasty Plot": "11.614%",
+        "Hex": "9.107%",
+        "Other": "17.539%"
+      },
+      "teammates": {
+        "Raging Bolt": "65.425%",
+        "Arcanine-Hisui": "47.688%",
+        "Flutter Mane": "47.583%",
+        "Ogerpon-Wellspring": "41.566%",
+        "Landorus": "30.218%",
+        "Whimsicott": "20.308%",
+        "Urshifu-Rapid-Strike": "19.386%",
+        "Ogerpon-Hearthflame": "19.121%",
+        "Basculegion": "17.971%",
+        "Terrakion": "17.858%"
+      },
+      "items": {
+        "Choice Specs": "63.854%",
+        "Sitrus Berry": "29.489%",
+        "Black Glasses": "2.247%",
+        "Other": "4.409%"
+      },
+      "ability": {
+        "Berserk": "100.000%"
+      },
+      "evs": {
+        "Modest": "252//0//0//100//0//156"
+      }
+    }
+  },
+  {
+    "name": "Sinistcha",
+    "usage": "2.38%",
+    "set": {
+      "moves": {
+        "Matcha Gotcha": "99.524%",
+        "분노가루": "92.543%",
+        "트릭룸": "78.797%",
+        "생명의물방울": "44.747%",
+        "힘흡수": "40.342%",
+        "방어": "14.032%",
+        "섀도볼": "10.447%",
+        "Other": "19.568%"
+      },
+      "teammates": {
+        "Gouging Fire": "38.883%",
+        "Chien-Pao": "31.960%",
+        "고릴타": "26.247%",
+        "Annihilape": "25.175%",
+        "Gholdengo": "20.933%",
+        "우라오스": "19.719%",
+        "망나뇽": "18.948%",
+        "Ting-Lu": "18.749%",
+        "어흥염": "15.533%",
+        "Flutter Mane": "15.361%"
+      },
+      "items": {
+        "울퉁불퉁멧": "69.159%",
+        "자뭉열매": "15.136%",
+        "멘탈허브": "9.316%",
+        "먹다남은음식": "2.278%",
+        "Other": "4.111%"
+      },
+      "ability": {
+        "Hospitality": "96.513%",
+        "내열": "3.487%"
+      },
+      "evs": {
+        "대담": "252//0//108//0//148//0",
+        "차분": "252//0//4//0//252//0",
+        "조심": "252//0//4//68//180//4"
+      }
+    }
+  },
+  {
+    "name": "Thundurus",
+    "usage": "2.23%",
+    "set": {
+      "moves": {
+        "怪異電波": "89.164%",
+        "電磁波": "87.944%",
+        "Wildbolt Storm": "79.239%",
+        "挑釁": "53.356%",
+        "求雨": "31.849%",
+        "十萬伏特": "11.285%",
+        "大晴天": "10.739%",
+        "電氣場地": "9.456%",
+        "伏特替換": "6.454%",
+        "電網": "4.926%",
+        "Other": "15.588%"
+      },
+      "teammates": {
+        "武道熊師": "69.635%",
+        "Gouging Fire": "39.783%",
+        "Ting-Lu": "39.485%",
+        "Chien-Pao": "38.483%",
+        "快龍": "37.453%",
+        "敗露球菇": "34.382%",
+        "土地雲": "31.263%",
+        "Archaludon": "26.340%",
+        "月亮伊布": "18.334%",
+        "Flutter Mane": "16.788%"
+      },
+      "items": {
+        "Covert Cloak": "81.229%",
+        "文柚果": "5.685%",
+        "心靈香草": "5.244%",
+        "生命寶珠": "2.566%",
+        "氣勢披帶": "1.432%",
+        "Other": "3.843%"
+      },
+      "ability": {
+        "惡作劇之心": "97.326%",
+        "不服輸": "2.674%"
+      },
+      "evs": {
+        "溫和": "252//0//84//4//164//4",
+        "膽小": "244//0//164//4//36//56",
+        "大膽": "252//0//252//0//4//0"
+      }
+    }
+  },
+  {
+    "name": "Porygon2",
+    "usage": "2.16%",
+    "set": {
+      "moves": {
+        "Trick Room": "99.434%",
+        "Ice Beam": "92.264%",
+        "Recover": "90.160%",
+        "Tera Blast": "83.938%",
+        "Tri Attack": "13.723%",
+        "Protect": "9.206%",
+        "Other": "11.275%"
+      },
+      "teammates": {
+        "Ursaluna": "73.626%",
+        "Incineroar": "72.210%",
+        "Amoonguss": "61.697%",
+        "Urshifu-Rapid-Strike": "47.051%",
+        "Tornadus": "35.666%",
+        "Flutter Mane": "28.035%",
+        "Ogerpon-Wellspring": "18.226%",
+        "Torkoal": "15.915%",
+        "Raging Bolt": "11.210%",
+        "Gholdengo": "9.768%"
+      },
+      "items": {
+        "Eviolite": "99.837%",
+        "Other": "0.163%"
+      },
+      "ability": {
+        "Download": "98.308%",
+        "Trace": "1.625%",
+        "Analytic": "0.067%"
+      },
+      "evs": {
+        "Quiet": "252//4//124//88//36//0",
+        "Relaxed": "252//0//252//0//4//0",
+        "Modest": "244//0//52//196//12//4"
+      }
+    }
+  },
+  {
+    "name": "Annihilape",
+    "usage": "2.13%",
+    "set": {
+      "moves": {
+        "Rage Fist": "80.113%",
+        "Close Combat": "54.190%",
+        "Drain Punch": "49.301%",
+        "Final Gambit": "49.002%",
+        "Bulk Up": "40.497%",
+        "Protect": "40.375%",
+        "Coaching": "35.246%",
+        "Taunt": "14.381%",
+        "U-turn": "12.192%",
+        "Shadow Claw": "11.785%",
+        "Other": "12.919%"
+      },
+      "teammates": {
+        "Gouging Fire": "32.719%",
+        "Chien-Pao": "31.350%",
+        "Gholdengo": "30.927%",
+        "Rillaboom": "30.241%",
+        "Sinistcha": "28.108%",
+        "Grimmsnarl": "17.789%",
+        "Clefairy": "16.856%",
+        "Goodra-Hisui": "16.078%",
+        "Spectrier": "15.811%",
+        "Lapras": "15.798%"
+      },
+      "items": {
+        "Choice Scarf": "37.786%",
+        "Sitrus Berry": "19.315%",
+        "Safety Goggles": "17.325%",
+        "Leftovers": "10.800%",
+        "Focus Sash": "5.771%",
+        "Assault Vest": "2.808%",
+        "Choice Band": "2.290%",
+        "Other": "3.905%"
+      },
+      "ability": {
+        "Defiant": "96.395%",
+        "Vital Spirit": "2.748%",
+        "Inner Focus": "0.857%"
+      },
+      "evs": {
+        "Jolly": "12//236//4//0//4//252",
+        "Careful": "188//4//44//0//252//20",
+        "Adamant": "188//36//44//0//220//20"
+      }
+    }
+  },
+  {
+    "name": "Smeargle",
+    "usage": "2.10%",
+    "set": {
+      "moves": {
+        "蘑菇孢子": "97.078%",
+        "擊掌奇襲": "92.441%",
+        "看我嘛": "92.053%",
+        "裝飾": "74.090%",
+        "廣域防守": "14.502%",
+        "Salt Cure": "3.691%",
+        "地裂": "2.504%",
+        "尖刺防守": "2.030%",
+        "特性互換": "1.385%",
+        "囂張": "1.383%",
+        "Other": "18.843%"
+      },
+      "teammates": {
+        "武道熊師": "75.084%",
+        "Farigiraf": "55.299%",
+        "龍捲雲": "41.662%",
+        "煤炭龜": "36.629%",
+        "愛管侍": "34.128%",
+        "布莉姆溫": "30.612%",
+        "Raging Bolt": "24.324%",
+        "Flutter Mane": "24.051%",
+        "Chi-Yu": "20.575%",
+        "土地雲": "19.645%"
+      },
+      "items": {
+        "氣勢披帶": "91.080%",
+        "避難背包": "7.057%",
+        "Other": "1.863%"
+      },
+      "ability": {
+        "心情不定": "66.824%",
+        "技術高手": "29.126%",
+        "我行我素": "4.050%"
+      },
+      "evs": {
+        "爽朗": "36//0//220//0//0//248",
+        "自大": "252//0//4//0//248//0"
+      }
+    }
+  },
+  {
+    "name": "Grimmsnarl",
+    "usage": "1.81%",
+    "set": {
+      "moves": {
+        "Spirit Break": "92.855%",
+        "Light Screen": "91.132%",
+        "Reflect": "89.950%",
+        "Thunder Wave": "52.424%",
+        "Misty Terrain": "19.069%",
+        "Fake Out": "17.376%",
+        "Parting Shot": "16.673%",
+        "Scary Face": "6.653%",
+        "Other": "13.868%"
+      },
+      "teammates": {
+        "Okidogi": "29.459%",
+        "Amoonguss": "24.292%",
+        "Annihilape": "20.922%",
+        "Goodra-Hisui": "20.696%",
+        "Ogerpon-Wellspring": "19.874%",
+        "Urshifu-Rapid-Strike": "19.504%",
+        "Clefairy": "19.096%",
+        "Spectrier": "18.717%",
+        "Lapras": "18.589%",
+        "Gholdengo": "17.967%"
+      },
+      "items": {
+        "Light Clay": "88.807%",
+        "Covert Cloak": "4.230%",
+        "Focus Sash": "3.413%",
+        "Other": "3.550%"
+      },
+      "ability": {
+        "Prankster": "99.874%",
+        "Frisk": "0.109%",
+        "Pickpocket": "0.018%"
+      },
+      "evs": {
+        "Careful": "252//4//0//0//248//0"
+      }
+    }
+  },
+  {
+    "name": "Okidogi",
+    "usage": "1.80%",
+    "set": {
+      "moves": {
+        "Drain Punch": "97.994%",
+        "Gunk Shot": "78.570%",
+        "Upper Hand": "54.092%",
+        "Knock Off": "43.762%",
+        "High Horsepower": "41.347%",
+        "Ice Punch": "39.545%",
+        "Protect": "17.186%",
+        "Poison Jab": "14.568%",
+        "Other": "12.937%"
+      },
+      "teammates": {
+        "Tornadus": "30.340%",
+        "Grimmsnarl": "29.679%",
+        "Raging Bolt": "29.073%",
+        "Chi-Yu": "28.819%",
+        "Urshifu": "27.403%",
+        "Farigiraf": "25.546%",
+        "Amoonguss": "25.099%",
+        "Ogerpon-Wellspring": "19.381%",
+        "Ogerpon-Cornerstone": "14.722%",
+        "Moltres-Galar": "13.955%"
+      },
+      "items": {
+        "Assault Vest": "82.441%",
+        "Figy Berry": "6.572%",
+        "Life Orb": "5.857%",
+        "Sitrus Berry": "2.679%",
+        "Other": "2.451%"
+      },
+      "ability": {
+        "Guard Dog": "99.868%",
+        "Toxic Chain": "0.132%"
+      },
+      "evs": {
+        "Adamant": "252//92//36//0//68//60",
+        "Jolly": "44//204//4//0//36//216"
+      }
+    }
+  },
+  {
+    "name": "Walking Wake",
+    "usage": "1.69%",
+    "set": {
+      "moves": {
+        "Hydro Steam": "98.636%",
+        "Protect": "78.988%",
+        "Draco Meteor": "76.401%",
+        "Flamethrower": "73.563%",
+        "Dragon Pulse": "30.923%",
+        "Weather Ball": "12.742%",
+        "Tera Blast": "8.676%",
+        "Snarl": "6.934%",
+        "Other": "13.136%"
+      },
+      "teammates": {
+        "Flutter Mane": "67.971%",
+        "Torkoal": "62.871%",
+        "Raging Bolt": "43.722%",
+        "Landorus": "42.294%",
+        "Lilligant-Hisui": "39.427%",
+        "Whimsicott": "18.099%",
+        "Entei": "16.144%",
+        "Tornadus": "15.264%",
+        "Incineroar": "13.155%",
+        "Rillaboom": "13.136%"
+      },
+      "items": {
+        "Life Orb": "35.248%",
+        "Covert Cloak": "34.843%",
+        "Choice Specs": "12.371%",
+        "Assault Vest": "6.054%",
+        "Booster Energy": "5.634%",
+        "Shell Bell": "3.039%",
+        "Other": "2.811%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Timid": "4//0//4//244//4//252",
+        "Modest": "148//0//4//116//12//228"
+      }
+    }
+  },
+  {
+    "name": "Baxcalibur",
+    "usage": "1.57%",
+    "set": {
+      "moves": {
+        "Ice Shard": "88.263%",
+        "Protect": "86.255%",
+        "Glaive Rush": "55.267%",
+        "Icicle Crash": "50.422%",
+        "Icicle Spear": "46.349%",
+        "Scale Shot": "44.764%",
+        "Earthquake": "9.785%",
+        "Other": "18.895%"
+      },
+      "teammates": {
+        "Landorus": "66.832%",
+        "Ogerpon-Wellspring": "44.657%",
+        "Amoonguss": "40.368%",
+        "Pelipper": "36.609%",
+        "Iron Hands": "33.975%",
+        "Heatran": "33.575%",
+        "Raging Bolt": "29.656%",
+        "Iron Bundle": "28.516%",
+        "Ogerpon": "28.458%",
+        "Gholdengo": "12.866%"
+      },
+      "items": {
+        "Loaded Dice": "46.404%",
+        "Icicle Plate": "28.171%",
+        "Clear Amulet": "10.396%",
+        "Assault Vest": "9.776%",
+        "Life Orb": "1.573%",
+        "Other": "3.681%"
+      },
+      "ability": {
+        "Thermal Exchange": "95.424%",
+        "Ice Body": "4.576%"
+      },
+      "evs": {
+        "Adamant": "148//116//0//0//0//244"
+      }
+    }
+  },
+  {
+    "name": "Maushold",
+    "usage": "1.55%",
+    "set": {
+      "moves": {
+        "Follow Me": "94.744%",
+        "Protect": "87.468%",
+        "Taunt": "48.298%",
+        "Population Bomb": "37.008%",
+        "Super Fang": "34.661%",
+        "Feint": "28.393%",
+        "Thunder Wave": "26.962%",
+        "Beat Up": "11.700%",
+        "Encore": "10.162%",
+        "After You": "7.117%",
+        "Other": "13.488%"
+      },
+      "teammates": {
+        "Dragonite": "30.835%",
+        "Urshifu-Rapid-Strike": "30.149%",
+        "Dondozo": "27.632%",
+        "Tatsugiri": "27.423%",
+        "Landorus": "26.830%",
+        "Gholdengo": "26.452%",
+        "Glimmora": "25.919%",
+        "Raging Bolt": "25.157%",
+        "Archaludon": "22.470%",
+        "Flamigo": "21.533%"
+      },
+      "items": {
+        "Wide Lens": "29.056%",
+        "Rocky Helmet": "26.617%",
+        "Sitrus Berry": "24.082%",
+        "Safety Goggles": "9.820%",
+        "Focus Sash": "4.516%",
+        "Covert Cloak": "3.968%",
+        "Other": "1.943%"
+      },
+      "ability": {
+        "Friend Guard": "80.954%",
+        "Technician": "19.014%",
+        "Cheek Pouch": "0.032%"
+      },
+      "evs": {
+        "Impish": "252//4//156//0//28//68",
+        "Timid": "252//0//188//0//0//68",
+        "Jolly": "36//212//4//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Lilligant-Hisui",
+    "usage": "1.39%",
+    "set": {
+      "moves": {
+        "Close Combat": "93.656%",
+        "Sleep Powder": "85.233%",
+        "Solar Blade": "81.041%",
+        "After You": "53.354%",
+        "Upper Hand": "36.267%",
+        "Protect": "14.073%",
+        "Leaf Blade": "13.070%",
+        "Ice Spinner": "5.708%",
+        "Other": "17.598%"
+      },
+      "teammates": {
+        "Torkoal": "95.123%",
+        "Flutter Mane": "56.565%",
+        "Raging Bolt": "53.821%",
+        "Walking Wake": "47.739%",
+        "Landorus": "36.574%",
+        "Farigiraf": "24.857%",
+        "Indeedee-F": "24.809%",
+        "Ursaluna": "15.211%",
+        "Hatterene": "14.560%",
+        "Incineroar": "12.487%"
+      },
+      "items": {
+        "Focus Sash": "85.488%",
+        "Wide Lens": "4.884%",
+        "Covert Cloak": "3.610%",
+        "Life Orb": "1.973%",
+        "Other": "4.046%"
+      },
+      "ability": {
+        "Chlorophyll": "99.490%",
+        "Hustle": "0.472%",
+        "Leaf Guard": "0.038%"
+      },
+      "evs": {
+        "Adamant": "4//248//0//0//0//252",
+        "Jolly": "0//252//0//0//0//248"
+      }
+    }
+  },
+  {
+    "name": "Primarina",
+    "usage": "1.39%",
+    "set": {
+      "moves": {
+        "Hyper Voice": "95.619%",
+        "Moonblast": "89.302%",
+        "Protect": "77.798%",
+        "Calm Mind": "29.820%",
+        "Haze": "28.469%",
+        "Dazzling Gleam": "15.274%",
+        "Energy Ball": "8.076%",
+        "Aqua Jet": "7.898%",
+        "Perish Song": "5.419%",
+        "Hydro Cannon": "5.346%",
+        "Ice Beam": "4.408%",
+        "Draining Kiss": "3.849%",
+        "Flip Turn": "3.712%",
+        "Water Pledge": "3.465%",
+        "Icy Wind": "3.101%",
+        "Other": "18.446%"
+      },
+      "teammates": {
+        "Incineroar": "29.419%",
+        "Sinistcha": "24.451%",
+        "Rillaboom": "24.186%",
+        "Iron Crown": "21.830%",
+        "Indeedee-F": "20.470%",
+        "Roaring Moon": "20.329%",
+        "Landorus": "19.463%",
+        "Ogerpon-Hearthflame": "17.470%",
+        "Tornadus": "17.225%",
+        "Dragonite": "16.235%"
+      },
+      "items": {
+        "Throat Spray": "37.206%",
+        "Leftovers": "29.950%",
+        "Assault Vest": "8.941%",
+        "Choice Specs": "8.568%",
+        "Life Orb": "4.909%",
+        "Sitrus Berry": "3.575%",
+        "Covert Cloak": "2.118%",
+        "Other": "4.733%"
+      },
+      "ability": {
+        "Liquid Voice": "95.129%",
+        "Torrent": "4.871%"
+      },
+      "evs": {
+        "Modest": "252//0//0//68//0//188",
+        "Bold": "252//0//236//12//4//4"
+      }
+    }
+  },
+  {
+    "name": "Iron Bundle",
+    "usage": "1.37%",
+    "set": {
+      "moves": {
+        "Freeze-Dry": "98.221%",
+        "Protect": "80.686%",
+        "Icy Wind": "74.963%",
+        "Encore": "60.075%",
+        "Hydro Pump": "49.005%",
+        "Blizzard": "18.698%",
+        "Other": "18.352%"
+      },
+      "teammates": {
+        "Raging Bolt": "47.125%",
+        "Landorus": "39.751%",
+        "Heatran": "37.247%",
+        "Ogerpon": "32.600%",
+        "Baxcalibur": "32.544%",
+        "Flutter Mane": "19.274%",
+        "Ninetales-Alola": "18.676%",
+        "Rillaboom": "14.026%",
+        "Tornadus": "13.061%",
+        "Urshifu-Rapid-Strike": "11.848%"
+      },
+      "items": {
+        "Booster Energy": "74.107%",
+        "Focus Sash": "21.467%",
+        "Other": "4.426%"
+      },
+      "ability": {
+        "Quark Drive": "100.000%"
+      },
+      "evs": {
+        "Timid": "116//0//140//0//0//248"
+      }
+    }
+  },
+  {
+    "name": "Sneasler",
+    "usage": "1.23%",
+    "set": {
+      "moves": {
+        "Close Combat": "96.119%",
+        "Dire Claw": "79.777%",
+        "Fake Out": "56.290%",
+        "Protect": "51.880%",
+        "Throat Chop": "28.232%",
+        "Acrobatics": "22.483%",
+        "Gunk Shot": "17.166%",
+        "Rock Slide": "15.395%",
+        "Coaching": "14.995%",
+        "Other": "17.663%"
+      },
+      "teammates": {
+        "Flutter Mane": "38.088%",
+        "Tornadus": "27.429%",
+        "Farigiraf": "26.430%",
+        "Ogerpon-Wellspring": "25.901%",
+        "Urshifu": "24.009%",
+        "Incineroar": "21.237%",
+        "Landorus": "21.145%",
+        "Arcanine-Hisui": "19.351%",
+        "Moltres-Galar": "18.558%",
+        "Raging Bolt": "18.417%"
+      },
+      "items": {
+        "Psychic Seed": "26.805%",
+        "White Herb": "20.483%",
+        "Lum Berry": "14.361%",
+        "Grassy Seed": "14.032%",
+        "Focus Sash": "10.276%",
+        "Normal Gem": "5.649%",
+        "Sitrus Berry": "2.640%",
+        "Choice Band": "1.294%",
+        "Other": "4.459%"
+      },
+      "ability": {
+        "Unburden": "91.220%",
+        "Poison Touch": "8.424%",
+        "Pressure": "0.355%"
+      },
+      "evs": {
+        "Adamant": "172//100//92//0//4//140",
+        "Jolly": "4//252//0//0//0//252"
+      }
+    }
+  },
+  {
+    "name": "Basculegion",
+    "usage": "1.19%",
+    "set": {
+      "moves": {
+        "Last Respects": "97.864%",
+        "Aqua Jet": "80.383%",
+        "Wave Crash": "58.318%",
+        "Protect": "56.227%",
+        "Liquidation": "40.712%",
+        "Flip Turn": "34.689%",
+        "Psychic Fangs": "10.511%",
+        "Head Smash": "5.497%",
+        "Other": "15.798%"
+      },
+      "teammates": {
+        "Raging Bolt": "45.181%",
+        "Whimsicott": "42.780%",
+        "Ogerpon-Hearthflame": "41.325%",
+        "Moltres-Galar": "40.943%",
+        "Terrakion": "40.550%",
+        "Archaludon": "36.853%",
+        "Pelipper": "35.291%",
+        "Incineroar": "16.827%",
+        "Rillaboom": "13.732%",
+        "Amoonguss": "13.139%"
+      },
+      "items": {
+        "Focus Sash": "41.308%",
+        "Choice Band": "26.454%",
+        "Choice Scarf": "9.994%",
+        "Life Orb": "7.949%",
+        "Mystic Water": "4.741%",
+        "Assault Vest": "4.569%",
+        "Other": "4.985%"
+      },
+      "ability": {
+        "Adaptability": "61.088%",
+        "Swift Swim": "38.906%",
+        "Mold Breaker": "0.006%"
+      },
+      "evs": {
+        "Adamant": "52//252//0//0//0//204",
+        "Jolly": "4//252//0//0//0//252"
+      }
+    }
+  },
+  {
+    "name": "Regieleki",
+    "usage": "1.12%",
+    "set": {
+      "moves": {
+        "Electroweb": "96.908%",
+        "Thunderbolt": "93.246%",
+        "Volt Switch": "71.146%",
+        "Hyper Beam": "52.169%",
+        "Protect": "20.725%",
+        "Light Screen": "19.019%",
+        "Reflect": "18.805%",
+        "Tera Blast": "13.346%",
+        "Other": "14.635%"
+      },
+      "teammates": {
+        "Flutter Mane": "56.345%",
+        "Tatsugiri": "54.639%",
+        "Dondozo": "54.633%",
+        "Chi-Yu": "53.822%",
+        "Glimmora": "51.465%",
+        "Regidrago": "25.165%",
+        "Registeel": "19.386%",
+        "Regice": "19.378%",
+        "Regigigas": "19.317%",
+        "Regirock": "18.532%"
+      },
+      "items": {
+        "Choice Scarf": "52.422%",
+        "Light Clay": "18.556%",
+        "Focus Sash": "16.040%",
+        "Magnet": "5.791%",
+        "Covert Cloak": "2.855%",
+        "Other": "4.336%"
+      },
+      "ability": {
+        "Transistor": "100.000%"
+      },
+      "evs": {
+        "Timid": "252//0//76//12//4//164",
+        "Modest": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Zapdos-Galar",
+    "usage": "1.06%",
+    "set": {
+      "moves": {
+        "Brave Bird": "76.487%",
+        "Coaching": "62.420%",
+        "Close Combat": "55.016%",
+        "Thunderous Kick": "48.654%",
+        "Acrobatics": "21.326%",
+        "Dual Wingbeat": "18.272%",
+        "Protect": "17.833%",
+        "Knock Off": "17.455%",
+        "U-turn": "16.677%",
+        "Quick Guard": "15.994%",
+        "Detect": "12.279%",
+        "Bulk Up": "11.333%",
+        "Taunt": "9.966%",
+        "Other": "16.288%"
+      },
+      "teammates": {
+        "Chien-Pao": "54.103%",
+        "Ting-Lu": "41.652%",
+        "Gouging Fire": "36.856%",
+        "Dragonite": "36.044%",
+        "Rillaboom": "28.830%",
+        "Raging Bolt": "26.909%",
+        "Sinistcha": "24.556%",
+        "Incineroar": "23.009%",
+        "Ogerpon-Hearthflame": "20.246%",
+        "Ogerpon-Wellspring": "19.494%"
+      },
+      "items": {
+        "Choice Scarf": "41.669%",
+        "Life Orb": "17.766%",
+        "Psychic Seed": "13.700%",
+        "Covert Cloak": "11.706%",
+        "Grassy Seed": "7.543%",
+        "Choice Band": "2.232%",
+        "Safety Goggles": "1.062%",
+        "Other": "4.322%"
+      },
+      "ability": {
+        "Defiant": "100.000%"
+      },
+      "evs": {
+        "Adamant": "180//204//12//0//12//100",
+        "Jolly": "0//252//0//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Tyranitar",
+    "usage": "0.98%",
+    "set": {
+      "moves": {
+        "岩崩": "94.995%",
+        "拍落": "86.828%",
+        "Tera Blast": "67.787%",
+        "踢倒": "52.727%",
+        "守住": "24.305%",
+        "咬碎": "12.195%",
+        "冰凍拳": "8.322%",
+        "地震": "7.335%",
+        "龍之舞": "6.506%",
+        "十萬馬力": "5.485%",
+        "尖石攻擊": "4.187%",
+        "冰凍之風": "3.575%",
+        "大聲咆哮": "3.028%",
+        "廣域破壞": "2.267%",
+        "鐵頭": "2.191%",
+        "Other": "18.267%"
+      },
+      "teammates": {
+        "龍頭地鼠": "63.587%",
+        "敗露球菇": "44.097%",
+        "鋼鎧鴉": "37.080%",
+        "Okidogi": "22.119%",
+        "閃電鳥": "19.501%",
+        "Flutter Mane": "15.631%",
+        "暴飛龍": "14.520%",
+        "熾焰咆哮虎": "14.084%",
+        "美納斯": "13.097%",
+        "轟擂金剛猩": "8.342%"
+      },
+      "items": {
+        "突擊背心": "38.416%",
+        "講究頭帶": "30.896%",
+        "Clear Amulet": "13.221%",
+        "弱點保險": "5.141%",
+        "文柚果": "2.309%",
+        "沙沙岩石": "1.869%",
+        "講究圍巾": "1.821%",
+        "吃剩的東西": "1.706%",
+        "Other": "4.622%"
+      },
+      "ability": {
+        "揚沙": "99.680%",
+        "緊張感": "0.320%"
+      },
+      "evs": {
+        "固執": "252//248//4//0//0//0",
+        "勇敢": "252//248//0//4//0//0"
+      }
+    }
+  },
+  {
+    "name": "Regigigas",
+    "usage": "0.94%",
+    "set": {
+      "moves": {
+        "Protect": "73.889%",
+        "Crush Grip": "67.596%",
+        "High Horsepower": "67.591%",
+        "Heavy Slam": "51.207%",
+        "Thunder Wave": "22.026%",
+        "Rock Slide": "19.415%",
+        "Icy Wind": "18.608%",
+        "Wide Guard": "15.945%",
+        "Heat Crash": "13.923%",
+        "Knock Off": "12.808%",
+        "Confuse Ray": "12.612%",
+        "Nothing": "4.630%",
+        "Other": "19.750%"
+      },
+      "teammates": {
+        "Weezing-Galar": "71.257%",
+        "Dondozo": "46.568%",
+        "Tatsugiri": "46.564%",
+        "Flutter Mane": "40.963%",
+        "Chi-Yu": "33.165%",
+        "Dragonite": "29.776%",
+        "Chien-Pao": "27.521%",
+        "Regieleki": "22.857%",
+        "Regidrago": "22.775%",
+        "Regice": "22.570%"
+      },
+      "items": {
+        "Life Orb": "67.594%",
+        "Sitrus Berry": "21.689%",
+        "Clear Amulet": "4.374%",
+        "Leftovers": "2.131%",
+        "Other": "4.212%"
+      },
+      "ability": {
+        "Slow Start": "100.000%"
+      },
+      "evs": {
+        "Jolly": "0//252//0//0//4//252",
+        "Careful": "252//0//76//0//180//0",
+        "Adamant": "12//236//4//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Goodra-Hisui",
+    "usage": "0.93%",
+    "set": {
+      "moves": {
+        "Heavy Slam": "94.371%",
+        "Body Press": "92.616%",
+        "Shelter": "59.733%",
+        "Protect": "52.533%",
+        "Life Dew": "44.368%",
+        "Acid Armor": "33.136%",
+        "Draco Meteor": "5.531%",
+        "Other": "17.713%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "50.532%",
+        "Rillaboom": "48.371%",
+        "Tornadus": "44.495%",
+        "Chien-Pao": "43.491%",
+        "Pikachu": "42.366%",
+        "Grimmsnarl": "40.327%",
+        "Annihilape": "36.847%",
+        "Clefairy": "36.568%",
+        "Spectrier": "36.240%",
+        "Lapras": "36.205%"
+      },
+      "items": {
+        "Leftovers": "52.487%",
+        "Rocky Helmet": "40.521%",
+        "Covert Cloak": "2.398%",
+        "Other": "4.593%"
+      },
+      "ability": {
+        "Shell Armor": "94.342%",
+        "Sap Sipper": "4.815%",
+        "Gooey": "0.843%"
+      },
+      "evs": {
+        "Careful": "252//0//252//0//4//0",
+        "Impish": "252//0//252//0//4//0",
+        "Bold": "252//0//156//76//20//4",
+        "Sassy": "252//0//4//0//252//0",
+        "Modest": "244//0//0//252//0//12"
+      }
+    }
+  },
+  {
+    "name": "Clefairy",
+    "usage": "0.92%",
+    "set": {
+      "moves": {
+        "Follow Me": "99.025%",
+        "Protect": "87.079%",
+        "Life Dew": "55.791%",
+        "Icy Wind": "46.493%",
+        "Helping Hand": "39.141%",
+        "After You": "27.218%",
+        "Encore": "13.732%",
+        "Heal Pulse": "6.410%",
+        "Moonblast": "6.382%",
+        "Other": "18.730%"
+      },
+      "teammates": {
+        "Annihilape": "38.839%",
+        "Grimmsnarl": "37.410%",
+        "Spectrier": "36.950%",
+        "Goodra-Hisui": "36.766%",
+        "Lapras": "36.402%",
+        "Flutter Mane": "31.328%",
+        "Urshifu-Rapid-Strike": "31.166%",
+        "Sinistcha": "23.263%",
+        "Incineroar": "22.486%",
+        "Kommo-o": "19.817%"
+      },
+      "items": {
+        "Eviolite": "99.910%",
+        "Other": "0.090%"
+      },
+      "ability": {
+        "Friend Guard": "98.402%",
+        "Cute Charm": "1.555%",
+        "Magic Guard": "0.043%"
+      },
+      "evs": {
+        "Calm": "252//0//140//0//116//0",
+        "Relaxed": "252//0//252//0//4//0",
+        "Sassy": "244//0//60//0//204//0",
+        "Bold": "252//0//124//4//124//4"
+      }
+    }
+  },
+  {
+    "name": "Registeel",
+    "usage": "0.91%",
+    "set": {
+      "moves": {
+        "Body Press": "99.972%",
+        "Heavy Slam": "98.079%",
+        "Protect": "94.021%",
+        "Iron Defense": "92.996%",
+        "Other": "14.933%"
+      },
+      "teammates": {
+        "Tornadus": "59.240%",
+        "Urshifu-Rapid-Strike": "52.241%",
+        "Flutter Mane": "51.534%",
+        "Raging Bolt": "50.796%",
+        "Landorus-Therian": "47.836%",
+        "Regidrago": "40.384%",
+        "Regice": "33.904%",
+        "Regirock": "27.989%",
+        "Regieleki": "23.672%",
+        "Regigigas": "23.291%"
+      },
+      "items": {
+        "Leftovers": "96.972%",
+        "Other": "3.028%"
+      },
+      "ability": {
+        "Clear Body": "100.000%",
+        "Light Metal": "0.000%"
+      },
+      "evs": {
+        "Bold": "252//0//180//0//76//0",
+        "Impish": "252//4//76//0//156//20",
+        "Relaxed": "212//36//252//0//0//0"
+      }
+    }
+  },
+  {
+    "name": "Ogerpon",
+    "usage": "0.88%",
+    "set": {
+      "moves": {
+        "Ivy Cudgel": "97.731%",
+        "Spiky Shield": "96.224%",
+        "Follow Me": "94.024%",
+        "Superpower": "56.894%",
+        "Stomping Tantrum": "32.018%",
+        "Encore": "9.116%",
+        "Other": "13.994%"
+      },
+      "teammates": {
+        "Raging Bolt": "75.991%",
+        "Landorus": "52.094%",
+        "Iron Bundle": "50.668%",
+        "Heatran": "50.580%",
+        "Baxcalibur": "50.479%",
+        "Chien-Pao": "35.400%",
+        "Incineroar": "34.990%",
+        "Urshifu-Rapid-Strike": "33.857%",
+        "Farigiraf": "26.528%",
+        "Tornadus": "9.188%"
+      },
+      "items": {
+        "Focus Sash": "55.324%",
+        "Life Orb": "26.700%",
+        "Covert Cloak": "10.500%",
+        "Loaded Dice": "2.194%",
+        "Sitrus Berry": "1.706%",
+        "Other": "3.576%"
+      },
+      "ability": {
+        "Defiant": "100.000%"
+      },
+      "evs": {
+        "Adamant": "0//252//4//0//0//252",
+        "Jolly": "0//252//0//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Klefki",
+    "usage": "0.87%",
+    "set": {
+      "moves": {
+        "Light Screen": "98.679%",
+        "Dazzling Gleam": "96.954%",
+        "Reflect": "62.895%",
+        "Sunny Day": "59.183%",
+        "Thunder Wave": "37.681%",
+        "Rain Dance": "36.881%",
+        "Other": "7.726%"
+      },
+      "teammates": {
+        "Flutter Mane": "59.839%",
+        "Gouging Fire": "54.130%",
+        "Milotic": "43.288%",
+        "Rillaboom": "41.568%",
+        "Raging Bolt": "41.552%",
+        "Landorus": "38.635%",
+        "Moltres-Galar": "36.373%",
+        "Arcanine-Hisui": "34.705%",
+        "Urshifu-Rapid-Strike": "33.423%",
+        "Landorus-Therian": "13.483%"
+      },
+      "items": {
+        "Light Clay": "60.502%",
+        "Covert Cloak": "31.575%",
+        "Rocky Helmet": "5.051%",
+        "Other": "2.873%"
+      },
+      "ability": {
+        "Prankster": "100.000%",
+        "Magician": "0.000%"
+      },
+      "evs": {
+        "Bold": "244//0//228//36//0//0"
+      }
+    }
+  },
+  {
+    "name": "Scream Tail",
+    "usage": "0.84%",
+    "set": {
+      "moves": {
+        "Perish Song": "77.493%",
+        "Encore": "73.516%",
+        "Protect": "58.985%",
+        "Disable": "50.816%",
+        "Misty Explosion": "36.146%",
+        "Dazzling Gleam": "35.517%",
+        "Sing": "14.220%",
+        "Baton Pass": "13.337%",
+        "Thunder Wave": "10.274%",
+        "Sunny Day": "8.258%",
+        "Psych Up": "5.230%",
+        "Other": "16.208%"
+      },
+      "teammates": {
+        "Dondozo": "59.950%",
+        "Tatsugiri": "59.919%",
+        "Flamigo": "48.413%",
+        "Glimmora": "38.326%",
+        "Maushold": "38.020%",
+        "Gothitelle": "30.626%",
+        "Incineroar": "21.339%",
+        "Flutter Mane": "19.395%",
+        "Cresselia": "17.162%",
+        "Amoonguss": "15.676%"
+      },
+      "items": {
+        "Booster Energy": "77.843%",
+        "Covert Cloak": "16.524%",
+        "Mental Herb": "3.506%",
+        "Other": "2.126%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Timid": "252//0//0//0//4//252",
+        "Modest": "4//0//0//248//0//252"
+      }
+    }
+  },
+  {
+    "name": "Gallade",
+    "usage": "0.81%",
+    "set": {
+      "moves": {
+        "Psycho Cut": "98.535%",
+        "Sacred Sword": "98.402%",
+        "Wide Guard": "91.117%",
+        "Trick Room": "89.767%",
+        "Protect": "6.699%",
+        "Other": "15.480%"
+      },
+      "teammates": {
+        "Indeedee-F": "88.063%",
+        "Hatterene": "77.534%",
+        "Torkoal": "77.392%",
+        "Ursaluna": "47.259%",
+        "Urshifu": "44.537%",
+        "Farigiraf": "20.853%",
+        "Ursaluna-Bloodmoon": "8.578%",
+        "Ogerpon-Cornerstone": "7.683%",
+        "Lilligant-Hisui": "7.657%",
+        "Exeggutor": "7.201%"
+      },
+      "items": {
+        "Clear Amulet": "87.806%",
+        "Mental Herb": "3.360%",
+        "Focus Sash": "1.890%",
+        "Life Orb": "1.288%",
+        "Choice Band": "1.089%",
+        "Other": "4.567%"
+      },
+      "ability": {
+        "Sharpness": "97.864%",
+        "Steadfast": "1.576%",
+        "Justified": "0.561%"
+      },
+      "evs": {
+        "Brave": "220//248//0//0//36//0",
+        "Adamant": "212//248//0//0//0//44"
+      }
+    }
+  },
+  {
+    "name": "Corviknight",
+    "usage": "0.81%",
+    "set": {
+      "moves": {
+        "Brave Bird": "82.911%",
+        "Tailwind": "68.863%",
+        "Iron Head": "67.790%",
+        "Roost": "50.022%",
+        "U-turn": "41.806%",
+        "Body Press": "28.026%",
+        "Iron Defense": "17.904%",
+        "Protect": "15.685%",
+        "Bulk Up": "15.512%",
+        "Other": "11.481%"
+      },
+      "teammates": {
+        "Tyranitar": "45.103%",
+        "Amoonguss": "44.564%",
+        "Excadrill": "40.704%",
+        "Flutter Mane": "30.968%",
+        "Raging Bolt": "30.453%",
+        "Okidogi": "25.062%",
+        "Zapdos": "22.538%",
+        "Gouging Fire": "21.471%",
+        "Ogerpon-Wellspring": "17.982%",
+        "Incineroar": "16.512%"
+      },
+      "items": {
+        "Figy Berry": "36.353%",
+        "Rocky Helmet": "31.771%",
+        "Leftovers": "12.832%",
+        "Sitrus Berry": "10.355%",
+        "Safety Goggles": "4.999%",
+        "Other": "3.690%"
+      },
+      "ability": {
+        "Mirror Armor": "96.871%",
+        "Pressure": "3.029%",
+        "Unnerve": "0.099%"
+      },
+      "evs": {
+        "Impish": "252//0//132//0//0//124",
+        "Adamant": "252//100//68//0//4//84",
+        "Careful": "252//36//4//0//196//20"
+      }
+    }
+  },
+  {
+    "name": "Bronzong",
+    "usage": "0.79%",
+    "set": {
+      "moves": {
+        "Trick Room": "99.259%",
+        "Gyro Ball": "89.558%",
+        "Body Press": "72.456%",
+        "Iron Defense": "70.494%",
+        "Helping Hand": "19.942%",
+        "Reflect": "19.108%",
+        "Heavy Slam": "7.767%",
+        "Skill Swap": "4.913%",
+        "Other": "16.502%"
+      },
+      "teammates": {
+        "Amoonguss": "47.215%",
+        "Torkoal": "41.863%",
+        "Ursaluna": "31.730%",
+        "Ogerpon-Cornerstone": "28.951%",
+        "Grimmsnarl": "28.771%",
+        "Okidogi": "27.954%",
+        "Moltres-Galar": "27.883%",
+        "Incineroar": "22.310%",
+        "Kingambit": "18.386%",
+        "Pelipper": "18.357%"
+      },
+      "items": {
+        "Leftovers": "55.301%",
+        "Mental Herb": "39.016%",
+        "Covert Cloak": "1.459%",
+        "Other": "4.223%"
+      },
+      "ability": {
+        "Levitate": "98.565%",
+        "Heatproof": "0.930%",
+        "Heavy Metal": "0.504%"
+      },
+      "evs": {
+        "Relaxed": "252//0//188//0//68//0",
+        "Sassy": "252//12//132//0//108//0"
+      }
+    }
+  },
+  {
+    "name": "Gothitelle",
+    "usage": "0.74%",
+    "set": {
+      "moves": {
+        "Fake Out": "81.336%",
+        "Protect": "73.700%",
+        "Psychic": "72.827%",
+        "Trick Room": "60.057%",
+        "Helping Hand": "49.084%",
+        "Heal Pulse": "18.769%",
+        "Taunt": "14.557%",
+        "Expanding Force": "11.429%",
+        "Other": "18.240%"
+      },
+      "teammates": {
+        "Incineroar": "64.985%",
+        "Amoonguss": "37.646%",
+        "Flutter Mane": "35.448%",
+        "Scream Tail": "34.539%",
+        "Urshifu-Rapid-Strike": "31.812%",
+        "Regidrago": "23.329%",
+        "Ogerpon-Hearthflame": "22.987%",
+        "Sylveon": "16.279%",
+        "Tsareena": "16.006%",
+        "Raging Bolt": "14.288%"
+      },
+      "items": {
+        "Sitrus Berry": "81.013%",
+        "Leftovers": "6.664%",
+        "Rocky Helmet": "4.117%",
+        "Covert Cloak": "2.328%",
+        "Focus Sash": "2.303%",
+        "Other": "3.576%"
+      },
+      "ability": {
+        "Shadow Tag": "98.912%",
+        "Frisk": "0.915%",
+        "Competitive": "0.173%"
+      },
+      "evs": {
+        "Calm": "252//0//172//4//76//4",
+        "Sassy": "252//4//0//0//252//0"
+      }
+    }
+  },
+  {
+    "name": "Sableye",
+    "usage": "0.74%",
+    "set": {
+      "moves": {
+        "Otra Vez": "87.329%",
+        "Pantalla de Luz": "76.494%",
+        "Reflejo": "74.566%",
+        "Anulación": "72.210%",
+        "Sorpresa": "20.359%",
+        "Último Lugar": "17.372%",
+        "Juego Sucio": "15.543%",
+        "Gravedad": "6.015%",
+        "Alarido": "5.149%",
+        "Fuego Fatuo": "4.480%",
+        "Intercambio": "3.253%",
+        "Other": "17.232%"
+      },
+      "teammates": {
+        "Archaludon": "67.398%",
+        "Pelipper": "66.895%",
+        "Incineroar": "66.865%",
+        "Frosmoth": "66.600%",
+        "Amoonguss": "64.982%",
+        "Smeargle": "11.330%",
+        "Annihilape": "7.624%",
+        "Gholdengo": "7.115%",
+        "Thundurus": "5.975%",
+        "Rillaboom": "5.658%"
+      },
+      "items": {
+        "Refleluz": "75.684%",
+        "Baya Hibis": "11.131%",
+        "Botón Escape": "5.580%",
+        "Ability Shield": "2.402%",
+        "Banda Focus": "1.446%",
+        "Other": "3.757%"
+      },
+      "ability": {
+        "Bromista": "99.925%",
+        "Vista Lince": "0.073%",
+        "Rezagado": "0.002%"
+      },
+      "evs": {
+        "Serena": "4//0//252//0//248//0",
+        "Cauta": "252//4//76//0//80//92",
+        "Osada": "252//0//248//0//4//0",
+        "Grosera": "252//0//140//0//116//0",
+        "Agitada": "252//0//0//0//252//0"
+      }
+    }
+  },
+  {
+    "name": "Metagross",
+    "usage": "0.74%",
+    "set": {
+      "moves": {
+        "Psychic Fangs": "93.398%",
+        "Bullet Punch": "83.738%",
+        "Heavy Slam": "54.896%",
+        "Protect": "39.071%",
+        "Stomping Tantrum": "37.673%",
+        "Explosion": "28.566%",
+        "Hard Press": "11.649%",
+        "Iron Head": "6.228%",
+        "Hammer Arm": "6.168%",
+        "Ice Punch": "5.814%",
+        "Brick Break": "4.643%",
+        "Body Press": "3.887%",
+        "Trailblaze": "3.648%",
+        "Meteor Mash": "3.587%",
+        "Other": "17.036%"
+      },
+      "teammates": {
+        "Flutter Mane": "46.832%",
+        "Chien-Pao": "30.329%",
+        "Farigiraf": "23.288%",
+        "Torkoal": "20.960%",
+        "Ursaluna": "20.541%",
+        "Ogerpon-Cornerstone": "20.446%",
+        "Indeedee-F": "20.275%",
+        "Amoonguss": "17.080%",
+        "Dragonite": "16.927%",
+        "Urshifu-Rapid-Strike": "16.766%"
+      },
+      "items": {
+        "Assault Vest": "48.687%",
+        "Life Orb": "21.379%",
+        "Weakness Policy": "8.205%",
+        "Iron Plate": "4.760%",
+        "Covert Cloak": "4.292%",
+        "Choice Band": "4.056%",
+        "Metal Coat": "2.817%",
+        "Leftovers": "0.995%",
+        "Other": "4.809%"
+      },
+      "ability": {
+        "Clear Body": "100.000%",
+        "Light Metal": "0.000%"
+      },
+      "evs": {
+        "Adamant": "164//184//68//0//4//84"
+      }
+    }
+  },
+  {
+    "name": "Dragapult",
+    "usage": "0.71%",
+    "set": {
+      "moves": {
+        "Dragon Darts": "88.940%",
+        "U-turn": "79.416%",
+        "Phantom Force": "76.724%",
+        "Tera Blast": "64.815%",
+        "Outrage": "15.931%",
+        "Protect": "13.343%",
+        "Draco Meteor": "8.302%",
+        "Sucker Punch": "8.114%",
+        "Shadow Ball": "8.030%",
+        "Psychic Fangs": "6.469%",
+        "Curse": "4.714%",
+        "Dragon Dance": "3.008%",
+        "Thunderbolt": "2.968%",
+        "Other": "19.226%"
+      },
+      "teammates": {
+        "Ogerpon-Wellspring": "42.252%",
+        "Archaludon": "41.354%",
+        "Whimsicott": "36.695%",
+        "Gholdengo": "36.214%",
+        "Landorus-Therian": "31.484%",
+        "Chien-Pao": "23.880%",
+        "Incineroar": "22.754%",
+        "Urshifu-Rapid-Strike": "17.516%",
+        "Indeedee-F": "11.937%",
+        "Farigiraf": "10.724%"
+      },
+      "items": {
+        "Choice Band": "75.713%",
+        "Life Orb": "11.393%",
+        "Focus Sash": "2.472%",
+        "Choice Specs": "2.213%",
+        "Safety Goggles": "1.673%",
+        "Choice Scarf": "0.833%",
+        "Other": "4.357%"
+      },
+      "ability": {
+        "Clear Body": "95.606%",
+        "Infiltrator": "2.246%",
+        "Cursed Body": "2.149%"
+      },
+      "evs": {
+        "Adamant": "0//252//4//0//0//252",
+        "Jolly": "12//252//4//0//28//208"
+      }
+    }
+  },
+  {
+    "name": "Excadrill",
+    "usage": "0.69%",
+    "set": {
+      "moves": {
+        "Iron Head": "98.200%",
+        "Protect": "90.347%",
+        "Earthquake": "84.198%",
+        "High Horsepower": "83.078%",
+        "Rock Slide": "18.418%",
+        "Swords Dance": "11.108%",
+        "Other": "14.652%"
+      },
+      "teammates": {
+        "Tyranitar": "89.762%",
+        "Amoonguss": "56.403%",
+        "Corviknight": "47.237%",
+        "Okidogi": "29.007%",
+        "Zapdos": "26.930%",
+        "Salamence": "20.226%",
+        "Milotic": "17.652%",
+        "Ogerpon-Wellspring": "14.169%",
+        "Incineroar": "13.743%",
+        "Flutter Mane": "11.060%"
+      },
+      "items": {
+        "Focus Sash": "70.784%",
+        "Life Orb": "13.932%",
+        "Clear Amulet": "10.235%",
+        "Choice Band": "3.505%",
+        "Other": "1.544%"
+      },
+      "ability": {
+        "Sand Rush": "90.700%",
+        "Sand Force": "6.634%",
+        "Mold Breaker": "2.666%"
+      },
+      "evs": {
+        "Adamant": "0//248//4//0//0//252",
+        "Jolly": "0//252//0//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Flamigo",
+    "usage": "0.69%",
+    "set": {
+      "moves": {
+        "Close Combat": "97.902%",
+        "Brave Bird": "77.371%",
+        "Protect": "53.400%",
+        "Dual Wingbeat": "48.164%",
+        "Detect": "27.332%",
+        "Wide Guard": "24.290%",
+        "Acrobatics": "20.919%",
+        "Roost": "12.454%",
+        "Feather Dance": "10.127%",
+        "Upper Hand": "6.259%",
+        "Substitute": "4.599%",
+        "Other": "17.184%"
+      },
+      "teammates": {
+        "Dondozo": "77.695%",
+        "Tatsugiri": "77.694%",
+        "Scream Tail": "58.888%",
+        "Maushold": "48.639%",
+        "Glimmora": "46.479%",
+        "Smeargle": "29.985%",
+        "Muk-Alola": "26.270%",
+        "Garganacl": "10.736%",
+        "Flutter Mane": "7.342%",
+        "Indeedee-F": "6.341%"
+      },
+      "items": {
+        "Sitrus Berry": "51.894%",
+        "White Herb": "30.161%",
+        "Safety Goggles": "3.102%",
+        "Life Orb": "3.036%",
+        "Clear Amulet": "3.026%",
+        "Focus Sash": "2.699%",
+        "Nothing": "2.057%",
+        "Other": "4.025%"
+      },
+      "ability": {
+        "Costar": "97.122%",
+        "Scrappy": "2.878%",
+        "Tangled Feet": "0.000%"
+      },
+      "evs": {
+        "Adamant": "140//36//44//0//164//124",
+        "Jolly": "244//4//4//0//4//252"
+      }
+    }
+  },
+  {
+    "name": "Milotic",
+    "usage": "0.65%",
+    "set": {
+      "moves": {
+        "Scald": "74.850%",
+        "Haze": "68.707%",
+        "Icy Wind": "67.329%",
+        "Life Dew": "63.629%",
+        "Muddy Water": "24.812%",
+        "Recover": "23.864%",
+        "Coil": "20.364%",
+        "Hypnosis": "17.301%",
+        "Protect": "15.821%",
+        "Ice Beam": "10.776%",
+        "Other": "12.548%"
+      },
+      "teammates": {
+        "Flutter Mane": "62.687%",
+        "Gouging Fire": "58.005%",
+        "Klefki": "57.974%",
+        "Rillaboom": "43.448%",
+        "Tyranitar": "19.733%",
+        "Amoonguss": "19.349%",
+        "Excadrill": "18.840%",
+        "Corviknight": "16.928%",
+        "Salamence": "16.172%",
+        "Dragonite": "14.421%"
+      },
+      "items": {
+        "Covert Cloak": "59.547%",
+        "Leftovers": "23.142%",
+        "Safety Goggles": "5.414%",
+        "Sitrus Berry": "5.128%",
+        "Rocky Helmet": "1.235%",
+        "Flame Orb": "1.168%",
+        "Other": "4.366%"
+      },
+      "ability": {
+        "Competitive": "98.565%",
+        "Marvel Scale": "1.434%",
+        "Cute Charm": "0.001%"
+      },
+      "evs": {
+        "Bold": "244//0//172//0//0//92",
+        "Calm": "180//0//156//4//104//60",
+        "Sassy": "252//0//4//0//248//0",
+        "Hardy": "196//0//100//108//0//100",
+        "Timid": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Terrakion",
+    "usage": "0.63%",
+    "set": {
+      "moves": {
+        "Rock Slide": "99.845%",
+        "Protect": "98.144%",
+        "Close Combat": "91.100%",
+        "Upper Hand": "86.872%",
+        "Sacred Sword": "9.176%",
+        "Other": "14.864%"
+      },
+      "teammates": {
+        "Whimsicott": "96.420%",
+        "Ogerpon-Hearthflame": "80.880%",
+        "Raging Bolt": "77.700%",
+        "Moltres-Galar": "77.226%",
+        "Basculegion": "76.969%",
+        "Gholdengo": "9.039%",
+        "Archaludon": "7.440%",
+        "Urshifu-Rapid-Strike": "7.085%",
+        "Flutter Mane": "6.582%",
+        "Pelipper": "5.812%"
+      },
+      "items": {
+        "Life Orb": "79.852%",
+        "Covert Cloak": "13.911%",
+        "Clear Amulet": "2.044%",
+        "Other": "4.192%"
+      },
+      "ability": {
+        "Justified": "100.000%"
+      },
+      "evs": {
+        "Jolly": "52//252//0//0//0//204"
+      }
+    }
+  },
+  {
+    "name": "Armarouge",
+    "usage": "0.57%",
+    "set": {
+      "moves": {
+        "Expanding Force": "95.544%",
+        "Armor Cannon": "62.478%",
+        "Trick Room": "50.394%",
+        "Protect": "46.588%",
+        "Heat Wave": "37.082%",
+        "Meteor Beam": "23.079%",
+        "Wide Guard": "17.788%",
+        "Aura Sphere": "17.521%",
+        "Endure": "11.972%",
+        "Stored Power": "11.824%",
+        "Energy Ball": "5.101%",
+        "Psychic": "3.155%",
+        "Other": "17.475%"
+      },
+      "teammates": {
+        "Indeedee-F": "91.005%",
+        "Torkoal": "37.063%",
+        "Ursaluna": "21.182%",
+        "Hatterene": "20.028%",
+        "Lilligant-Hisui": "16.395%",
+        "Urshifu-Rapid-Strike": "10.927%",
+        "Ursaluna-Bloodmoon": "10.240%",
+        "Iron Hands": "10.122%",
+        "Gallade": "9.868%",
+        "Urshifu": "9.173%"
+      },
+      "items": {
+        "Weakness Policy": "33.683%",
+        "Power Herb": "23.188%",
+        "Life Orb": "19.594%",
+        "Focus Sash": "8.718%",
+        "Covert Cloak": "2.300%",
+        "Psychic Seed": "2.233%",
+        "Choice Specs": "1.909%",
+        "Sitrus Berry": "1.634%",
+        "Choice Scarf": "1.485%",
+        "Twisted Spoon": "1.140%",
+        "Other": "4.116%"
+      },
+      "ability": {
+        "Flash Fire": "62.551%",
+        "Weak Armor": "37.449%"
+      },
+      "evs": {
+        "Modest": "252//0//4//248//0//0",
+        "Quiet": "244//0//0//248//12//0",
+        "Timid": "4//0//0//252//0//248"
+      }
+    }
+  },
+  {
+    "name": "Scizor",
+    "usage": "0.55%",
+    "set": {
+      "moves": {
+        "Bullet Punch": "99.899%",
+        "U-turn": "81.025%",
+        "Close Combat": "74.744%",
+        "Dual Wingbeat": "62.800%",
+        "Bug Bite": "21.289%",
+        "Protect": "18.960%",
+        "Iron Head": "16.036%",
+        "Swords Dance": "10.378%",
+        "Other": "14.869%"
+      },
+      "teammates": {
+        "Dragonite": "48.917%",
+        "Glimmora": "47.476%",
+        "Tatsugiri": "46.454%",
+        "Dondozo": "46.417%",
+        "Ursaluna-Bloodmoon": "45.831%",
+        "Pelipper": "20.274%",
+        "Incineroar": "20.141%",
+        "Archaludon": "17.444%",
+        "Maushold": "15.248%",
+        "Thundurus-Therian": "15.102%"
+      },
+      "items": {
+        "Choice Band": "75.513%",
+        "Clear Amulet": "11.872%",
+        "Life Orb": "6.273%",
+        "Safety Goggles": "1.294%",
+        "Expert Belt": "1.256%",
+        "Other": "3.792%"
+      },
+      "ability": {
+        "Technician": "99.954%",
+        "Swarm": "0.046%",
+        "Light Metal": "0.000%"
+      },
+      "evs": {
+        "Adamant": "220//116//76//0//60//36"
+      }
+    }
+  },
+  {
+    "name": "Gastrodon",
+    "usage": "0.55%",
+    "set": {
+      "moves": {
+        "Protect": "89.332%",
+        "Earth Power": "87.234%",
+        "Recover": "41.029%",
+        "Yawn": "40.669%",
+        "Icy Wind": "37.714%",
+        "Ice Beam": "35.444%",
+        "Muddy Water": "26.716%",
+        "Clear Smog": "15.057%",
+        "Helping Hand": "5.415%",
+        "Earthquake": "5.021%",
+        "Other": "16.370%"
+      },
+      "teammates": {
+        "Gholdengo": "33.408%",
+        "Arcanine": "32.339%",
+        "Kilowattrel": "29.038%",
+        "Annihilape": "28.411%",
+        "Baxcalibur": "26.497%",
+        "Incineroar": "24.505%",
+        "Flutter Mane": "19.278%",
+        "Landorus": "15.283%",
+        "Thundurus": "12.448%",
+        "Urshifu": "10.080%"
+      },
+      "items": {
+        "Leftovers": "45.505%",
+        "Aguav Berry": "28.381%",
+        "Sitrus Berry": "12.030%",
+        "Wiki Berry": "5.264%",
+        "Grassy Seed": "2.567%",
+        "Assault Vest": "1.276%",
+        "Other": "4.978%"
+      },
+      "ability": {
+        "Storm Drain": "98.991%",
+        "Sticky Hold": "0.936%",
+        "Sand Force": "0.073%"
+      },
+      "evs": {
+        "Calm": "252//0//0//4//252//0",
+        "Bold": "252//0//252//0//4//0",
+        "Relaxed": "252//4//108//36//108//0",
+        "Modest": "252//0//0//252//4//0"
+      }
+    }
+  },
+  {
+    "name": "Ninetales",
+    "usage": "0.55%",
+    "set": {
+      "moves": {
+        "Protect": "92.078%",
+        "Heat Wave": "84.386%",
+        "Helping Hand": "62.846%",
+        "Overheat": "48.919%",
+        "Encore": "39.045%",
+        "Will-O-Wisp": "11.050%",
+        "Flamethrower": "10.987%",
+        "Disable": "9.016%",
+        "Hypnosis": "8.064%",
+        "Nasty Plot": "7.915%",
+        "Solar Beam": "7.514%",
+        "Other": "18.180%"
+      },
+      "teammates": {
+        "Flutter Mane": "84.658%",
+        "Tornadus": "61.147%",
+        "Urshifu": "58.288%",
+        "Farigiraf": "47.110%",
+        "Ogerpon-Cornerstone": "40.761%",
+        "Indeedee": "20.133%",
+        "Sneasler": "19.786%",
+        "Raging Bolt": "19.329%",
+        "Incineroar": "12.841%",
+        "Rillaboom": "11.534%"
+      },
+      "items": {
+        "Life Orb": "60.453%",
+        "Focus Sash": "9.804%",
+        "Eject Pack": "8.323%",
+        "Wide Lens": "7.288%",
+        "Heat Rock": "4.707%",
+        "Rocky Helmet": "1.787%",
+        "Choice Specs": "1.313%",
+        "Safety Goggles": "1.213%",
+        "Covert Cloak": "0.950%",
+        "Other": "4.162%"
+      },
+      "ability": {
+        "Drought": "99.753%",
+        "Flash Fire": "0.247%"
+      },
+      "evs": {
+        "Timid": "164//0//44//44//4//252",
+        "Modest": "0//0//0//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Zoroark-Hisui",
+    "usage": "0.53%",
+    "set": {
+      "moves": {
+        "Hyper Voice": "73.249%",
+        "Protect": "72.740%",
+        "Shadow Ball": "66.562%",
+        "Icy Wind": "38.288%",
+        "Bitter Malice": "32.817%",
+        "Tera Blast": "32.605%",
+        "Taunt": "28.631%",
+        "Will-O-Wisp": "9.771%",
+        "Snarl": "5.765%",
+        "Hyper Beam": "5.589%",
+        "Psychic": "5.493%",
+        "Flamethrower": "4.786%",
+        "Nasty Plot": "4.154%",
+        "Other": "19.549%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "67.501%",
+        "Regidrago": "52.720%",
+        "Whimsicott": "44.774%",
+        "Rillaboom": "32.614%",
+        "Kingambit": "30.679%",
+        "Tornadus": "24.815%",
+        "Flutter Mane": "22.436%",
+        "Ogerpon-Hearthflame": "20.931%",
+        "Incineroar": "17.249%",
+        "Gholdengo": "14.542%"
+      },
+      "items": {
+        "Life Orb": "52.154%",
+        "Focus Sash": "32.211%",
+        "Choice Specs": "12.366%",
+        "Other": "3.270%"
+      },
+      "ability": {
+        "Illusion": "100.000%"
+      },
+      "evs": {
+        "Modest": "4//0//0//248//0//252",
+        "Timid": "0//0//4//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Latios",
+    "usage": "0.52%",
+    "set": {
+      "moves": {
+        "Luster Purge": "93.219%",
+        "Protect": "76.455%",
+        "Tailwind": "72.425%",
+        "Draco Meteor": "68.175%",
+        "Dragon Pulse": "17.631%",
+        "Icy Wind": "13.251%",
+        "Simple Beam": "13.145%",
+        "Dragon Cheer": "6.506%",
+        "Ice Beam": "5.793%",
+        "Aura Sphere": "5.117%",
+        "Heal Pulse": "3.999%",
+        "Recover": "3.322%",
+        "Thunder Wave": "3.013%",
+        "Other": "17.949%"
+      },
+      "teammates": {
+        "Flutter Mane": "63.485%",
+        "Incineroar": "50.885%",
+        "Amoonguss": "39.023%",
+        "Urshifu-Rapid-Strike": "36.340%",
+        "Ogerpon-Hearthflame": "32.396%",
+        "Rillaboom": "15.397%",
+        "Ogerpon-Wellspring": "14.330%",
+        "Arcanine-Hisui": "13.715%",
+        "Ursaluna-Bloodmoon": "13.124%",
+        "Sneasler": "12.240%"
+      },
+      "items": {
+        "Soul Dew": "69.544%",
+        "Covert Cloak": "11.115%",
+        "Focus Sash": "4.087%",
+        "Rocky Helmet": "3.245%",
+        "Life Orb": "2.329%",
+        "Weakness Policy": "2.128%",
+        "Choice Scarf": "1.787%",
+        "Assault Vest": "1.251%",
+        "Other": "4.513%"
+      },
+      "ability": {
+        "Levitate": "100.000%"
+      },
+      "evs": {
+        "Timid": "0//0//4//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Frosmoth",
+    "usage": "0.52%",
+    "set": {
+      "moves": {
+        "Quiver Dance": "99.439%",
+        "Protect": "99.323%",
+        "Substitute": "95.543%",
+        "Dazzling Gleam": "95.464%",
+        "Other": "10.230%"
+      },
+      "teammates": {
+        "Archaludon": "95.439%",
+        "Pelipper": "95.438%",
+        "Sableye": "95.437%",
+        "Incineroar": "91.019%",
+        "Amoonguss": "87.467%",
+        "Thundurus": "8.260%",
+        "Basculegion": "7.507%"
+      },
+      "items": {
+        "Leftovers": "97.860%",
+        "Other": "2.140%"
+      },
+      "ability": {
+        "Ice Scales": "99.983%",
+        "Shield Dust": "0.017%"
+      },
+      "evs": {
+        "Timid": "116//0//36//132//4//220"
+      }
+    }
+  },
+  {
+    "name": "Volcarona",
+    "usage": "0.50%",
+    "set": {
+      "moves": {
+        "나비춤": "78.192%",
+        "방어": "75.242%",
+        "열풍": "47.792%",
+        "기가드레인": "36.505%",
+        "Tera Blast": "36.238%",
+        "화염방사": "23.559%",
+        "분노가루": "22.430%",
+        "불꽃춤": "19.606%",
+        "벌레의저항": "14.883%",
+        "순풍": "12.805%",
+        "벌레의야단법석": "10.371%",
+        "오버히트": "10.251%",
+        "Other": "12.126%"
+      },
+      "teammates": {
+        "Raging Bolt": "32.745%",
+        "뽀록나": "30.628%",
+        "우라오스": "29.352%",
+        "망나뇽": "26.998%",
+        "Chien-Pao": "24.667%",
+        "어흥염": "21.405%",
+        "고릴타": "15.444%",
+        "Ogerpon-Wellspring": "14.827%",
+        "Flutter Mane": "14.479%",
+        "Ogerpon-Cornerstone": "8.569%"
+      },
+      "items": {
+        "먹다남은음식": "38.510%",
+        "자뭉열매": "17.860%",
+        "Covert Cloak": "12.687%",
+        "울퉁불퉁멧": "8.602%",
+        "그래스시드": "6.149%",
+        "생명의구슬": "3.755%",
+        "목탄": "3.347%",
+        "방진고글": "3.157%",
+        "파워풀허브": "1.308%",
+        "Other": "4.624%"
+      },
+      "ability": {
+        "불꽃몸": "99.025%",
+        "벌레의알림": "0.975%"
+      },
+      "evs": {
+        "조심": "252//0//68//36//4//148",
+        "겁쟁이": "132//0//116//4//4//252"
+      }
+    }
+  },
+  {
+    "name": "Sylveon",
+    "usage": "0.49%",
+    "set": {
+      "moves": {
+        "Hyper Voice": "99.629%",
+        "Tera Blast": "50.338%",
+        "Shadow Ball": "47.522%",
+        "Quick Attack": "38.133%",
+        "Protect": "37.176%",
+        "Hyper Beam": "36.827%",
+        "Detect": "19.900%",
+        "Moonblast": "17.163%",
+        "Misty Terrain": "13.219%",
+        "Calm Mind": "8.079%",
+        "Yawn": "6.685%",
+        "Helping Hand": "5.205%",
+        "Sleep Talk": "3.696%",
+        "Other": "16.428%"
+      },
+      "teammates": {
+        "Incineroar": "54.015%",
+        "Urshifu-Rapid-Strike": "40.741%",
+        "Gothitelle": "24.767%",
+        "Regidrago": "24.639%",
+        "Tsareena": "24.628%",
+        "Landorus": "17.504%",
+        "Ogerpon-Wellspring": "16.386%",
+        "Amoonguss": "14.252%",
+        "Raging Bolt": "12.356%",
+        "Farigiraf": "10.491%"
+      },
+      "items": {
+        "Choice Specs": "41.645%",
+        "Throat Spray": "30.918%",
+        "Pixie Plate": "7.982%",
+        "Fairy Feather": "5.907%",
+        "Rocky Helmet": "4.652%",
+        "Leftovers": "4.640%",
+        "Other": "4.255%"
+      },
+      "ability": {
+        "Pixilate": "99.819%",
+        "Cute Charm": "0.181%"
+      },
+      "evs": {
+        "Modest": "252//0//140//76//4//36",
+        "Quiet": "252//0//4//252//0//0"
+      }
+    }
+  },
+  {
+    "name": "Regice",
+    "usage": "0.47%",
+    "set": {
+      "moves": {
+        "Ice Beam": "95.239%",
+        "Thunderbolt": "94.811%",
+        "Tera Blast": "68.236%",
+        "Icy Wind": "63.327%",
+        "Blizzard": "35.219%",
+        "Focus Blast": "13.525%",
+        "Protect": "11.114%",
+        "Other": "18.529%"
+      },
+      "teammates": {
+        "Registeel": "65.942%",
+        "Regidrago": "65.880%",
+        "Regieleki": "46.024%",
+        "Regigigas": "45.302%",
+        "Regirock": "44.045%",
+        "Tornadus": "33.346%",
+        "Ninetales-Alola": "30.874%",
+        "Incineroar": "24.140%",
+        "Ogerpon-Hearthflame": "20.810%",
+        "Cresselia": "19.987%"
+      },
+      "items": {
+        "Assault Vest": "60.792%",
+        "Choice Specs": "24.961%",
+        "Rocky Helmet": "6.961%",
+        "Life Orb": "3.601%",
+        "Other": "3.685%"
+      },
+      "ability": {
+        "Clear Body": "74.583%",
+        "Ice Body": "25.417%"
+      },
+      "evs": {
+        "Modest": "252//0//0//252//4//0",
+        "Quiet": "252//0//4//252//0//0"
+      }
+    }
+  },
+  {
+    "name": "Gyarados",
+    "usage": "0.46%",
+    "set": {
+      "moves": {
+        "Waterfall": "99.248%",
+        "Thunder Wave": "84.021%",
+        "Taunt": "45.872%",
+        "Earthquake": "31.603%",
+        "Dragon Cheer": "29.954%",
+        "Iron Head": "29.924%",
+        "Protect": "25.059%",
+        "Helping Hand": "13.305%",
+        "Dragon Dance": "11.845%",
+        "Tera Blast": "11.297%",
+        "Other": "17.874%"
+      },
+      "teammates": {
+        "Raging Bolt": "51.193%",
+        "Torkoal": "29.683%",
+        "Avalugg": "29.217%",
+        "Exeggutor-Alola": "28.584%",
+        "Ting-Lu": "27.483%",
+        "Okidogi": "26.226%",
+        "Ninetales-Alola": "23.663%",
+        "Articuno": "23.310%",
+        "Rhydon": "21.679%"
+      },
+      "items": {
+        "Clear Amulet": "38.236%",
+        "Sitrus Berry": "32.592%",
+        "Rocky Helmet": "10.424%",
+        "Aguav Berry": "7.286%",
+        "Safety Goggles": "3.399%",
+        "Assault Vest": "2.611%",
+        "Covert Cloak": "1.422%",
+        "Other": "4.029%"
+      },
+      "ability": {
+        "Intimidate": "98.131%",
+        "Moxie": "1.869%"
+      },
+      "evs": {
+        "Adamant": "244//8//84//0//92//76",
+        "Jolly": "4//252//0//0//0//252"
+      }
+    }
+  },
+  {
+    "name": "Great Tusk",
+    "usage": "0.46%",
+    "set": {
+      "moves": {
+        "Headlong Rush": "95.462%",
+        "Protect": "87.863%",
+        "Earthquake": "79.775%",
+        "Ice Spinner": "75.468%",
+        "Close Combat": "28.720%",
+        "Iron Head": "5.334%",
+        "Knock Off": "5.278%",
+        "Rock Slide": "4.938%",
+        "Other": "17.161%"
+      },
+      "teammates": {
+        "Flutter Mane": "78.020%",
+        "Incineroar": "69.577%",
+        "Tornadus": "69.115%",
+        "Ogerpon-Hearthflame": "67.985%",
+        "Gholdengo": "63.757%",
+        "Torkoal": "16.348%",
+        "Whimsicott": "10.613%",
+        "Raging Bolt": "10.371%",
+        "Sinistcha": "6.708%",
+        "Heatran": "6.604%"
+      },
+      "items": {
+        "Clear Amulet": "79.034%",
+        "Booster Energy": "9.221%",
+        "Choice Scarf": "3.757%",
+        "Assault Vest": "2.560%",
+        "Focus Sash": "2.466%",
+        "Other": "2.962%"
+      },
+      "ability": {
+        "Protosynthesis": "100.000%"
+      },
+      "evs": {
+        "Adamant": "164//244//4//0//76//20",
+        "Jolly": "0//252//0//0//4//248",
+        "Brave": "252//252//0//0//4//0"
+      }
+    }
+  },
+  {
+    "name": "Umbreon",
+    "usage": "0.45%",
+    "set": {
+      "moves": {
+        "Foul Play": "99.388%",
+        "Snarl": "95.317%",
+        "Taunt": "91.305%",
+        "Baby-Doll Eyes": "90.503%",
+        "Protect": "5.134%",
+        "Other": "18.352%"
+      },
+      "teammates": {
+        "Amoonguss": "91.132%",
+        "Urshifu-Rapid-Strike": "90.722%",
+        "Archaludon": "90.497%",
+        "Thundurus": "90.492%",
+        "Landorus": "90.490%",
+        "Sylveon": "2.991%",
+        "Ursaluna": "2.952%",
+        "Indeedee-F": "2.807%",
+        "Hatterene": "2.668%",
+        "Espeon": "2.312%"
+      },
+      "items": {
+        "Safety Goggles": "92.584%",
+        "Leftovers": "3.898%",
+        "Other": "3.518%"
+      },
+      "ability": {
+        "Inner Focus": "98.613%",
+        "Synchronize": "1.387%"
+      },
+      "evs": {
+        "Bold": "228//0//252//0//0//28",
+        "Calm": "252//0//4//0//252//0"
+      }
+    }
+  },
+  {
+    "name": "Pikachu",
+    "usage": "0.43%",
+    "set": {
+      "moves": {
+        "Fake Out": "99.897%",
+        "Helping Hand": "96.102%",
+        "Nuzzle": "94.577%",
+        "Endeavor": "90.791%",
+        "Other": "18.632%"
+      },
+      "teammates": {
+        "Tornadus": "96.518%",
+        "Urshifu-Rapid-Strike": "94.834%",
+        "Rillaboom": "90.848%",
+        "Chien-Pao": "90.810%",
+        "Goodra-Hisui": "90.604%",
+        "Flutter Mane": "5.749%",
+        "Pelipper": "5.218%",
+        "Amoonguss": "3.327%"
+      },
+      "items": {
+        "Eviolite": "91.391%",
+        "Light Ball": "5.517%",
+        "Other": "3.092%"
+      },
+      "ability": {
+        "Lightning Rod": "99.112%",
+        "Static": "0.888%"
+      },
+      "evs": {
+        "Jolly": "4//252//0//0//0//252",
+        "Timid": "4//0//0//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Kommo-O",
+    "usage": "0.43%",
+    "set": {
+      "moves": {
+        "Protect": "97.541%",
+        "Clanging Scales": "79.500%",
+        "Clangorous Soul": "75.742%",
+        "Flash Cannon": "64.634%",
+        "Body Press": "19.592%",
+        "Iron Defense": "18.387%",
+        "Iron Head": "16.256%",
+        "Aura Sphere": "9.525%",
+        "Other": "18.824%"
+      },
+      "teammates": {
+        "Flutter Mane": "58.378%",
+        "Sinistcha": "55.012%",
+        "Urshifu-Rapid-Strike": "46.362%",
+        "Clefairy": "42.445%",
+        "Heatran": "41.524%",
+        "Incineroar": "32.842%",
+        "Amoonguss": "15.596%",
+        "Gholdengo": "14.576%",
+        "Ogerpon-Cornerstone": "12.818%",
+        "Whimsicott": "10.825%"
+      },
+      "items": {
+        "Throat Spray": "73.229%",
+        "Leftovers": "18.140%",
+        "Sitrus Berry": "4.355%",
+        "Other": "4.276%"
+      },
+      "ability": {
+        "Bulletproof": "52.823%",
+        "Overcoat": "42.261%",
+        "Soundproof": "4.917%"
+      },
+      "evs": {
+        "Timid": "92//0//0//252//0//160",
+        "Impish": "252//4//36//0//196//20",
+        "Modest": "0//0//0//252//4//252"
+      }
+    }
+  },
+  {
+    "name": "Indeedee",
+    "usage": "0.43%",
+    "set": {
+      "moves": {
+        "Expanding Force": "97.817%",
+        "Dazzling Gleam": "54.697%",
+        "Trick Room": "43.993%",
+        "Tera Blast": "41.863%",
+        "Imprison": "26.851%",
+        "Trick": "26.750%",
+        "Hyper Voice": "26.146%",
+        "Fake Out": "20.823%",
+        "Protect": "15.142%",
+        "Psychic": "12.549%",
+        "Encore": "7.810%",
+        "Shadow Ball": "7.774%",
+        "Other": "17.785%"
+      },
+      "teammates": {
+        "Sneasler": "51.616%",
+        "Flutter Mane": "34.668%",
+        "Tornadus": "32.485%",
+        "Urshifu": "26.877%",
+        "Ninetales": "25.749%",
+        "Iron Crown": "24.944%",
+        "Whimsicott": "15.481%",
+        "Farigiraf": "14.389%",
+        "Amoonguss": "12.265%",
+        "Ursaluna-Bloodmoon": "11.504%"
+      },
+      "items": {
+        "Choice Scarf": "53.000%",
+        "Focus Sash": "23.615%",
+        "Choice Specs": "8.817%",
+        "Twisted Spoon": "4.272%",
+        "Mind Plate": "2.269%",
+        "Terrain Extender": "1.700%",
+        "Psychic Seed": "1.579%",
+        "Other": "4.747%"
+      },
+      "ability": {
+        "Psychic Surge": "99.021%",
+        "Inner Focus": "0.747%",
+        "Synchronize": "0.232%"
+      },
+      "evs": {
+        "Timid": "12//0//92//148//4//248",
+        "Modest": "4//0//0//248//0//252"
+      }
+    }
+  },
+  {
+    "name": "Garchomp",
+    "usage": "0.42%",
+    "set": {
+      "moves": {
+        "Earthquake": "83.175%",
+        "Dragon Claw": "71.037%",
+        "Protect": "68.581%",
+        "Rock Slide": "48.218%",
+        "Stomping Tantrum": "34.773%",
+        "Swords Dance": "19.469%",
+        "Iron Head": "13.263%",
+        "Crunch": "11.404%",
+        "Outrage": "8.623%",
+        "Poison Jab": "5.376%",
+        "Scale Shot": "4.806%",
+        "Substitute": "3.925%",
+        "Tera Blast": "3.716%",
+        "Breaking Swipe": "3.273%",
+        "Earth Power": "3.190%",
+        "Other": "17.172%"
+      },
+      "teammates": {
+        "Incineroar": "40.999%",
+        "Flutter Mane": "34.652%",
+        "Tornadus": "32.227%",
+        "Urshifu-Rapid-Strike": "29.588%",
+        "Gholdengo": "26.682%",
+        "Tyranitar": "19.202%",
+        "Amoonguss": "19.042%",
+        "Corviknight": "15.061%",
+        "Ninetales-Alola": "7.230%",
+        "Typhlosion-Hisui": "7.135%"
+      },
+      "items": {
+        "Life Orb": "40.864%",
+        "Clear Amulet": "19.466%",
+        "Rocky Helmet": "10.696%",
+        "Choice Band": "5.227%",
+        "Bright Powder": "4.532%",
+        "Leftovers": "4.079%",
+        "Choice Scarf": "3.398%",
+        "Loaded Dice": "2.952%",
+        "Assault Vest": "2.658%",
+        "Lum Berry": "2.059%",
+        "Other": "4.067%"
+      },
+      "ability": {
+        "Rough Skin": "83.333%",
+        "Sand Veil": "16.667%"
+      },
+      "evs": {
+        "Jolly": "0//252//4//0//0//252",
+        "Adamant": "4//252//0//0//0//252",
+        "Timid": "4//0//0//252//0//252"
+      }
+    }
+  },
+  {
+    "name": "Zapdos",
+    "usage": "0.40%",
+    "set": {
+      "moves": {
+        "Thunderbolt": "93.203%",
+        "Hurricane": "63.375%",
+        "Tailwind": "63.158%",
+        "Protect": "52.650%",
+        "Detect": "23.996%",
+        "Helping Hand": "21.817%",
+        "Weather Ball": "21.572%",
+        "Roost": "20.157%",
+        "Heat Wave": "12.603%",
+        "Volt Switch": "7.120%",
+        "Thunder Wave": "5.917%",
+        "Other": "14.432%"
+      },
+      "teammates": {
+        "Amoonguss": "55.052%",
+        "Tyranitar": "47.448%",
+        "Okidogi": "46.713%",
+        "Excadrill": "46.416%",
+        "Corviknight": "45.080%",
+        "Flutter Mane": "33.505%",
+        "Torkoal": "21.910%",
+        "Ursaluna": "21.856%",
+        "Walking Wake": "21.559%",
+        "Entei": "21.053%"
+      },
+      "items": {
+        "Rocky Helmet": "64.064%",
+        "Zap Plate": "21.241%",
+        "Covert Cloak": "3.169%",
+        "Life Orb": "2.490%",
+        "Sitrus Berry": "2.376%",
+        "Leftovers": "1.944%",
+        "Other": "4.716%"
+      },
+      "ability": {
+        "Static": "91.863%",
+        "Pressure": "8.137%"
+      },
+      "evs": {
+        "Timid": "0//0//4//252//0//252",
+        "Modest": "252//0//108//116//28//4",
+        "Bold": "252//0//228//20//4//4"
+      }
+    }
+  },
+  {
+    "name": "Lapras",
+    "usage": "0.40%",
+    "set": {
+      "moves": {
+        "Freeze-Dry": "87.142%",
+        "Haze": "84.379%",
+        "Sheer Cold": "72.148%",
+        "Life Dew": "64.100%",
+        "Rest": "24.328%",
+        "Fissure": "21.466%",
+        "Protect": "15.251%",
+        "Perish Song": "13.718%",
+        "Other": "17.469%"
+      },
+      "teammates": {
+        "Grimmsnarl": "84.042%",
+        "Clefairy": "84.008%",
+        "Goodra-Hisui": "84.005%",
+        "Annihilape": "84.004%",
+        "Spectrier": "84.004%",
+        "Dragonite": "9.040%",
+        "Incineroar": "8.822%",
+        "Golurk": "7.576%",
+        "Bronzong": "7.531%",
+        "Smeargle": "7.080%"
+      },
+      "items": {
+        "Covert Cloak": "60.362%",
+        "Chesto Berry": "24.045%",
+        "Leftovers": "9.900%",
+        "Sitrus Berry": "2.428%",
+        "Other": "3.264%"
+      },
+      "ability": {
+        "Shell Armor": "85.597%",
+        "Water Absorb": "14.175%",
+        "Hydration": "0.228%"
+      },
+      "evs": {
+        "Bold": "252//0//188//0//68//0",
+        "Relaxed": "252//0//144//0//108//0",
+        "Sassy": "252//0//228//0//24//0",
+        "Calm": "252//0//0//4//248//0"
+      }
+    }
+  },
+  {
+    "name": "Tsareena",
+    "usage": "0.39%",
+    "set": {
+      "moves": {
+        "Power Whip": "93.349%",
+        "Triple Axel": "86.591%",
+        "Protect": "66.782%",
+        "Helping Hand": "63.010%",
+        "Taunt": "46.803%",
+        "Play Rough": "12.787%",
+        "High Jump Kick": "9.660%",
+        "Bullet Seed": "5.564%",
+        "Other": "15.455%"
+      },
+      "teammates": {
+        "Urshifu-Rapid-Strike": "82.972%",
+        "Regidrago": "73.510%",
+        "Incineroar": "51.400%",
+        "Tornadus": "34.970%",
+        "Sylveon": "30.850%",
+        "Gothitelle": "30.503%",
+        "Landorus-Therian": "21.498%",
+        "Fezandipiti": "17.644%",
+        "Garganacl": "12.470%",
+        "Regieleki": "12.470%"
+      },
+      "items": {
+        "Wide Lens": "44.137%",
+        "Clear Amulet": "30.578%",
+        "Sitrus Berry": "12.621%",
+        "Loaded Dice": "5.588%",
+        "Assault Vest": "5.194%",
+        "Other": "1.882%"
+      },
+      "ability": {
+        "Queenly Majesty": "99.157%",
+        "Sweet Veil": "0.843%",
+        "Leaf Guard": "0.000%"
+      },
+      "evs": {
+        "Adamant": "0//252//0//0//4//252",
+        "Brave": "252//252//0//0//4//0"
+      }
+    }
+  }
+]
